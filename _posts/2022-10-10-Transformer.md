@@ -1,10 +1,10 @@
 ---
 
 layout: post
-title: VIT
+title: Attention-Is-All-You-Need
 categories: Transformer
 description:
-keywords: image classification,transformer
+keywords: attention,transformer
 
 ---
 
@@ -12,9 +12,9 @@ keywords: image classification,transformer
 
 ### 整体结构
 
-<img src="http://rjlg5clbk.hd-bkt.clouddn.com/imgimage-20221012011539932.png" alt="image-20221012011539932" style="zoom:50%;" />
+<img src="http://rjlg5clbk.hd-bkt.clouddn.com/imgimgimage-20221012011539932.png" alt="image-20221012011539932" style="zoom:50%;" />
 
-<img src="http://rjlg5clbk.hd-bkt.clouddn.com/imgimage-20221012002512478.png" alt="image-20221012002512478" style="zoom:50%;" />
+<img src="http://rjlg5clbk.hd-bkt.clouddn.com/imgimgimage-20221012002512478.png" alt="image-20221012002512478" style="zoom:50%;" />
 
 #### Attention计算
 
@@ -22,12 +22,12 @@ $Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$
 
 ### 实现细节
 
-| 参数名      | 参数含义            | base模型取值 |
-| ----------- | ------------------- | ------------ |
-| N           | encoder/decoder层数 | 6            |
-| $d_{model}$ | embedding维度       | 512          |
-| h           | head数量            | 8            |
-| $d_{k}$ / $d_{v}$        | key、value、query的维度 | 64           |
+| 参数名            | 参数含义                | base模型取值 |
+| ----------------- | ----------------------- | ------------ |
+| N                 | encoder/decoder层数     | 6            |
+| $d_{model}$       | embedding维度           | 512          |
+| h                 | head数量                | 8            |
+| $d_{k}$ / $d_{v}$ | key、value、query的维度 | 64           |
 
 #### 输入层embedding
 
