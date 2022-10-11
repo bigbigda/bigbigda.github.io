@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 激活Typora
+title: 碎碎念
 categories: Vim
 description:
 keywords: 碎碎念
