@@ -1,139 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-11T12:08:18+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">记录</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">激活Typora</title><link href="https://bigbigda.github.io/2022/10/11/ActiveTypora/" rel="alternate" type="text/html" title="激活Typora" /><published>2022-10-11T00:00:00+08:00</published><updated>2022-10-11T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/11/ActiveTypora</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/11/ActiveTypora/">&lt;p&gt;2022年10月11日，购买并激活了typora，开始好好写博客&lt;/p&gt;</content><author><name>nice</name></author><category term="Vim" /><summary type="html">2022年10月11日，购买并激活了typora，开始好好写博客</summary></entry><entry><title type="html">Transformer</title><link href="https://bigbigda.github.io/2022/10/09/transformer/" rel="alternate" type="text/html" title="Transformer" /><published>2022-10-09T00:00:00+08:00</published><updated>2022-10-09T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/09/transformer</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/09/transformer/">&lt;p&gt;前两天刚刚升级到了 MacVim 9.0 的最新版本，日常编辑编辑文字没遇到过什么问题，直到今天动了一下插件。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-11T14:39:55+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">记录</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">碎碎念</title><link href="https://bigbigda.github.io/2022/10/11/ActiveTypora/" rel="alternate" type="text/html" title="碎碎念" /><published>2022-10-11T00:00:00+08:00</published><updated>2022-10-11T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/11/ActiveTypora</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/11/ActiveTypora/">&lt;p&gt;2022年10月11日，购买并激活了typora，开始好好写博客&lt;/p&gt;</content><author><name>nice</name></author><category term="Vim" /><summary type="html">2022年10月11日，购买并激活了typora，开始好好写博客</summary></entry><entry><title type="html">Detr</title><link href="https://bigbigda.github.io/2022/10/11/DETR/" rel="alternate" type="text/html" title="Detr" /><published>2022-10-11T00:00:00+08:00</published><updated>2022-10-11T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/11/DETR</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/11/DETR/">&lt;p&gt;layout: post
+title: DETR论文
+categories: Transformer
+description:
+keywords: 目标检测&lt;/p&gt;
 
-&lt;h2 id=&quot;发现问题&quot;&gt;发现问题&lt;/h2&gt;
+&lt;h2 id=&quot;目标检测背景知识&quot;&gt;目标检测背景知识&lt;/h2&gt;
 
-&lt;p&gt;今早看到一个有意思的 Vim 插件，安装上试用了下，感觉对我来说不太实用，就删掉配置，打算运行 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:PlugClean&lt;/code&gt; 清理掉它，结果 MacVim 提示我即将删掉的插件有两个——除了试用的这个以外，还有 LeaderF。&lt;/p&gt;
+&lt;h3 id=&quot;rcnn系列&quot;&gt;RCNN系列&lt;/h3&gt;
 
-&lt;p&gt;LeaderF 是我用得比较多的插件之一了，我并没有表明意图我要删掉它，是发生了什么让 vim-plug 这样以为呢？肯定是有什么误会。&lt;/p&gt;
+&lt;p&gt;rcnn -&amp;gt; fast-rcnn -&amp;gt; faster-rcnn&lt;/p&gt;
 
-&lt;p&gt;我的 _vimrc 文件里，添加 LeaderF 插件是这样写的：&lt;/p&gt;
+&lt;h4 id=&quot;fast-rcnn中roi-pooling&quot;&gt;fast-rcnn中roi pooling&lt;/h4&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if has('python') || has('python3')
-    Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-endif
+&lt;p&gt;roi pooling包括两个部分：首先是将proposal的区域映射的到feature map，第二步是将feature map进行pooling，转化为7*7的大小，然后进行分类、调整位置等操作。这两步都可能会引入精度损失。&lt;/p&gt;
+
+&lt;p&gt;mask-rcnn引入Roi Align来解决这一问题&lt;/p&gt;
+
+&lt;p&gt;可参考 https://cloud.tencent.com/developer/article/1829792&lt;/p&gt;
+
+&lt;h4 id=&quot;非极大值抑制-nms&quot;&gt;非极大值抑制 NMS&lt;/h4&gt;
+
+&lt;p&gt;NMS是一个选框的算法。在rcnn、fast-rnn流程中，针对一个目标物体，往往会产出多个检测框，NMS的作用是保证只保留一个。&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;非极大值抑制的流程如下：
+
+根据置信度得分进行排序
+选择置信度最高的比边界框添加到最终输出列表中，将其从边界框列表中删除
+计算所有边界框的面积
+计算置信度最高的边界框与其它候选框的IoU。
+删除IoU大于阈值的边界框
+重复上述过程，直至边界框列表为空。
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;于是打开一个 MacVim 窗口，试了下 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:echo has('python')&lt;/code&gt; 和 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:echo has('python3')&lt;/code&gt;，输出竟然都是 0，那就难怪了……&lt;/p&gt;
-
-&lt;h2 id=&quot;分析问题&quot;&gt;分析问题&lt;/h2&gt;
-
-&lt;p&gt;一开始主要想弄清楚两点：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;我使用的 MacVim 版本编译时究竟有没有启用 Python 支持？&lt;/p&gt;
-
-    &lt;p&gt;在 MacVim 窗口里运行 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:version&lt;/code&gt;，可以看到 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+python/dyn&lt;/code&gt; 和 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+python3/dyn&lt;/code&gt;，那说明同时启用了 Python 和 Python3 支持。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;我本地有没有安装 Python？&lt;/p&gt;
-
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python
- zsh: &lt;span class=&quot;nb&quot;&gt;command &lt;/span&gt;not found: python
-
- &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew list | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;python
- python@3.10
- python@3.8
- python@3.9
-
- &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python3
- Python 3.9.12 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;main, Mar 26 2022, 15:51:15&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Clang 13.1.6 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;clang-1316.0.21.2&lt;span class=&quot;o&quot;&gt;)]&lt;/span&gt; on darwin
- Type &lt;span class=&quot;s2&quot;&gt;&quot;help&quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&quot;copyright&quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&quot;credits&quot;&lt;/span&gt; or &lt;span class=&quot;s2&quot;&gt;&quot;license&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;more information.
- &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;p&gt;可以看到我本地安装了 Python3 的 3.8、3.9、3.10 三个版本，默认 3.9，没有安装 Python2。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;这没什么问题，那继续找，尝试下在 MacVim 里执行 Python3 语句：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;:py3 import sys;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;结果输出了一堆报错：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;E370: 无法加载库 /usr/local/Frameworks/Python.framework/Versions/3.10/Python：dlopen(/usr/local/Frameworks/Python.fram
-ework/Versions/3.10/Python, 0x0009): tried: '/usr/local/Frameworks/Python.framework/Versions/3.10/Python' (no such fil
-e), '/Library/Frameworks/Python.framework/Versions/3.10/Python' (no such file), '/System/Library/Frameworks/Python.fra
-mework/Versions/3.10/Python' (no such file)
-E263: 抱歉，此命令不可用，无法加载 Python 库。
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;它要找的这个文件路径确实不存在……毕竟我默认的是 3.9 版本，所以  /usr/local/Frameworks/Python.framework/Versions/ 下只有 3.9 和 current 目录，没有 3.10。&lt;/p&gt;
-
-&lt;p&gt;它为啥放着配置好的 3.9 版本不用，非得这么头铁去找 3.10 版本呢？这个问题先不回答，留待后面的刨根问底环节。现在先解决问题。&lt;/p&gt;
-
-&lt;h2 id=&quot;解决问题&quot;&gt;解决问题&lt;/h2&gt;
-
-&lt;p&gt;在网上将以上错误信息搜索一番后，了解到了可以通过设置 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pythonthreedll&lt;/code&gt; 来指定动态加载的 Python3 支持库。&lt;/p&gt;
-
-&lt;p&gt;另外，也了解了一下，通过 brew 安装的多个 Python 版本如何切换默认版本。&lt;/p&gt;
-
-&lt;p&gt;所以这个小问题找到了两种解决方法：&lt;/p&gt;
-
-&lt;p&gt;一、在 _vimrc 里添加配置，指定动态加载的 Python3 支持库路径，比如：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```vim
-let &amp;amp;pythonthreedll='/usr/local/Frameworks/Python.framework/Versions/3.9/python'
-```
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;二、切换系统默认 Python3 版本，比如这里 MacVim 寻找 3.10 版本，我就把默认的切换到 3.10 版本好了：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```sh
-brew unlink python@3.9
-brew link python@3.10
-```
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;经验证以上两个方法都可以解决问题，我最终用了第二种。&lt;/p&gt;
-
-&lt;h2 id=&quot;刨根问底&quot;&gt;刨根问底&lt;/h2&gt;
-
-&lt;p&gt;上面我们遗留了一个问题，为什么 MacVim 那么头铁非要加载 3.10 版本的 Python 支持库呢？&lt;/p&gt;
-
-&lt;p&gt;首先看一下 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pythonthreedll&lt;/code&gt; 的帮助文档说明：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;:h pythonthreedll
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;可以看到：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;'pythonthreedll'	string	(default depends on the build)
-			global
-			{only available when compiled with the |+python3/dyn|
-			feature}
-	Specifies the name of the Python 3 shared library. The default is
-	DYNAMIC_PYTHON3_DLL, which was specified at compile time.
-	Environment variables are expanded |:set_env|.
-	This option cannot be set from a |modeline| or in the |sandbox|, for
-	security reasons.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;也就是说默认值是在编译时指定的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DYNAMIC_PYTHON3_DLL&lt;/code&gt; 值，按我理解那就是说如果没有在配置文件里人为指定，那它就是会按编译时指定的去加载。&lt;/p&gt;
-
-&lt;p&gt;那编译时的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DYNAMIC_PYTHON3_DLL&lt;/code&gt;，我们可以在 MacVim 的官方仓库 &lt;a href=&quot;https://github.com/macvim-dev/macvim/blob/master/.github/workflows/ci-macvim.yaml&quot;&gt;.github/worflows/ci-macvim.yaml&lt;/a&gt; 里找到，关键内容：&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;...&lt;/span&gt;
-
-  &lt;span class=&quot;na&quot;&gt;vi_cv_dll_name_python3&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/usr/local/Frameworks/Python.framework/Versions/3.10/Python&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Make sure to keep src/MacVim/vimrc synced with the Python version here for the Python DLL detection logic.&lt;/span&gt;
-
-&lt;span class=&quot;nn&quot;&gt;...&lt;/span&gt;
-
-          &lt;span class=&quot;s&quot;&gt;grep -q -- &quot;-DDYNAMIC_PYTHON3_DLL=\\\\\&quot;${vi_cv_dll_name_python3}\\\\\&quot;&quot; src/auto/config.mk&lt;/span&gt;
-
-&lt;span class=&quot;nn&quot;&gt;...&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;至此破案了。&lt;/p&gt;
-
-&lt;h2 id=&quot;参考&quot;&gt;参考&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/18f06d12348c&quot;&gt;https://www.jianshu.com/p/18f06d12348c&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>nice</name></author><category term="Vim" /><summary type="html">前两天刚刚升级到了 MacVim 9.0 的最新版本，日常编辑编辑文字没遇到过什么问题，直到今天动了一下插件。</summary></entry><entry><title type="html">修复 MacVim 9.0 的 Python3 支持</title><link href="https://bigbigda.github.io/2022/09/22/enable-python3-in-macvim/" rel="alternate" type="text/html" title="修复 MacVim 9.0 的 Python3 支持" /><published>2022-09-22T00:00:00+08:00</published><updated>2022-09-22T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/09/22/enable-python3-in-macvim</id><content type="html" xml:base="https://bigbigda.github.io/2022/09/22/enable-python3-in-macvim/">&lt;p&gt;前两天刚刚升级到了 MacVim 9.0 的最新版本，日常编辑编辑文字没遇到过什么问题，直到今天动了一下插件。&lt;/p&gt;
+&lt;details&gt;&lt;summary&gt;非极大值抑制的流程&lt;/summary&gt;
+根据置信度得分进行排序
+选择置信度最高的比边界框添加到最终输出列表中，将其从边界框列表中删除
+计算所有边界框的面积
+计算置信度最高的边界框与其它候选框的IoU。
+删除IoU大于阈值的边界框
+重复上述过程，直至边界框列表为空。
+&lt;/details&gt;</content><author><name>nice</name></author><summary type="html">layout: post title: DETR论文 categories: Transformer description: keywords: 目标检测</summary></entry><entry><title type="html">第一篇博文</title><link href="https://bigbigda.github.io/2022/10/09/first-blog/" rel="alternate" type="text/html" title="第一篇博文" /><published>2022-10-09T00:00:00+08:00</published><updated>2022-10-09T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/09/first-blog</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/09/first-blog/">&lt;p&gt;终于搭建完成了基于github的个人博客&lt;/p&gt;</content><author><name>nice</name></author><category term="碎碎念" /><summary type="html">终于搭建完成了基于github的个人博客</summary></entry><entry><title type="html">修复 MacVim 9.0 的 Python3 支持</title><link href="https://bigbigda.github.io/2022/09/22/enable-python3-in-macvim/" rel="alternate" type="text/html" title="修复 MacVim 9.0 的 Python3 支持" /><published>2022-09-22T00:00:00+08:00</published><updated>2022-09-22T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/09/22/enable-python3-in-macvim</id><content type="html" xml:base="https://bigbigda.github.io/2022/09/22/enable-python3-in-macvim/">&lt;p&gt;前两天刚刚升级到了 MacVim 9.0 的最新版本，日常编辑编辑文字没遇到过什么问题，直到今天动了一下插件。&lt;/p&gt;
 
 &lt;h2 id=&quot;发现问题&quot;&gt;发现问题&lt;/h2&gt;
 
@@ -941,115 +847,4 @@ _git_merge_to_comp&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;我们乐于受人尊敬，并不是热爱「尊敬」本身，我们爱是只是受人尊敬带来的好处。&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>nice</name></author><category term="Blog" /><summary type="html">最近读完了这本小书，想写点什么，但又似乎暂时表达不出，先挖个读书笔记的坑在这里，后面有所感了也许会填上。</summary></entry><entry><title type="html">利用 XXL-JOB 实现灵活控制的分片处理</title><link href="https://bigbigda.github.io/2021/06/19/xxl-job-sharding/" rel="alternate" type="text/html" title="利用 XXL-JOB 实现灵活控制的分片处理" /><published>2021-06-19T00:00:00+08:00</published><updated>2021-06-19T00:00:00+08:00</updated><id>https://bigbigda.github.io/2021/06/19/xxl-job-sharding</id><content type="html" xml:base="https://bigbigda.github.io/2021/06/19/xxl-job-sharding/">&lt;p&gt;本文讲述了一种利用 XXL-JOB 来进行分片任务处理的方法，另外加入对执行节点数的灵活控制。&lt;/p&gt;
-
-&lt;h2 id=&quot;场景&quot;&gt;场景&lt;/h2&gt;
-
-&lt;p&gt;现在一张数据表里有大量数据需要某个服务端应用来处理，要求：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;能够并行处理；&lt;/li&gt;
-  &lt;li&gt;能够较灵活地控制并行任务数量。&lt;/li&gt;
-  &lt;li&gt;压力较均衡地分散到不同的服务器节点；&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;思路&quot;&gt;思路&lt;/h2&gt;
-
-&lt;p&gt;因为需要并行处理同一张数据表里的数据，所以比较自然地想到了分片查询数据，可以利用对 id 取模的方法进行分片，避免同一条数据被重复处理。&lt;/p&gt;
-
-&lt;p&gt;根据第 1、2 点要求，本来想通过对线程池的动态配置来实现，但结合第 3 点来考虑，服务器节点数量有可能会变化，节点之间相互无感知无通信，自己在应用内实现一套调度机制可能会很复杂。&lt;/p&gt;
-
-&lt;p&gt;如果有现成的独立于这些服务器节点之外的调度器就好了——顺着这个思路，就想到了已经接入的分布式任务调度平台 XXL-JOB，而在阅读其 &lt;a href=&quot;https://www.xuxueli.com/xxl-job/&quot;&gt;官方文档&lt;/a&gt; 后发现「分片广播 &amp;amp; 动态分片」很贴合这种场景。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/java/xxl-job-sharding-broadcast.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;方案&quot;&gt;方案&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;利用 XXL-JOB 的路由策略「分片广播」来调度定时任务；&lt;/li&gt;
-  &lt;li&gt;通过任务参数传入执行任务节点数量；&lt;/li&gt;
-  &lt;li&gt;定时任务逻辑里，根据获取到的分片参数、执行任务节点数量，决策当前节点是否需要执行，分片查询数据并处理：
-    &lt;ul&gt;
-      &lt;li&gt;如果 &lt;em&gt;分片序号 &amp;gt; (执行任务节点数量 - 1)&lt;/em&gt;，则当前节点不执行任务，直接返回；&lt;/li&gt;
-      &lt;li&gt;否则，取 &lt;em&gt;分片序号&lt;/em&gt; 和 &lt;em&gt;执行任务节点数量&lt;/em&gt; 作为分片参数，查询数据并处理。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;这样，我们可以实现灵活调度 [1, N] 个节点并行执行任务处理数据。&lt;/p&gt;
-
-&lt;h2 id=&quot;主要代码示例&quot;&gt;主要代码示例&lt;/h2&gt;
-
-&lt;p&gt;JobHandler 示例：&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@XxlJob&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;demoJobHandler&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;param&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;XxlJobHelper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getJobParam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;StringUtils&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isBlank&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;XxlJobHelper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;任务参数为空&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;XxlJobHelper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;handleFail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// 执行任务节点数量&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;executeNodeNum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;valueOf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// 分片序号&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shardIndex&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;XxlJobHelper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getShardIndex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// 分片总数&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shardTotal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;XxlJobHelper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getShardTotal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;executeNodeNum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;executeNodeNum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shardTotal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;XxlJobHelper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;执行任务节点数量取值范围[1,节点总数]&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;XxlJobHelper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;handleFail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shardIndex&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;executeNodeNum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;XxlJobHelper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;当前分片 {} 无需执行&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shardIndex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;XxlJobHelper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;handleSuccess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;shardTotal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;executeNodeNum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// 分片查询数据并处理&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shardIndex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shardTotal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-    &lt;span class=&quot;nc&quot;&gt;XxlJobHelper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;handleSuccess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;分片查询数据示例：&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;field1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;field2&lt;/span&gt; 
-&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;table_name&lt;/span&gt; 
-&lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt; 
-    &lt;span class=&quot;k&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;mod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shardTotal&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shardIndex&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt; 
-&lt;span class=&quot;k&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;limit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;rows&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;进一步思考&quot;&gt;进一步思考&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;如果需要更大的并发量，需要有大于应用节点数量的任务并行，如何处理？&lt;/p&gt;
-
-    &lt;p&gt;两种思路：&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;通过任务参数传入一个并发数，单个节点在处理任务时，将查询到的数据按这个数字进行再分片，交由线程池并行处理；&lt;/li&gt;
-      &lt;li&gt;配置 M 个定时任务，指定相同的 JobHandler，给它们编号 0、1、2…M，并将定时任务编号和 M 这两个数，由任务参数传入，定时任务逻辑里，先根据分片参数、定时任务编号、M，重新计算出新的分片参数，如 &lt;em&gt;分片序号 = (分片序号 * M) + 定时任务编号&lt;/em&gt;，&lt;em&gt;分片总数 = 分片总数 * M&lt;/em&gt;，再查询数据并处理。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;如果有可能频繁调整任务执行逻辑，包括可能要新增任务参数等，而不想重启服务器，如何解决？&lt;/p&gt;
-
-    &lt;p&gt;可以考虑使用 XXL-JOB 的「GLUE模式」任务，能够在线编辑和更新定时任务执行逻辑。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;参考&quot;&gt;参考&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.xuxueli.com/xxl-job/&quot;&gt;分布式任务调度平台XXL-JOB&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>nice</name></author><category term="Java" /><summary type="html">本文讲述了一种利用 XXL-JOB 来进行分片任务处理的方法，另外加入对执行节点数的灵活控制。</summary></entry></feed>
+&lt;/blockquote&gt;</content><author><name>nice</name></author><category term="Blog" /><summary type="html">最近读完了这本小书，想写点什么，但又似乎暂时表达不出，先挖个读书笔记的坑在这里，后面有所感了也许会填上。</summary></entry></feed>

@@ -253,19 +253,27 @@
     } ,
   
     {
-      "title"    : "Transformer",
-      "category" : "Vim",
+      "title"    : "第一篇博文",
+      "category" : "碎碎念",
       
-      "url"      : "https://bigbigda.github.io/2022/10/09/transformer/",
-      "keywords" : "MacVim, Python3"
+      "url"      : "https://bigbigda.github.io/2022/10/09/first-blog/",
+      "keywords" : "碎碎念"
     } ,
   
     {
-      "title"    : "激活Typora",
+      "title"    : "碎碎念",
       "category" : "Vim",
       
       "url"      : "https://bigbigda.github.io/2022/10/11/ActiveTypora/",
       "keywords" : "碎碎念"
+    } ,
+  
+    {
+      "title"    : "Detr",
+      "category" : "",
+      
+      "url"      : "https://bigbigda.github.io/2022/10/11/DETR/",
+      "keywords" : ""
     } ,
   
     {
