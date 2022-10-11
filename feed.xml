@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-11T21:17:40+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">DETR论文</title><link href="https://bigbigda.github.io/2022/10/11/DETR/" rel="alternate" type="text/html" title="DETR论文" /><published>2022-10-11T00:00:00+08:00</published><updated>2022-10-11T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/11/DETR</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/11/DETR/">&lt;h1 id=&quot;detr论文&quot;&gt;DETR论文&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-12T01:22:00+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">DETR论文</title><link href="https://bigbigda.github.io/2022/10/11/DETR/" rel="alternate" type="text/html" title="DETR论文" /><published>2022-10-11T00:00:00+08:00</published><updated>2022-10-11T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/11/DETR</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/11/DETR/">&lt;h1 id=&quot;detr论文&quot;&gt;DETR论文&lt;/h1&gt;
 
 &lt;h2 id=&quot;目标检测背景知识&quot;&gt;目标检测背景知识&lt;/h2&gt;
 
@@ -37,13 +37,157 @@
 &lt;h4 id=&quot;流程&quot;&gt;流程&lt;/h4&gt;
 &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008vxvgGly1h71mmmg1ncj31g40qawnp.jpg&quot; alt=&quot;image-20221011203510794&quot; /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;http://rjlg5clbk.hd-bkt.clouddn.com/imgimage-20221011234750955.png&quot; alt=&quot;image-20221011234750955&quot; /&gt;&lt;/p&gt;
+
 &lt;ol&gt;
-  &lt;li&gt;使用一个CNN骨干网络提取feature map（）&lt;/li&gt;
-  &lt;li&gt;使用一个encoder对前一步提取的feature map进行编码&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>nice</name></author><category term="Transformer" /><summary type="html">DETR论文</summary></entry><entry><title type="html">VIT</title><link href="https://bigbigda.github.io/2022/10/10/VIT/" rel="alternate" type="text/html" title="VIT" /><published>2022-10-10T00:00:00+08:00</published><updated>2022-10-10T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/10/VIT</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/10/VIT/"></content><author><name>nice</name></author><category term="Transformer" /><summary type="html"></summary></entry><entry><title type="html">第一篇博文</title><link href="https://bigbigda.github.io/2022/10/09/first-blog/" rel="alternate" type="text/html" title="第一篇博文" /><published>2022-10-09T00:00:00+08:00</published><updated>2022-10-09T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/09/first-blog</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/09/first-blog/">&lt;ul&gt;
+  &lt;li&gt;使用一个CNN骨干网络提取feature map，输出大小通常为$2048&lt;em&gt;\frac{H}{32}&lt;/em&gt;\frac{W}{32}$，本文实现中采用ResNet-50和ResNet-101&lt;/li&gt;
+  &lt;li&gt;使用一个encoder对前一步提取的feature map进行编码，注意输入的feature map还增加了positional encoding&lt;/li&gt;
+  &lt;li&gt;使用decoder对上述编码结果进行解码，解码器的query为可学习的object queries（本文固定位100个）&lt;/li&gt;
+  &lt;li&gt;Prediction feed-forward networks（FFNs），为一个3层激活函数为Relu的MLP&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>nice</name></author><category term="Transformer" /><summary type="html">DETR论文</summary></entry><entry><title type="html">Attention-Is-All-You-Need</title><link href="https://bigbigda.github.io/2022/10/10/Transformer/" rel="alternate" type="text/html" title="Attention-Is-All-You-Need" /><published>2022-10-10T00:00:00+08:00</published><updated>2022-10-10T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/10/Transformer</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/10/Transformer/">&lt;h1 id=&quot;attention-is-all-you-need&quot;&gt;Attention Is All You Need&lt;/h1&gt;
+
+&lt;h3 id=&quot;整体结构&quot;&gt;整体结构&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://rjlg5clbk.hd-bkt.clouddn.com/imgimgimage-20221012011539932.png&quot; alt=&quot;image-20221012011539932&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://rjlg5clbk.hd-bkt.clouddn.com/imgimgimage-20221012002512478.png&quot; alt=&quot;image-20221012002512478&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;attention计算&quot;&gt;Attention计算&lt;/h4&gt;
+
+&lt;p&gt;$Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$&lt;/p&gt;
+
+&lt;h3 id=&quot;实现细节&quot;&gt;实现细节&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;参数名&lt;/th&gt;
+      &lt;th&gt;参数含义&lt;/th&gt;
+      &lt;th&gt;base模型取值&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;N&lt;/td&gt;
+      &lt;td&gt;encoder/decoder层数&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$d_{model}$&lt;/td&gt;
+      &lt;td&gt;embedding维度&lt;/td&gt;
+      &lt;td&gt;512&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;h&lt;/td&gt;
+      &lt;td&gt;head数量&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$d_{k}$ / $d_{v}$&lt;/td&gt;
+      &lt;td&gt;key、value、query的维度&lt;/td&gt;
+      &lt;td&gt;64&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;输入层embedding&quot;&gt;输入层embedding&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;对于英文，进行token embedding时可以以单词的粒度token化，也可以以词根的粒度token化；对于中文，一般以字为单位&lt;/li&gt;
+  &lt;li&gt;本文实现中embedding同encoder/decoder部分联合训练，且input embedding和output embedding共享参数&lt;/li&gt;
+  &lt;li&gt;decoder的embedding层和FC层权重共享：embedding层可以说是通过one-hot获取对应的embedding向量，FC层则是通过向量x去得到它为各个词的softmax概率（理论上也是one-hot），所以这两个计算近似为互逆过程。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;其他参考资料&quot;&gt;其他参考资料&lt;/h3&gt;
+
+&lt;p&gt;http://jalammar.github.io/illustrated-transformer/&lt;/p&gt;
+
+&lt;p&gt;https://nlp.seas.harvard.edu/2018/04/03/attention.html&lt;/p&gt;
+
+&lt;p&gt;https://zhuanlan.zhihu.com/p/132554155&lt;/p&gt;</content><author><name>nice</name></author><category term="Transformer" /><summary type="html">Attention Is All You Need</summary></entry><entry><title type="html">VIT</title><link href="https://bigbigda.github.io/2022/10/10/VIT/" rel="alternate" type="text/html" title="VIT" /><published>2022-10-10T00:00:00+08:00</published><updated>2022-10-10T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/10/VIT</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/10/VIT/">&lt;h1 id=&quot;attention-is-all-you-need&quot;&gt;Attention Is All You Need&lt;/h1&gt;
+
+&lt;h3 id=&quot;整体结构&quot;&gt;整体结构&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://rjlg5clbk.hd-bkt.clouddn.com/imgimage-20221012011539932.png&quot; alt=&quot;image-20221012011539932&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://rjlg5clbk.hd-bkt.clouddn.com/imgimage-20221012002512478.png&quot; alt=&quot;image-20221012002512478&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;attention计算&quot;&gt;Attention计算&lt;/h4&gt;
+
+&lt;p&gt;$Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$&lt;/p&gt;
+
+&lt;h3 id=&quot;实现细节&quot;&gt;实现细节&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;参数名&lt;/th&gt;
+      &lt;th&gt;参数含义&lt;/th&gt;
+      &lt;th&gt;base模型取值&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;N&lt;/td&gt;
+      &lt;td&gt;encoder/decoder层数&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$d_{model}$&lt;/td&gt;
+      &lt;td&gt;embedding维度&lt;/td&gt;
+      &lt;td&gt;512&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;h&lt;/td&gt;
+      &lt;td&gt;head数量&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$d_{k}$ / $d_{v}$&lt;/td&gt;
+      &lt;td&gt;key、value、query的维度&lt;/td&gt;
+      &lt;td&gt;64&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;输入层embedding&quot;&gt;输入层embedding&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;对于英文，进行token embedding时可以以单词的粒度token化，也可以以词根的粒度token化；对于中文，一般以字为单位&lt;/li&gt;
+  &lt;li&gt;本文实现中embedding同encoder/decoder部分联合训练，且input embedding和output embedding共享参数&lt;/li&gt;
+  &lt;li&gt;decoder的embedding层和FC层权重共享：embedding层可以说是通过one-hot获取对应的embedding向量，FC层则是通过向量x去得到它为各个词的softmax概率（理论上也是one-hot），所以这两个计算近似为互逆过程。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;其他参考资料&quot;&gt;其他参考资料&lt;/h3&gt;
+
+&lt;p&gt;http://jalammar.github.io/illustrated-transformer/&lt;/p&gt;
+
+&lt;p&gt;https://nlp.seas.harvard.edu/2018/04/03/attention.html&lt;/p&gt;
+
+&lt;p&gt;https://zhuanlan.zhihu.com/p/132554155&lt;/p&gt;</content><author><name>nice</name></author><category term="Transformer" /><summary type="html">Attention Is All You Need</summary></entry><entry><title type="html">第一篇博文</title><link href="https://bigbigda.github.io/2022/10/09/first-blog/" rel="alternate" type="text/html" title="第一篇博文" /><published>2022-10-09T00:00:00+08:00</published><updated>2022-10-09T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/09/first-blog</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/09/first-blog/">&lt;h3 id=&quot;github-pages搭建&quot;&gt;github pages搭建&lt;/h3&gt;
+
+&lt;ul&gt;
   &lt;li&gt;2022-10-09 终于搭建完成了基于github的个人博客&lt;/li&gt;
   &lt;li&gt;2022-10-11 buy Typora&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>nice</name></author><category term="碎碎念" /><summary type="html">2022-10-09 终于搭建完成了基于github的个人博客 2022-10-11 buy Typora</summary></entry><entry><title type="html">修复 MacVim 9.0 的 Python3 支持</title><link href="https://bigbigda.github.io/2022/09/22/enable-python3-in-macvim/" rel="alternate" type="text/html" title="修复 MacVim 9.0 的 Python3 支持" /><published>2022-09-22T00:00:00+08:00</published><updated>2022-09-22T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/09/22/enable-python3-in-macvim</id><content type="html" xml:base="https://bigbigda.github.io/2022/09/22/enable-python3-in-macvim/">&lt;p&gt;前两天刚刚升级到了 MacVim 9.0 的最新版本，日常编辑编辑文字没遇到过什么问题，直到今天动了一下插件。&lt;/p&gt;
+  &lt;li&gt;2022-10-11 解决图片问题&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;解决图片问题记录&quot;&gt;解决图片问题记录&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;方案一：参考原始代码，将图片放在blog同路径下
+    &lt;ul&gt;
+      &lt;li&gt;最初尝试在one-blog.md同路径下创建one-blog-images目录，将图片放在其中，但实际网站上无法展示图片&lt;/li&gt;
+      &lt;li&gt;最终放在/images/one-blog-images下可以解决此问题，但是这种方式&lt;strong&gt;图片解析很慢&lt;/strong&gt;，且由于图片比较多，以后有超过github-pages 1G 空间限制风险，遂放弃&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;方案二：使用typora+ipic+微博图床，实现复制图片时自动update到云端，同时md文件中保存的也是url。可以完美解决方案一的问题。
+    &lt;ul&gt;
+      &lt;li&gt;方案二引入的新问题是如果以后微博图床失效，那整个博客有挂掉的风险。最初希望通过配置typora实现上传的同时保存到本地，但没找到此功能。&lt;strong&gt;后续计划&lt;/strong&gt;自己写python实现此功能&lt;/li&gt;
+      &lt;li&gt;目前优化为&lt;strong&gt;typora+PicGo+七牛云&lt;/strong&gt;，考虑到七牛云也在提供收费服务，稳定性有明显提升&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>nice</name></author><category term="碎碎念" /><summary type="html">github pages搭建</summary></entry><entry><title type="html">修复 MacVim 9.0 的 Python3 支持</title><link href="https://bigbigda.github.io/2022/09/22/enable-python3-in-macvim/" rel="alternate" type="text/html" title="修复 MacVim 9.0 的 Python3 支持" /><published>2022-09-22T00:00:00+08:00</published><updated>2022-09-22T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/09/22/enable-python3-in-macvim</id><content type="html" xml:base="https://bigbigda.github.io/2022/09/22/enable-python3-in-macvim/">&lt;p&gt;前两天刚刚升级到了 MacVim 9.0 的最新版本，日常编辑编辑文字没遇到过什么问题，直到今天动了一下插件。&lt;/p&gt;
 
 &lt;h2 id=&quot;发现问题&quot;&gt;发现问题&lt;/h2&gt;
 
@@ -827,28 +971,4 @@ _git_merge_to_comp&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.cnblogs.com/alalazy/p/13179608.html&quot;&gt;https://www.cnblogs.com/alalazy/p/13179608.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>nice</name></author><category term="Java" /><summary type="html">记两种让 Spring Security「少管闲事」的方法。</summary></entry><entry><title type="html">读叔本华《人生的智慧》</title><link href="https://bigbigda.github.io/2021/10/25/the-wisdom-of-life/" rel="alternate" type="text/html" title="读叔本华《人生的智慧》" /><published>2021-10-25T00:00:00+08:00</published><updated>2021-10-25T00:00:00+08:00</updated><id>https://bigbigda.github.io/2021/10/25/the-wisdom-of-life</id><content type="html" xml:base="https://bigbigda.github.io/2021/10/25/the-wisdom-of-life/">&lt;p&gt;最近读完了这本小书，想写点什么，但又似乎暂时表达不出，先挖个读书笔记的坑在这里，后面有所感了也许会填上。&lt;/p&gt;
-
-&lt;p&gt;读此书的过程中，感觉前半部分比较有意思，后半部分都是在大讲所谓骑士荣誉，看得很烦。&lt;/p&gt;
-
-&lt;h2 id=&quot;摘录&quot;&gt;摘录&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;美貌是一封公开的推荐信。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;只要对生活稍作考察，我们就会发现，人类幸福的两大宿敌是痛苦和无聊。我再补充一下，当我们足够幸运逃离了其中一端时，我们就接近了另外一端，也就是说，免得了痛苦却免不了无聊，反之亦然。实际上，生活就像是钟摆一般，在这两端之间或激烈或温和地来回摇摆——要么痛苦，要么无聊，反正总有一项逃不掉。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;麻木迟钝是一种摆在脸上、印在心底的空虚状态——人们对外部发生的一些琐碎的事情表现出不停的、强烈的关注，同样也暴露了他们内在的空虚。这就是无聊的真正根源——内心空虚的人为了寻求刺激，不断用各种无谓的东西充塞大脑和心灵，单调又乏味。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;根据亚里士多德的学说，幸福在于能够施展才能；斯托拜乌在他对逍遥派（即亚里士多德学派）哲学的阐述中也说了，「幸福意味着充满活力地做你擅长的事并获得预期的结果」。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;我们乐于受人尊敬，并不是热爱「尊敬」本身，我们爱是只是受人尊敬带来的好处。&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>nice</name></author><category term="Blog" /><summary type="html">最近读完了这本小书，想写点什么，但又似乎暂时表达不出，先挖个读书笔记的坑在这里，后面有所感了也许会填上。</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>nice</name></author><category term="Java" /><summary type="html">记两种让 Spring Security「少管闲事」的方法。</summary></entry></feed>

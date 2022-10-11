@@ -261,11 +261,19 @@
     } ,
   
     {
+      "title"    : "Attention-Is-All-You-Need",
+      "category" : "Transformer",
+      
+      "url"      : "https://bigbigda.github.io/2022/10/10/Transformer/",
+      "keywords" : "attention,transformer"
+    } ,
+  
+    {
       "title"    : "VIT",
       "category" : "Transformer",
       
       "url"      : "https://bigbigda.github.io/2022/10/10/VIT/",
-      "keywords" : "image classif,transformer"
+      "keywords" : "image classification,transformer"
     } ,
   
     {
