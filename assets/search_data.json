@@ -261,6 +261,14 @@
     } ,
   
     {
+      "title"    : "激活Typora",
+      "category" : "Vim",
+      
+      "url"      : "https://bigbigda.github.io/2022/10/11/ActiveTypora/",
+      "keywords" : "碎碎念"
+    } ,
+  
+    {
       "title"    : "JSON",
       "category" : "",
       

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-10T01:58:18+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">记录</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">Transformer</title><link href="https://bigbigda.github.io/2022/10/09/transformer/" rel="alternate" type="text/html" title="Transformer" /><published>2022-10-09T00:00:00+08:00</published><updated>2022-10-09T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/09/transformer</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/09/transformer/">&lt;p&gt;前两天刚刚升级到了 MacVim 9.0 的最新版本，日常编辑编辑文字没遇到过什么问题，直到今天动了一下插件。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-11T12:08:18+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">记录</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">激活Typora</title><link href="https://bigbigda.github.io/2022/10/11/ActiveTypora/" rel="alternate" type="text/html" title="激活Typora" /><published>2022-10-11T00:00:00+08:00</published><updated>2022-10-11T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/11/ActiveTypora</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/11/ActiveTypora/">&lt;p&gt;2022年10月11日，购买并激活了typora，开始好好写博客&lt;/p&gt;</content><author><name>nice</name></author><category term="Vim" /><summary type="html">2022年10月11日，购买并激活了typora，开始好好写博客</summary></entry><entry><title type="html">Transformer</title><link href="https://bigbigda.github.io/2022/10/09/transformer/" rel="alternate" type="text/html" title="Transformer" /><published>2022-10-09T00:00:00+08:00</published><updated>2022-10-09T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/09/transformer</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/09/transformer/">&lt;p&gt;前两天刚刚升级到了 MacVim 9.0 的最新版本，日常编辑编辑文字没遇到过什么问题，直到今天动了一下插件。&lt;/p&gt;
 
 &lt;h2 id=&quot;发现问题&quot;&gt;发现问题&lt;/h2&gt;
 
@@ -1052,50 +1052,4 @@ _git_merge_to_comp&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.xuxueli.com/xxl-job/&quot;&gt;分布式任务调度平台XXL-JOB&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>nice</name></author><category term="Java" /><summary type="html">本文讲述了一种利用 XXL-JOB 来进行分片任务处理的方法，另外加入对执行节点数的灵活控制。</summary></entry><entry><title type="html">解决 IntelliJ IDEA 启动报 Unsupported Java Version 的问题</title><link href="https://bigbigda.github.io/2021/03/27/intellij-idea-unsupported-java-version/" rel="alternate" type="text/html" title="解决 IntelliJ IDEA 启动报 Unsupported Java Version 的问题" /><published>2021-03-27T00:00:00+08:00</published><updated>2021-03-27T00:00:00+08:00</updated><id>https://bigbigda.github.io/2021/03/27/intellij-idea-unsupported-java-version</id><content type="html" xml:base="https://bigbigda.github.io/2021/03/27/intellij-idea-unsupported-java-version/">&lt;p&gt;今天用我老掉牙的 MacBook Pro 2015 跑 IDEA 时，感觉略卡，于是在网上找了一些教程来优化它的启动和运行速度。&lt;/p&gt;
-
-&lt;h2 id=&quot;遇到问题&quot;&gt;遇到问题&lt;/h2&gt;
-
-&lt;p&gt;有不少网友提到的一个措施是修改 IDEA 自身运行的 Runtime，即 JDK 版本。也决定试一下看看效果，于是安装了 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Choose Runtime&lt;/code&gt; 插件，然后将默认的 JetBrains Runtime 由 IDEA 自带 JDK 11 换成了我自己安装的 JDK1.8.0_271，然后……IDEA 就再也起不来了，启动就报如下这个错误：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/java/idea-unsupported-java-version.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Unsupported Java Version
-
-Java 11 or newer is required to run the IDE.
-Please contact support at https://jb.gg/ide/critical-startup-errors
-
-Your JRE: 1.8.0_271-b09 x86_64 (Oracle Corporation)
-/Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home/jre
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;解决方法&quot;&gt;解决方法&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;想办法进设置 Runtime 的地方，将配置再改回来。&lt;/p&gt;
-
-    &lt;p&gt;但并没有找到办法进设置。失败&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;想办法找到存储这个配置项的配置文件，手动修改回来。&lt;/p&gt;
-
-    &lt;p&gt;在网上搜、按经验找了 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~&lt;/code&gt;、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/Library/Preferences&lt;/code&gt; 等文件夹，均未找到正在使用的 2020.3 版本的配置文件。失败&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;此时留意到以上错误提醒里有个链接，打开链接寻找线索。&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;打开 &lt;a href=&quot;https://jb.gg/ide/critical-startup-errors&quot;&gt;https://jb.gg/ide/critical-startup-errors&lt;/a&gt;，在该页面并未直接找到答案，但在侧边栏发现了线索链接。&lt;/li&gt;
-      &lt;li&gt;跳转到 &lt;a href=&quot;https://intellij-support.jetbrains.com/hc/en-us/articles/206544879-Selecting-the-JDK-version-the-IDE-will-run-under&quot;&gt;Selecting the JDK version the IDE will run under&lt;/a&gt;，在正文的 macOS 部分，提到了如果配置过 IDE JDK Version，会保存在配置文件目录下的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;product&amp;gt;.jdk&lt;/code&gt; 文件里，并提供了配置文件目录相关的链接。&lt;/li&gt;
-      &lt;li&gt;跳转到 &lt;a href=&quot;https://intellij-support.jetbrains.com/hc/en-us/articles/206544519&quot;&gt;Directories used by the IDE to store settings, caches, plugins and logs&lt;/a&gt;，可以找到 macOS 下 IDEA 2020.3 的配置文件路径 idea.config.path 为 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/Library/Application Support/JetBrains/IntelliJIdea2020.3&lt;/code&gt;，打开该目录，果然发现了 idea.jdk 文件。&lt;/li&gt;
-      &lt;li&gt;将 idea.jdk 文件删除，重新打开 IDEA，问题解决。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;小结&quot;&gt;小结&lt;/h2&gt;
-
-&lt;p&gt;当遇到问题时，最应该关注的是错误提示里的信息，很可能解决方案或线索就在里面。&lt;/p&gt;
-
-&lt;p&gt;如果以上解决不了问题，在官方文档/网站等渠道寻找解决方案会比盲目全网搜索更精准。如 &lt;a href=&quot;https://www.jetbrains.com/help/idea/tuning-the-ide.html#config-directory&quot;&gt;Configuration directory&lt;/a&gt; 这个链接里就清楚地描述了 IntelliJ IDEA 配置文件的存放位置。&lt;/p&gt;</content><author><name>nice</name></author><category term="Java" /><summary type="html">今天用我老掉牙的 MacBook Pro 2015 跑 IDEA 时，感觉略卡，于是在网上找了一些教程来优化它的启动和运行速度。</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>nice</name></author><category term="Java" /><summary type="html">本文讲述了一种利用 XXL-JOB 来进行分片任务处理的方法，另外加入对执行节点数的灵活控制。</summary></entry></feed>
