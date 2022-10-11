@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-12T01:22:00+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">DETR论文</title><link href="https://bigbigda.github.io/2022/10/11/DETR/" rel="alternate" type="text/html" title="DETR论文" /><published>2022-10-11T00:00:00+08:00</published><updated>2022-10-11T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/11/DETR</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/11/DETR/">&lt;h1 id=&quot;detr论文&quot;&gt;DETR论文&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-12T02:04:52+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">DETR论文</title><link href="https://bigbigda.github.io/2022/10/11/DETR/" rel="alternate" type="text/html" title="DETR论文" /><published>2022-10-11T00:00:00+08:00</published><updated>2022-10-11T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/11/DETR</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/11/DETR/">&lt;h1 id=&quot;detr论文&quot;&gt;DETR论文&lt;/h1&gt;
 
 &lt;h2 id=&quot;目标检测背景知识&quot;&gt;目标检测背景知识&lt;/h2&gt;
 
@@ -104,67 +104,38 @@
 
 &lt;p&gt;https://nlp.seas.harvard.edu/2018/04/03/attention.html&lt;/p&gt;
 
-&lt;p&gt;https://zhuanlan.zhihu.com/p/132554155&lt;/p&gt;</content><author><name>nice</name></author><category term="Transformer" /><summary type="html">Attention Is All You Need</summary></entry><entry><title type="html">VIT</title><link href="https://bigbigda.github.io/2022/10/10/VIT/" rel="alternate" type="text/html" title="VIT" /><published>2022-10-10T00:00:00+08:00</published><updated>2022-10-10T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/10/VIT</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/10/VIT/">&lt;h1 id=&quot;attention-is-all-you-need&quot;&gt;Attention Is All You Need&lt;/h1&gt;
+&lt;p&gt;https://zhuanlan.zhihu.com/p/132554155&lt;/p&gt;</content><author><name>nice</name></author><category term="Transformer" /><summary type="html">Attention Is All You Need</summary></entry><entry><title type="html">VIT</title><link href="https://bigbigda.github.io/2022/10/10/VIT/" rel="alternate" type="text/html" title="VIT" /><published>2022-10-10T00:00:00+08:00</published><updated>2022-10-10T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/10/VIT</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/10/VIT/">&lt;h1 id=&quot;an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale&quot;&gt;AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE&lt;/h1&gt;
+
+&lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;2021年发表与ICLR&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;VIT（Vision Transformer）是一篇开创性的工作。自从2017年Transformer出现后，已经成为NLP领域的最主流模型，但此时CV圈的主流模型仍基于CNN结构，本文的最大创新点就是证明单纯的Transformer结构同样适用于cv任务，不仅为cv领域开辟了一个新方向，而且从结构上将nlp任务和cv任务统一起来，促进了后续多模态工作的大发展。&lt;/p&gt;
+
+&lt;p&gt;作者在文中其实也提到，17年之后也有许多工作吧self-attention结构引入cv领域，例如将卷积层完全替换为self-attention层，或在原有cnn结构中引入self-attention单元，但这些尝试不仅导致模型的计算对硬件很不友好，效果上看也没有撼动CNN架构的SOTA地位。也有一个工作与本文非常近似，但其应用在小数据集上。相比之下，本文是&lt;strong&gt;首次直接把Transformer架构（encoder部分，也可看做BERT）应用与ImageNet分类任务&lt;/strong&gt;中。&lt;/p&gt;
+
+&lt;p&gt;从实验来看，VIT在ImageNet上训练时效果还是略差于ResNets，作者将此归因为VIT没有CNN的归纳偏置（inductive biases）。事实上，通过在更大规模数据集上预训练，可以取得SOTA效果。&lt;/p&gt;
+
+&lt;p&gt;一个字：牛！&lt;/p&gt;
 
 &lt;h3 id=&quot;整体结构&quot;&gt;整体结构&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://rjlg5clbk.hd-bkt.clouddn.com/imgimage-20221012011539932.png&quot; alt=&quot;image-20221012011539932&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://rjlg5clbk.hd-bkt.clouddn.com/imgimage-20221012012237172.png&quot; alt=&quot;image-20221012012237172&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://rjlg5clbk.hd-bkt.clouddn.com/imgimage-20221012002512478.png&quot; alt=&quot;image-20221012002512478&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;attention计算&quot;&gt;Attention计算&lt;/h4&gt;
-
-&lt;p&gt;$Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$&lt;/p&gt;
-
-&lt;h3 id=&quot;实现细节&quot;&gt;实现细节&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;参数名&lt;/th&gt;
-      &lt;th&gt;参数含义&lt;/th&gt;
-      &lt;th&gt;base模型取值&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;N&lt;/td&gt;
-      &lt;td&gt;encoder/decoder层数&lt;/td&gt;
-      &lt;td&gt;6&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;$d_{model}$&lt;/td&gt;
-      &lt;td&gt;embedding维度&lt;/td&gt;
-      &lt;td&gt;512&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;h&lt;/td&gt;
-      &lt;td&gt;head数量&lt;/td&gt;
-      &lt;td&gt;8&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;$d_{k}$ / $d_{v}$&lt;/td&gt;
-      &lt;td&gt;key、value、query的维度&lt;/td&gt;
-      &lt;td&gt;64&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&quot;输入层embedding&quot;&gt;输入层embedding&lt;/h4&gt;
+&lt;h3 id=&quot;预处理&quot;&gt;预处理&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;对于英文，进行token embedding时可以以单词的粒度token化，也可以以词根的粒度token化；对于中文，一般以字为单位&lt;/li&gt;
-  &lt;li&gt;本文实现中embedding同encoder/decoder部分联合训练，且input embedding和output embedding共享参数&lt;/li&gt;
-  &lt;li&gt;decoder的embedding层和FC层权重共享：embedding层可以说是通过one-hot获取对应的embedding向量，FC层则是通过向量x去得到它为各个词的softmax概率（理论上也是one-hot），所以这两个计算近似为互逆过程。&lt;/li&gt;
+  &lt;li&gt;原始图片通过一层16x16的卷积变成14*14*768的feature map（这一步即按照16x16取patch）&lt;/li&gt;
+  &lt;li&gt;feature map拉直为196*768，即表示长度为196的序列，序列每个元素维度为768&lt;/li&gt;
+  &lt;li&gt;在序列最前方增加类似CLS的分类token&lt;/li&gt;
+  &lt;li&gt;增加Position Bias&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;其他参考资料&quot;&gt;其他参考资料&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;http://rjlg5clbk.hd-bkt.clouddn.com/imgimage-20221012014708951.png&quot; alt=&quot;image-20221012014708951&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;http://jalammar.github.io/illustrated-transformer/&lt;/p&gt;
+&lt;h3 id=&quot;输出层&quot;&gt;输出层&lt;/h3&gt;
 
-&lt;p&gt;https://nlp.seas.harvard.edu/2018/04/03/attention.html&lt;/p&gt;
-
-&lt;p&gt;https://zhuanlan.zhihu.com/p/132554155&lt;/p&gt;</content><author><name>nice</name></author><category term="Transformer" /><summary type="html">Attention Is All You Need</summary></entry><entry><title type="html">第一篇博文</title><link href="https://bigbigda.github.io/2022/10/09/first-blog/" rel="alternate" type="text/html" title="第一篇博文" /><published>2022-10-09T00:00:00+08:00</published><updated>2022-10-09T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/09/first-blog</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/09/first-blog/">&lt;h3 id=&quot;github-pages搭建&quot;&gt;github pages搭建&lt;/h3&gt;
+&lt;p&gt;首先取出之前加的第一个分类token经过多层encoder的输出结果，为1*768维，将此向量过一个两层MLP，即得到最终输出。&lt;/p&gt;</content><author><name>nice</name></author><category term="Transformer" /><summary type="html">AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE</summary></entry><entry><title type="html">第一篇博文</title><link href="https://bigbigda.github.io/2022/10/09/first-blog/" rel="alternate" type="text/html" title="第一篇博文" /><published>2022-10-09T00:00:00+08:00</published><updated>2022-10-09T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/09/first-blog</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/09/first-blog/">&lt;h3 id=&quot;github-pages搭建&quot;&gt;github pages搭建&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;2022-10-09 终于搭建完成了基于github的个人博客&lt;/li&gt;
