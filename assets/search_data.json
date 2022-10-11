@@ -261,19 +261,11 @@
     } ,
   
     {
-      "title"    : "碎碎念",
-      "category" : "Vim",
-      
-      "url"      : "https://bigbigda.github.io/2022/10/11/ActiveTypora/",
-      "keywords" : "碎碎念"
-    } ,
-  
-    {
-      "title"    : "Detr",
-      "category" : "",
+      "title"    : "DETR论文",
+      "category" : "Transformer",
       
       "url"      : "https://bigbigda.github.io/2022/10/11/DETR/",
-      "keywords" : ""
+      "keywords" : "目标检测"
     } ,
   
     {
