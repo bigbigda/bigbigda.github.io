@@ -261,11 +261,19 @@
     } ,
   
     {
+      "title"    : "VIT",
+      "category" : "Transformer",
+      
+      "url"      : "https://bigbigda.github.io/2022/10/10/VIT/",
+      "keywords" : "image classif,transformer"
+    } ,
+  
+    {
       "title"    : "DETR论文",
       "category" : "Transformer",
       
       "url"      : "https://bigbigda.github.io/2022/10/11/DETR/",
-      "keywords" : "目标检测"
+      "keywords" : "image detection,transformer"
     } ,
   
     {
