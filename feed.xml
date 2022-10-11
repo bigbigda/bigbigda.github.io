@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-11T20:26:38+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">DETR论文</title><link href="https://bigbigda.github.io/2022/10/11/DETR/" rel="alternate" type="text/html" title="DETR论文" /><published>2022-10-11T00:00:00+08:00</published><updated>2022-10-11T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/11/DETR</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/11/DETR/">&lt;h1 id=&quot;detr论文&quot;&gt;DETR论文&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-11T20:31:46+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">DETR论文</title><link href="https://bigbigda.github.io/2022/10/11/DETR/" rel="alternate" type="text/html" title="DETR论文" /><published>2022-10-11T00:00:00+08:00</published><updated>2022-10-11T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/11/DETR</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/11/DETR/">&lt;h1 id=&quot;detr论文&quot;&gt;DETR论文&lt;/h1&gt;
 
 &lt;h2 id=&quot;目标检测背景知识&quot;&gt;目标检测背景知识&lt;/h2&gt;
 
@@ -36,17 +36,19 @@
 
 &lt;h4 id=&quot;流程&quot;&gt;流程&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;/_posts/2022-10-11-DETR-image/image-20221011192953667.png&quot; alt=&quot;image-20221011192953667&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/image-20221011192953667.png&quot; alt=&quot;image-20221011192953667&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;使用一个CNN骨干网络提取feature map（）&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&quot;/_posts/2021-douban.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/2021-douban.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008vxvgGly1h71m8thty5j306s02m0ou.jpg&quot; alt=&quot;image-20221011202208046&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;222&lt;/p&gt;</content><author><name>nice</name></author><category term="Transformer" /><summary type="html">DETR论文</summary></entry><entry><title type="html">VIT</title><link href="https://bigbigda.github.io/2022/10/10/VIT/" rel="alternate" type="text/html" title="VIT" /><published>2022-10-10T00:00:00+08:00</published><updated>2022-10-10T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/10/VIT</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/10/VIT/"></content><author><name>nice</name></author><category term="Transformer" /><summary type="html"></summary></entry><entry><title type="html">第一篇博文</title><link href="https://bigbigda.github.io/2022/10/09/first-blog/" rel="alternate" type="text/html" title="第一篇博文" /><published>2022-10-09T00:00:00+08:00</published><updated>2022-10-09T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/09/first-blog</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/09/first-blog/">&lt;ul&gt;
+&lt;p&gt;222&lt;/p&gt;
+
+&lt;p&gt;33&lt;/p&gt;</content><author><name>nice</name></author><category term="Transformer" /><summary type="html">DETR论文</summary></entry><entry><title type="html">VIT</title><link href="https://bigbigda.github.io/2022/10/10/VIT/" rel="alternate" type="text/html" title="VIT" /><published>2022-10-10T00:00:00+08:00</published><updated>2022-10-10T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/10/VIT</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/10/VIT/"></content><author><name>nice</name></author><category term="Transformer" /><summary type="html"></summary></entry><entry><title type="html">第一篇博文</title><link href="https://bigbigda.github.io/2022/10/09/first-blog/" rel="alternate" type="text/html" title="第一篇博文" /><published>2022-10-09T00:00:00+08:00</published><updated>2022-10-09T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/09/first-blog</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/09/first-blog/">&lt;ul&gt;
   &lt;li&gt;2022-10-09 终于搭建完成了基于github的个人博客&lt;/li&gt;
   &lt;li&gt;2022-10-11 buy Typora&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>nice</name></author><category term="碎碎念" /><summary type="html">2022-10-09 终于搭建完成了基于github的个人博客 2022-10-11 buy Typora</summary></entry><entry><title type="html">修复 MacVim 9.0 的 Python3 支持</title><link href="https://bigbigda.github.io/2022/09/22/enable-python3-in-macvim/" rel="alternate" type="text/html" title="修复 MacVim 9.0 的 Python3 支持" /><published>2022-09-22T00:00:00+08:00</published><updated>2022-09-22T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/09/22/enable-python3-in-macvim</id><content type="html" xml:base="https://bigbigda.github.io/2022/09/22/enable-python3-in-macvim/">&lt;p&gt;前两天刚刚升级到了 MacVim 9.0 的最新版本，日常编辑编辑文字没遇到过什么问题，直到今天动了一下插件。&lt;/p&gt;
