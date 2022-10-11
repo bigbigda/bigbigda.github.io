@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-12T02:04:52+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">DETR论文</title><link href="https://bigbigda.github.io/2022/10/11/DETR/" rel="alternate" type="text/html" title="DETR论文" /><published>2022-10-11T00:00:00+08:00</published><updated>2022-10-11T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/11/DETR</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/11/DETR/">&lt;h1 id=&quot;detr论文&quot;&gt;DETR论文&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-12T02:09:13+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">DETR论文</title><link href="https://bigbigda.github.io/2022/10/11/DETR/" rel="alternate" type="text/html" title="DETR论文" /><published>2022-10-11T00:00:00+08:00</published><updated>2022-10-11T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/11/DETR</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/11/DETR/">&lt;h1 id=&quot;detr论文&quot;&gt;DETR论文&lt;/h1&gt;
 
 &lt;h2 id=&quot;目标检测背景知识&quot;&gt;目标检测背景知识&lt;/h2&gt;
 
@@ -35,8 +35,6 @@
 &lt;p&gt;如名字所示，DETR是一个端到端的基于transformer的目标检测网络。在本文之前，目标检测任务并不是完全端到端的，其流程中需要nms、anchor generation等步骤。DETR通过引入&lt;strong&gt;集合学习&lt;/strong&gt;和&lt;strong&gt;transformer&lt;/strong&gt;，首次移除了这些瓶颈。&lt;/p&gt;
 
 &lt;h4 id=&quot;流程&quot;&gt;流程&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008vxvgGly1h71mmmg1ncj31g40qawnp.jpg&quot; alt=&quot;image-20221011203510794&quot; /&gt;&lt;/p&gt;
-
 &lt;p&gt;&lt;img src=&quot;http://rjlg5clbk.hd-bkt.clouddn.com/imgimage-20221011234750955.png&quot; alt=&quot;image-20221011234750955&quot; /&gt;&lt;/p&gt;
 
 &lt;ol&gt;
