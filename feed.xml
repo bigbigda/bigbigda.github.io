@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-14T11:41:13+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">MAE</title><link href="https://bigbigda.github.io/2022/10/13/MAE/" rel="alternate" type="text/html" title="MAE" /><published>2022-10-13T00:00:00+08:00</published><updated>2022-10-13T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/13/MAE</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/13/MAE/">&lt;h2 id=&quot;masked-autoencoders-are-scalable-vision-learners&quot;&gt;Masked Autoencoders Are Scalable Vision Learners&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-14T13:37:50+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">MAE</title><link href="https://bigbigda.github.io/2022/10/13/MAE/" rel="alternate" type="text/html" title="MAE" /><published>2022-10-13T00:00:00+08:00</published><updated>2022-10-13T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/13/MAE</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/13/MAE/">&lt;h2 id=&quot;masked-autoencoders-are-scalable-vision-learners&quot;&gt;Masked Autoencoders Are Scalable Vision Learners&lt;/h2&gt;
 
 &lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
 
@@ -21,7 +21,7 @@
 &lt;p&gt;如名字所示，DETR是一个端到端的基于transformer的目标检测网络。在本文之前，目标检测任务并不是完全端到端的，其流程中需要nms、anchor generation等步骤。DETR通过引入&lt;strong&gt;集合学习&lt;/strong&gt;和&lt;strong&gt;transformer&lt;/strong&gt;，首次移除了这些瓶颈。&lt;/p&gt;
 
 &lt;h4 id=&quot;流程&quot;&gt;流程&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;http://rjlg5clbk.hd-bkt.clouddn.com/imgimage-20221011234750955.png&quot; alt=&quot;image-20221011234750955&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20221011234750955.png&quot; alt=&quot;image-20221011234750955&quot; /&gt;&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;使用一个CNN骨干网络提取feature map，输出大小通常为$2048&lt;em&gt;\frac{H}{32}&lt;/em&gt;\frac{W}{32}$，本文实现中采用ResNet-50和ResNet-101&lt;/li&gt;
