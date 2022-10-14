@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-14T13:37:50+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">MAE</title><link href="https://bigbigda.github.io/2022/10/13/MAE/" rel="alternate" type="text/html" title="MAE" /><published>2022-10-13T00:00:00+08:00</published><updated>2022-10-13T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/13/MAE</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/13/MAE/">&lt;h2 id=&quot;masked-autoencoders-are-scalable-vision-learners&quot;&gt;Masked Autoencoders Are Scalable Vision Learners&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-14T14:51:56+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">MAE</title><link href="https://bigbigda.github.io/2022/10/13/MAE/" rel="alternate" type="text/html" title="MAE" /><published>2022-10-13T00:00:00+08:00</published><updated>2022-10-13T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/13/MAE</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/13/MAE/">&lt;h2 id=&quot;masked-autoencoders-are-scalable-vision-learners&quot;&gt;Masked Autoencoders Are Scalable Vision Learners&lt;/h2&gt;
 
 &lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
 
@@ -9,6 +9,10 @@
 &lt;p&gt;MAE可以看做CV版的bert&lt;/p&gt;
 
 &lt;p&gt;Transformer-&amp;gt;BERT-&amp;gt;VIT-&amp;gt;MAE&lt;/p&gt;
+
+&lt;h3 id=&quot;架构&quot;&gt;架构&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20221014135446680.png&quot; alt=&quot;image-20221014135446680&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;参考资料&quot;&gt;参考资料&lt;/h3&gt;
 
@@ -30,7 +34,7 @@
   &lt;li&gt;Prediction feed-forward networks（FFNs），为一个3层激活函数为Relu的MLP&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://rjlg5clbk.hd-bkt.clouddn.com/imgimage-20221013003541678.png&quot; alt=&quot;image-20221013003541678&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20221013003541678.png&quot; alt=&quot;image-20221013003541678&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;细节&quot;&gt;细节&lt;/h3&gt;
 
@@ -96,9 +100,9 @@
 
 &lt;h3 id=&quot;整体结构&quot;&gt;整体结构&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://rjlg5clbk.hd-bkt.clouddn.com/imgimgimage-20221012011539932.png&quot; alt=&quot;image-20221012011539932&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimgimage-20221012011539932.png&quot; alt=&quot;image-20221012011539932&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://rjlg5clbk.hd-bkt.clouddn.com/imgimgimage-20221012002512478.png&quot; alt=&quot;image-20221012002512478&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimgimage-20221012002512478.png&quot; alt=&quot;image-20221012002512478&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;attention计算&quot;&gt;Attention计算&lt;/h4&gt;
 
@@ -168,7 +172,7 @@
 
 &lt;h3 id=&quot;整体结构&quot;&gt;整体结构&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://rjlg5clbk.hd-bkt.clouddn.com/imgimage-20221012012237172.png&quot; alt=&quot;image-20221012012237172&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20221012012237172.png&quot; alt=&quot;image-20221012012237172&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;预处理&quot;&gt;预处理&lt;/h3&gt;
 
@@ -179,7 +183,7 @@
   &lt;li&gt;增加Position Bias&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://rjlg5clbk.hd-bkt.clouddn.com/imgimage-20221012014708951.png&quot; alt=&quot;image-20221012014708951&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20221012014708951.png&quot; alt=&quot;image-20221012014708951&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;输出层&quot;&gt;输出层&lt;/h3&gt;
 
