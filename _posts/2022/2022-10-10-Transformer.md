@@ -12,9 +12,9 @@ keywords: attention,transformer
 
 ### 整体结构
 
-<img src="http://rjlg5clbk.hd-bkt.clouddn.com/imgimgimage-20221012011539932.png" alt="image-20221012011539932" style="zoom:50%;" />
+<img src="http://pic.inoodles.online/imgimgimage-20221012011539932.png" alt="image-20221012011539932" style="zoom:50%;" />
 
-<img src="http://rjlg5clbk.hd-bkt.clouddn.com/imgimgimage-20221012002512478.png" alt="image-20221012002512478" style="zoom:50%;" />
+<img src="http://pic.inoodles.online/imgimgimage-20221012002512478.png" alt="image-20221012002512478" style="zoom:50%;" />
 
 #### Attention计算
 
