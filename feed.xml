@@ -1,6 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-12T02:09:13+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">DETR论文</title><link href="https://bigbigda.github.io/2022/10/11/DETR/" rel="alternate" type="text/html" title="DETR论文" /><published>2022-10-11T00:00:00+08:00</published><updated>2022-10-11T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/11/DETR</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/11/DETR/">&lt;h1 id=&quot;detr论文&quot;&gt;DETR论文&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-14T11:41:13+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">MAE</title><link href="https://bigbigda.github.io/2022/10/13/MAE/" rel="alternate" type="text/html" title="MAE" /><published>2022-10-13T00:00:00+08:00</published><updated>2022-10-13T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/13/MAE</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/13/MAE/">&lt;h2 id=&quot;masked-autoencoders-are-scalable-vision-learners&quot;&gt;Masked Autoencoders Are Scalable Vision Learners&lt;/h2&gt;
 
-&lt;h2 id=&quot;目标检测背景知识&quot;&gt;目标检测背景知识&lt;/h2&gt;
+&lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;CVPR2021&lt;/strong&gt;  He Kaiming&lt;/p&gt;
+
+&lt;p&gt;本文的最大意义在于在图像领域引入masked autoencoders训练任务，实现了自监督学习。&lt;/p&gt;
+
+&lt;p&gt;MAE可以看做CV版的bert&lt;/p&gt;
+
+&lt;p&gt;Transformer-&amp;gt;BERT-&amp;gt;VIT-&amp;gt;MAE&lt;/p&gt;
+
+&lt;h3 id=&quot;参考资料&quot;&gt;参考资料&lt;/h3&gt;
+
+&lt;p&gt;https://www.zhihu.com/question/498364155&lt;/p&gt;</content><author><name>nice</name></author><category term="Transformer" /><summary type="html">Masked Autoencoders Are Scalable Vision Learners</summary></entry><entry><title type="html">DETR</title><link href="https://bigbigda.github.io/2022/10/11/DETR/" rel="alternate" type="text/html" title="DETR" /><published>2022-10-11T00:00:00+08:00</published><updated>2022-10-11T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/11/DETR</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/11/DETR/">&lt;h1 id=&quot;detr-end-to-end-object-detection-with-transformers&quot;&gt;&lt;strong&gt;DETR&lt;/strong&gt;: End-to-End Object Detection with Transformers&lt;/h1&gt;
+
+&lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;ECCV 2020&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;如名字所示，DETR是一个端到端的基于transformer的目标检测网络。在本文之前，目标检测任务并不是完全端到端的，其流程中需要nms、anchor generation等步骤。DETR通过引入&lt;strong&gt;集合学习&lt;/strong&gt;和&lt;strong&gt;transformer&lt;/strong&gt;，首次移除了这些瓶颈。&lt;/p&gt;
+
+&lt;h4 id=&quot;流程&quot;&gt;流程&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;http://rjlg5clbk.hd-bkt.clouddn.com/imgimage-20221011234750955.png&quot; alt=&quot;image-20221011234750955&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;使用一个CNN骨干网络提取feature map，输出大小通常为$2048&lt;em&gt;\frac{H}{32}&lt;/em&gt;\frac{W}{32}$，本文实现中采用ResNet-50和ResNet-101&lt;/li&gt;
+  &lt;li&gt;使用一个encoder对前一步提取的feature map进行编码，注意输入的feature map还增加了positional encoding&lt;/li&gt;
+  &lt;li&gt;使用decoder对上述编码结果进行解码，解码器的query为可学习的object queries（本文固定位100个）&lt;/li&gt;
+  &lt;li&gt;Prediction feed-forward networks（FFNs），为一个3层激活函数为Relu的MLP&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://rjlg5clbk.hd-bkt.clouddn.com/imgimage-20221013003541678.png&quot; alt=&quot;image-20221013003541678&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;细节&quot;&gt;细节&lt;/h3&gt;
+
+&lt;p&gt;DETR 代码可见 https://github.com/facebookresearch/detr/blob/10a2c759454930813aeac7af5e779f835dcb75f5/models/detr.py#L39&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;decoder第一个attention，query、key为前一个decoder layer输出（第一层则为0）加object-query-embedding，value为前一个layer输出&lt;/li&gt;
+  &lt;li&gt;decoder第二个attention，query为前一个attention结果+object-query-encoding，key为encoder输出+Spatial-positional-encoding，value为encoder输出&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class TransformerDecoderLayer(nn.Module):
+  def forward_post(self, tgt, memory,
+                      tgt_mask: Optional[Tensor] = None,
+                      memory_mask: Optional[Tensor] = None,
+                      tgt_key_padding_mask: Optional[Tensor] = None,
+                      memory_key_padding_mask: Optional[Tensor] = None,
+                      pos: Optional[Tensor] = None,
+                      query_pos: Optional[Tensor] = None):
+      q = k = self.with_pos_embed(tgt, query_pos)
+      tgt2 = self.self_attn(q, k, value=tgt, attn_mask=tgt_mask,
+                              key_padding_mask=tgt_key_padding_mask)[0]
+      tgt = tgt + self.dropout1(tgt2)
+      tgt = self.norm1(tgt)
+      tgt2 = self.multihead_attn(query=self.with_pos_embed(tgt, query_pos),
+                                  key=self.with_pos_embed(memory, pos),
+                                  value=memory, attn_mask=memory_mask,
+                                  key_padding_mask=memory_key_padding_mask)[0]
+      tgt = tgt + self.dropout2(tgt2)
+      tgt = self.norm2(tgt)
+      tgt2 = self.linear2(self.dropout(self.activation(self.linear1(tgt))))
+      tgt = tgt + self.dropout3(tgt2)
+      tgt = self.norm3(tgt)
+      return tgt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;背景知识&quot;&gt;背景知识&lt;/h2&gt;
 
 &lt;h3 id=&quot;rcnn系列&quot;&gt;RCNN系列&lt;/h3&gt;
 
@@ -26,23 +92,7 @@
 计算置信度最高的边界框与其它候选框的IoU。
 删除IoU大于阈值的边界框
 重复上述过程，直至边界框列表为空。
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;detr&quot;&gt;DETR&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;DETR&lt;/strong&gt;: End-to-End Object Detection with Transformers&lt;/p&gt;
-
-&lt;p&gt;如名字所示，DETR是一个端到端的基于transformer的目标检测网络。在本文之前，目标检测任务并不是完全端到端的，其流程中需要nms、anchor generation等步骤。DETR通过引入&lt;strong&gt;集合学习&lt;/strong&gt;和&lt;strong&gt;transformer&lt;/strong&gt;，首次移除了这些瓶颈。&lt;/p&gt;
-
-&lt;h4 id=&quot;流程&quot;&gt;流程&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;http://rjlg5clbk.hd-bkt.clouddn.com/imgimage-20221011234750955.png&quot; alt=&quot;image-20221011234750955&quot; /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;使用一个CNN骨干网络提取feature map，输出大小通常为$2048&lt;em&gt;\frac{H}{32}&lt;/em&gt;\frac{W}{32}$，本文实现中采用ResNet-50和ResNet-101&lt;/li&gt;
-  &lt;li&gt;使用一个encoder对前一步提取的feature map进行编码，注意输入的feature map还增加了positional encoding&lt;/li&gt;
-  &lt;li&gt;使用decoder对上述编码结果进行解码，解码器的query为可学习的object queries（本文固定位100个）&lt;/li&gt;
-  &lt;li&gt;Prediction feed-forward networks（FFNs），为一个3层激活函数为Relu的MLP&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>nice</name></author><category term="Transformer" /><summary type="html">DETR论文</summary></entry><entry><title type="html">Attention-Is-All-You-Need</title><link href="https://bigbigda.github.io/2022/10/10/Transformer/" rel="alternate" type="text/html" title="Attention-Is-All-You-Need" /><published>2022-10-10T00:00:00+08:00</published><updated>2022-10-10T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/10/Transformer</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/10/Transformer/">&lt;h1 id=&quot;attention-is-all-you-need&quot;&gt;Attention Is All You Need&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>nice</name></author><category term="Transformer" /><summary type="html">DETR: End-to-End Object Detection with Transformers</summary></entry><entry><title type="html">Attention-Is-All-You-Need</title><link href="https://bigbigda.github.io/2022/10/10/Transformer/" rel="alternate" type="text/html" title="Attention-Is-All-You-Need" /><published>2022-10-10T00:00:00+08:00</published><updated>2022-10-10T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/10/Transformer</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/10/Transformer/">&lt;h1 id=&quot;attention-is-all-you-need&quot;&gt;Attention Is All You Need&lt;/h1&gt;
 
 &lt;h3 id=&quot;整体结构&quot;&gt;整体结构&lt;/h3&gt;
 
@@ -106,7 +156,7 @@
 
 &lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;2021年发表与ICLR&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2021年发表于ICLR&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;VIT（Vision Transformer）是一篇开创性的工作。自从2017年Transformer出现后，已经成为NLP领域的最主流模型，但此时CV圈的主流模型仍基于CNN结构，本文的最大创新点就是证明单纯的Transformer结构同样适用于cv任务，不仅为cv领域开辟了一个新方向，而且从结构上将nlp任务和cv任务统一起来，促进了后续多模态工作的大发展。&lt;/p&gt;
 
@@ -772,172 +822,4 @@ _git_merge_to_comp&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 
 &lt;p&gt;那就祝自己和大家新年快乐，健康平安吧。&lt;/p&gt;
 
-&lt;p&gt;慢慢的，把眼下的日子过下去，就好。&lt;/p&gt;</content><author><name>nice</name></author><category term="Blog" /><summary type="html">对于 2021 年，如果仅从岁月流逝的角度，当然是期望时光时光慢些吧；如果从这一年外界的疯狂变幻来讲，又想对它说慢走不送。但终会无力地看清，时间的洪流上并无刻度，你喜欢或者不喜欢，它并不在意，兀自「逝者如斯夫，不舍昼夜」。</summary></entry><entry><title type="html">如何让 Spring Security 「少管闲事」</title><link href="https://bigbigda.github.io/2021/12/26/spring-security/" rel="alternate" type="text/html" title="如何让 Spring Security 「少管闲事」" /><published>2021-12-26T00:00:00+08:00</published><updated>2021-12-26T00:00:00+08:00</updated><id>https://bigbigda.github.io/2021/12/26/spring-security</id><content type="html" xml:base="https://bigbigda.github.io/2021/12/26/spring-security/">&lt;p&gt;记两种让 Spring Security「少管闲事」的方法。&lt;/p&gt;
-
-&lt;h2 id=&quot;遇到问题&quot;&gt;遇到问题&lt;/h2&gt;
-
-&lt;p&gt;一个应用对外提供 Rest 接口，接口的访问认证通过 Spring Security OAuth2 控制，token 形式为 JWT。因为一些原因，某一特定路径前缀（假设为 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/custom/&lt;/code&gt;）的接口需要使用另外一种自定义的认证方式，token 是一串无规则的随机字符串。两种认证方式的 token 都是在 Headers 里传递，形式都是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Authorization: bearer xxx&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;所以当外部请求这个应用的接口时，情况示意如下：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/java/spring-security-traffic.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这时，问题出现了。&lt;/p&gt;
-
-&lt;p&gt;我通过 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WebSecurityConfigurerAdapter&lt;/code&gt; 配置 Spring Security 将 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/custom/&lt;/code&gt; 前缀的请求直接放行：&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;httpSecurity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;authorizeRequests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;regexMatchers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;^(?!/custom/).*$&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;permitAll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;但请求 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/custom/&lt;/code&gt; 前缀的接口仍然被拦截，报了如下错误：&lt;/p&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;error&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;invalid_token&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;error_description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Cannot convert access token to JSON&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;分析问题&quot;&gt;分析问题&lt;/h2&gt;
-
-&lt;p&gt;从错误提示首先可以通过检查排除掉 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CustomWebFilter&lt;/code&gt; 的嫌疑，自定义认证方式的 token 不是 JSON 格式，它里面自然也不然尝试去将其转换成 JSON。&lt;/p&gt;
-
-&lt;p&gt;那推测问题出在 Spring Security 「多管闲事」，拦截了不该拦截的请求上。&lt;/p&gt;
-
-&lt;p&gt;经过一番面向搜索编程和源码调试，找到抛出以上错误信息的位置是在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JwtAccessTokenConverter.decode&lt;/code&gt; 方法里：&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;token&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// 下面这行会抛出异常&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;Jwt&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jwt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;JwtHelper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;decodeAndVerify&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;token&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;verifier&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// ... some code here&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;InvalidTokenException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Cannot convert access token to JSON&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;调用堆栈如下：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/java/spring-security-callstack.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;从调用的上下文可以看出（高亮那一行），执行逻辑在一个名为 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OAuth2AuthenticationProcessingFilter&lt;/code&gt; 的 Filter 里，会尝试从请求中提取 Bearer Token，然后做一些处理（此处是 JWT 转换和校验等）。这个 Filter 是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ResourceServerSecurityConfigurer.configure&lt;/code&gt; 中初始化的，我们的应用同时也是作为一个 Spring Security OAuth2 Resource Server，从类名可以看出是对此的配置。&lt;/p&gt;
-
-&lt;h2 id=&quot;解决问题&quot;&gt;解决问题&lt;/h2&gt;
-
-&lt;p&gt;找到了问题所在之后，经过自己的思考和同事间的讨论，得出了两种可行的解决方案。&lt;/p&gt;
-
-&lt;h3 id=&quot;方案一让特定的请求跳过-oauth2authenticationprocessingfilter&quot;&gt;方案一：让特定的请求跳过 OAuth2AuthenticationProcessingFilter&lt;/h3&gt;
-
-&lt;p&gt;这个方案的思路是通过 AOP，在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OAuth2AuthenticationProcessingFilter.doFilter&lt;/code&gt; 方法执行前做个判断&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;如果请求路径是以 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/custom/&lt;/code&gt; 开头，就跳过该 Filter 继续往后执行；&lt;/li&gt;
-  &lt;li&gt;如果请求路径非 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/custom/&lt;/code&gt; 开头，正常执行。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;关键代码示意：&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Aspect&lt;/span&gt;
-&lt;span class=&quot;nd&quot;&gt;@Component&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AuthorizationHeaderAspect&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Pointcut&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;execution(* org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.doFilter(..))&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;securityOauth2DoFilter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Around&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;securityOauth2DoFilter()&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;skipNotCustom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ProceedingJoinPoint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;joinPoint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Throwable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;joinPoint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getArgs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;instanceof&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HttpServletRequest&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;instanceof&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;javax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;servlet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ServletResponse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;instanceof&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FilterChain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;joinPoint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;proceed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;HttpServletRequest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;HttpServletRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getRequestURI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;startsWith&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/custom/&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;joinPoint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;proceed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;FilterChain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;doFilter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ServletRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ServletResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]);&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;方案二调整-filter-顺序&quot;&gt;方案二：调整 Filter 顺序&lt;/h3&gt;
-
-&lt;p&gt;如果能让请求先到达我们自定义的 Filter，请求路径以 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/custom/&lt;/code&gt; 开头的，处理完自定义 token 校验等逻辑，然后将 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Authorization&lt;/code&gt; Header 去掉（在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OAuth2AuthenticationProcessingFilter.doFilter&lt;/code&gt; 中，如果取不到 Bearer Token，不会抛异常），其它请求直接放行，也是一个可以达成目标的思路。&lt;/p&gt;
-
-&lt;p&gt;但现状是自定义的 Filter 默认是在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OAuth2AuthenticationProcessingFilter&lt;/code&gt; 后执行的，如何实现它们的执行顺序调整呢？&lt;/p&gt;
-
-&lt;p&gt;在我们前面找到的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OAuth2AuthenticationProcessingFilter&lt;/code&gt; 注册的地方，也就是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ResourceServerSecurityConfigurer.configure&lt;/code&gt; 方法里，我们可以看到 Filter 是通过以下这种写法添加的：&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;configure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;HttpSecurity&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// ... some code here&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;http&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;authorizeRequests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;expressionHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expressionHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;and&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addFilterBefore&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resourcesServerFilter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AbstractPreAuthenticatedProcessingFilter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;exceptionHandling&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;accessDeniedHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;accessDeniedHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;authenticationEntryPoint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;authenticationEntryPoint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;核心方法是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HttpSecurity.addFilterBefore&lt;/code&gt;，说起 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HttpSecurity&lt;/code&gt;，我们有印象啊……前面通过 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WebSecurityConfigurerAdapter&lt;/code&gt; 来配置请求放行时入参是它，能否在那个时机将自定义 Filter 注册到 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OAuth2AuthenticationProcessingFilter&lt;/code&gt; 之前呢？&lt;/p&gt;
-
-&lt;p&gt;我们将前面配置放行规则处的代码修改如下：&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;httpSecurity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;authorizeRequests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;registry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;regexMatchers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;^(?!/custom/).*$&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;permitAll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;and&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addFilterAfter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CustomWebFilter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;X509AuthenticationFilter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt; CustomWebFilter 改为直接 new 出来的，手动添加到 Security Filter Chain，不再自动注入到其它 Filter Chain。&lt;/p&gt;
-
-&lt;p&gt;为什么是将自定义 Filter 添加到 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;X509AuthenticationFilter.class&lt;/code&gt; 之后呢？可以参考 spring-security-config 包的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FilterComparator&lt;/code&gt; 里预置的 Filter 顺序来做决定，从前面的代码可知 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OAuth2AuthenticationProcessingFilter&lt;/code&gt; 是添加到 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AbstractPreAuthenticatedProcessingFilter.class&lt;/code&gt; 之前的，而在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FilterComparator&lt;/code&gt; 预置的顺序里，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;X509AuthenticationFilter.class&lt;/code&gt; 是在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AbstractPreAuthenticatedProcessingFilter.class&lt;/code&gt; 之前的，我们这样添加就足以确保自定义 Filter 在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OAuth2AuthenticationProcessingFilter&lt;/code&gt; 之前。&lt;/p&gt;
-
-&lt;p&gt;做了以上修改，自定义 Filter 已经在我们预期的位置了，那么我们在这个 Filter 里面，对请求路径以 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/custom/&lt;/code&gt; 开头的做必要处理，然后清空 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Authorization&lt;/code&gt; Header 即可，关键代码示意如下：&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doFilter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ServletRequest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;servletRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ServletResponse&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;servletResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FilterChain&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filterChain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;IOException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ServletException&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;HttpServletRequest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;HttpServletRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;servletRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getServletPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;startsWith&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/custom/&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// do something here&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;authorizationHeader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Authorization&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;HttpServletRequestWrapper&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requestWrapper&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HttpServletRequestWrapper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;HttpServletRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;servletRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getHeader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;authorizationHeader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equalsIgnoreCase&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Enumeration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;authorizationHeader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equalsIgnoreCase&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;elements&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;filterChain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;doFilter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requestWrapper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;servletResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;filterChain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;doFilter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;servletRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;servletResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;小结&quot;&gt;小结&lt;/h2&gt;
-
-&lt;p&gt;经过尝试，两种方案都能满足需求，项目里最终使用了方案一，相信也还有其它的思路可以解决问题。&lt;/p&gt;
-
-&lt;p&gt;经过这一过程，也暴露出了对 Spring Security 的理解不够的问题，后续需要抽空做一些更深入的学习。&lt;/p&gt;
-
-&lt;h2 id=&quot;参考&quot;&gt;参考&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.cnblogs.com/alalazy/p/13179608.html&quot;&gt;https://www.cnblogs.com/alalazy/p/13179608.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>nice</name></author><category term="Java" /><summary type="html">记两种让 Spring Security「少管闲事」的方法。</summary></entry></feed>
+&lt;p&gt;慢慢的，把眼下的日子过下去，就好。&lt;/p&gt;</content><author><name>nice</name></author><category term="Blog" /><summary type="html">对于 2021 年，如果仅从岁月流逝的角度，当然是期望时光时光慢些吧；如果从这一年外界的疯狂变幻来讲，又想对它说慢走不送。但终会无力地看清，时间的洪流上并无刻度，你喜欢或者不喜欢，它并不在意，兀自「逝者如斯夫，不舍昼夜」。</summary></entry></feed>

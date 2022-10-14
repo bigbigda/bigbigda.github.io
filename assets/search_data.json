@@ -277,11 +277,19 @@
     } ,
   
     {
-      "title"    : "DETR论文",
+      "title"    : "DETR",
       "category" : "Transformer",
       
       "url"      : "https://bigbigda.github.io/2022/10/11/DETR/",
-      "keywords" : "image detection,transformer"
+      "keywords" : "CV,image detection,transformer"
+    } ,
+  
+    {
+      "title"    : "MAE",
+      "category" : "Transformer",
+      
+      "url"      : "https://bigbigda.github.io/2022/10/13/MAE/",
+      "keywords" : "CV,transformer,Autoencoders"
     } ,
   
     {
