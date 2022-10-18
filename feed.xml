@@ -1,4 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-14T14:51:56+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">MAE</title><link href="https://bigbigda.github.io/2022/10/13/MAE/" rel="alternate" type="text/html" title="MAE" /><published>2022-10-13T00:00:00+08:00</published><updated>2022-10-13T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/13/MAE</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/13/MAE/">&lt;h2 id=&quot;masked-autoencoders-are-scalable-vision-learners&quot;&gt;Masked Autoencoders Are Scalable Vision Learners&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-18T11:27:59+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">MoCo</title><link href="https://bigbigda.github.io/2022/10/14/MoCo/" rel="alternate" type="text/html" title="MoCo" /><published>2022-10-14T00:00:00+08:00</published><updated>2022-10-14T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/14/MoCo</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/14/MoCo/">&lt;h2 id=&quot;momentum-contrast-for-unsupervised-visual-representation-learning&quot;&gt;Momentum Contrast for Unsupervised Visual Representation Learning&lt;/h2&gt;
+
+&lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
+
+&lt;p&gt;cvpr2020 Best Paper提名 He Kaiming&lt;/p&gt;
+
+&lt;p&gt;在文本领域，bert等自监督学习（&lt;strong&gt;Self-Supervised Learning&lt;/strong&gt;）已经得到了广泛应用，但其在CV领域的进展一直比较缓慢，之前也有不少基于对比学习的尝试，本文将他们都归类为基于构建动态词典的方式。具体而言，无监督学习被看做训练一个encoder进行词典查找，使得正样本更加接近，负样本具体更远。但作者认为之前工作没有同时处理好（1）字典比较大；(2)字典训练过程中保持一致。&lt;/p&gt;
+
+&lt;p&gt;本文引入了一种Momentum的encoder更新策略来解决上述问题。本文最终实验结果在分类、检测、分割等任务上均展示出了和监督学习可比甚至更好的效果，证明了监督学习的可行性。&lt;/p&gt;
+
+&lt;h3 id=&quot;关键点&quot;&gt;关键点&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;无监督学习研究主要包括两方面：代理任务和Loss函数。本文主要聚焦于Loss函数&lt;/li&gt;
+  &lt;li&gt;文中对比了三种架构：end2end、memory bank和MoCo
+    &lt;ul&gt;
+      &lt;li&gt;end2end的方法，随着batchsize的增大效果会越来越好，但是受限于batchsize，实际无法变的很大&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;架构图&quot;&gt;架构图&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20221018110959714.png&quot; alt=&quot;image-20221018110959714&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;伪代码来自论文&quot;&gt;伪代码（来自论文）&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;f_k.params = f_q.params # 初始化
+for x in loader: # 输入一个图像序列x，包含N张图，没有标签
+    x_q = aug(x) # 用于查询的图（数据增强得到）
+    x_k = aug(x) # 模板图（数据增强得到），自监督就体现在这里，只有图x和x的数据增强才被归为一类
+    q = f_q.forward(x_q) # 提取查询特征，输出NxC
+    k = f_k.forward(x_k) # 提取模板特征，输出NxC
+    # 不使用梯度更新f_k的参数，这是因为文章假设用于提取模板的表示应该是稳定的，不应立即更新
+    k = k.detach() 
+    # 这里bmm是分批矩阵乘法
+    l_pos = bmm(q.view(N,1,C), k.view(N,C,1)) # 输出Nx1，也就是自己与自己的增强图的特征的匹配度
+    l_neg = mm(q.view(N,C), queue.view(C,K)) # 输出Nxk，自己与上一批次所有图的匹配度（全不匹配）
+    logits = cat([l_pos, l_neg], dim=1) # 输出Nx(1+k)
+    labels = zeros(N)
+    # NCE损失函数，就是为了保证自己与自己衍生的匹配度输出越大越好，否则越小越好
+    loss = CrossEntropyLoss(logits/t, labels) 
+    loss.backward()
+    update(f_q.params) # f_q使用梯度立即更新
+    # 由于假设模板特征的表示方法是稳定的，因此它更新得更慢，这里使用动量法更新，相当于做了个滤波。
+    f_k.params = m*f_k.params+(1-m)*f_q.params 
+    enqueue(queue, k) # 为了生成反例，所以引入了队列
+    dequeue(queue)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;参考资料&quot;&gt;参考资料&lt;/h3&gt;
+
+&lt;p&gt;https://zhuanlan.zhihu.com/p/382763210 （讲得非常详细清楚）&lt;/p&gt;</content><author><name>nice</name></author><category term="Contrastive" /><category term="Learning" /><summary type="html">Momentum Contrast for Unsupervised Visual Representation Learning</summary></entry><entry><title type="html">MAE</title><link href="https://bigbigda.github.io/2022/10/13/MAE/" rel="alternate" type="text/html" title="MAE" /><published>2022-10-13T00:00:00+08:00</published><updated>2022-10-13T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/13/MAE</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/13/MAE/">&lt;h2 id=&quot;masked-autoencoders-are-scalable-vision-learners&quot;&gt;Masked Autoencoders Are Scalable Vision Learners&lt;/h2&gt;
 
 &lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
 
@@ -13,6 +65,25 @@
 &lt;h3 id=&quot;架构&quot;&gt;架构&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20221014135446680.png&quot; alt=&quot;image-20221014135446680&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;相关工作&quot;&gt;相关工作&lt;/h3&gt;
+
+&lt;p&gt;MAE之前，BEiT也在尝试类似思路，但是BEiT还没有激进的直接去学习pixel粒度信息&lt;/p&gt;
+
+&lt;h4 id=&quot;mae的细节&quot;&gt;MAE的细节&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;非对称的encoder和decoder：在encoder部分，不对masked patch进行编码，在decoder前重新插入这些patches&lt;/li&gt;
+  &lt;li&gt;轻量化的decoder：相比encoder，decoder的层数更少&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;mae的实验&quot;&gt;MAE的实验&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;作者对mask的方法（随机、网格状、大块）、decoder层数、是否encoder mask、decoder target是否正则等进行了大量实验&lt;/li&gt;
+  &lt;li&gt;一个有意思的现象是，作者发现VIT原始论文中VIT-H在ImageNet上训练的效果被低估了（VIT-L由于模型过大，容易过拟合），通过调整训练参数，准确度可以从76.5提升到82.5（huge improve），再次说明&lt;strong&gt;训练方法的重要性&lt;/strong&gt;，至少对CV领域&lt;/li&gt;
+  &lt;li&gt;还分析了fine-tune和linear probing的效果，首先fine-tune效果肯定要好的多；对比MoCo v3，作者发现MAE linear probing效果要差一些，但是fine-tune或partial fine-tune下效果则明显变化，作者认为这说明MAE学到的特征非线性更强&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;参考资料&quot;&gt;参考资料&lt;/h3&gt;
 
@@ -722,108 +793,4 @@ _git_merge_to_comp&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://zsh.sourceforge.io/Doc/Release/Completion-System.html&quot;&gt;Completion System&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://unix.stackexchange.com/questions/29724/how-to-properly-collect-an-array-of-lines-in-zsh&quot;&gt;How to properly collect an array of lines in zsh&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>nice</name></author><category term="Shell" /><summary type="html">有时我会自定义一些 zsh 命令，以便提升某些高频操作的效率。本文记录我给一个自定义命令添加参数自动补全的方法。</summary></entry><entry><title type="html">我的 2021 盘点</title><link href="https://bigbigda.github.io/2022/01/01/my-2021/" rel="alternate" type="text/html" title="我的 2021 盘点" /><published>2022-01-01T00:00:00+08:00</published><updated>2022-01-01T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/01/01/my-2021</id><content type="html" xml:base="https://bigbigda.github.io/2022/01/01/my-2021/">&lt;p&gt;对于 2021 年，如果仅从岁月流逝的角度，当然是期望时光时光慢些吧；如果从这一年外界的疯狂变幻来讲，又想对它说慢走不送。但终会无力地看清，时间的洪流上并无刻度，你喜欢或者不喜欢，它并不在意，兀自「逝者如斯夫，不舍昼夜」。&lt;/p&gt;
-
-&lt;p&gt;怀着这样微妙的情绪，伴着这几天微信群和朋友圈里大家抒发的美好祝愿来到了新的一年。&lt;/p&gt;
-
-&lt;p&gt;是时候略作盘点，挥别过往，纵情向前。&lt;/p&gt;
-
-&lt;h2 id=&quot;大事记&quot;&gt;大事记&lt;/h2&gt;
-
-&lt;p&gt;总体来讲，今年没什么大的变化，如果非要记一笔，那我会选因为疫情被隔离的经历。&lt;/p&gt;
-
-&lt;p&gt;虽然常居武汉，但之前疫情最严重的时候我在老家，并没有最切身的感受，这一次却是从头经历了从成为密接，到为了和小别能做上核酸检测打各种电话求助，到隔离期间继续熬夜做项目与「隔友们」一起苦中作乐，到为了各自复工的事愁肠百结，到生活终于回归平静，个人的情绪在忐忑绝望苦闷庆幸间横跳，家人们想必也饱受煎熬，还好大家最后都无恙通关。&lt;/p&gt;
-
-&lt;p&gt;疫情已经深刻地改变了我们的生活，时至今日，我还有亲友在西安与之斗争，愿大家都平安，愿能摘下口罩自由呼吸的那天早点到来。&lt;/p&gt;
-
-&lt;h2 id=&quot;分类记录&quot;&gt;分类记录&lt;/h2&gt;
-
-&lt;p&gt;按例简单分类作回顾。&lt;/p&gt;
-
-&lt;h3 id=&quot;运动与健康&quot;&gt;运动与健康&lt;/h3&gt;
-
-&lt;p&gt;这次调整了一下顺序，将这一项提到了分类的最前面，也是因为随着年龄的增长，越来越体会到健康的重要性。&lt;/p&gt;
-
-&lt;p&gt;关键词：伤病，牙齿，保险，癌症。&lt;/p&gt;
-
-&lt;p&gt;今年的运动量仍然以羽毛球为主，跑步基本没有，游泳完全没有。还是作为公司武汉办公室羽毛球活动的主要发起者，每周组织活动，另外周末参加了少量民间活动，技术上没有什么进步，出勤率还算可以。&lt;/p&gt;
-
-&lt;p&gt;去年体检时报出的脂肪肝趋势，今年消失了，血脂和尿酸偏高的情况也有所改善，但「伤病」有点多，运动时两次崴脚一次腰伤，自己推测原因可能是除了羽毛球没有什么其它运动量，肌肉退化了，后面得搭配一些有氧和力量训练。年末买了个椭圆机放家，小别同学用得更多一点，不知道啥时候会变成晾衣架。&lt;/p&gt;
-
-&lt;p&gt;另外值得一说的是终于去医院持续接受牙周治疗了，牙齿的健康状态应该得到一定的修复，躺在治疗椅上脑补医生作业的时候真的很恐怖。每个人都要认真保养牙齿。&lt;/p&gt;
-
-&lt;p&gt;最近一年多的时间里，给我和小别同学陆续把保险配置上了，有点迟，有一些除外承保的情况，好歹也算是能稍安心一点了。&lt;/p&gt;
-
-&lt;p&gt;肺癌，这可能是我周围听说的最普遍的癌症，就身边的亲人来讲就有几例，我们这一辈人也有因此而凋零的了，彼时内心百感交集，此时也憋不出什么话语，只想说世事无常，按期体检，珍惜亲友。&lt;/p&gt;
-
-&lt;h3 id=&quot;书影音&quot;&gt;书影音&lt;/h3&gt;
-
-&lt;p&gt;数据统计自豆瓣记录。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/blog/2021-douban.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;统计数字与直观感受略有不同。&lt;/p&gt;
-
-&lt;p&gt;疫情的这两年感觉窝在家看电影电视剧的时候比之前要多了，但实际上数量并无明显增长。当然也可能是有一些未标记。&lt;/p&gt;
-
-&lt;p&gt;今年看过的影视推荐：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;《旺达幻视》：剧情喜欢，奥妹很美。&lt;/li&gt;
-  &lt;li&gt;《肖申克的救赎》：希望至美。&lt;/li&gt;
-  &lt;li&gt;《让子弹飞》：可以细品。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;读书的形式还是以 Kindle 阅读为主，略有不同的是现在读过觉得好的书会再买一本实体书收藏。&lt;/p&gt;
-
-&lt;p&gt;今年看过的图书推荐，两本都是能带来一些不同的阅读体验的：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;《沉默的病人》：双故事线，有时间差，挺特别。&lt;/li&gt;
-  &lt;li&gt;《禅与摩托车维修艺术》：很独特的一本书，读起来有小学语文老师常说的「夹叙夹议」的感觉。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;github-与博客&quot;&gt;GitHub 与博客&lt;/h3&gt;
-
-&lt;p&gt;GitHub 上的记录：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/blog/2021-github.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;226 contributions，比 2020 年的 303 次进一步下降；&lt;/li&gt;
-  &lt;li&gt;最长连击记录 10 天，2021-11-08 到 2021-11-17；&lt;/li&gt;
-  &lt;li&gt;有 10 个自然周没有任何记录。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;这些指标能一定程度反映对技术的关注和参与度，需要继续提醒自己警惕，技术仍是立身之本。&lt;/p&gt;
-
-&lt;p&gt;博客上今年只发了廖廖 5 篇文章，平均每个季度一篇的节奏。&lt;/p&gt;
-
-&lt;p&gt;我可能陷入了一个误区，每次有值得一写的话题，就会随手记到一个清单，想着后面花点时间回顾下，做到干货足够多，相关知识点都讲到，然后再发出去，殊不知后面可能再不会花时间去看了。日积月累，这个清单里已经攒了不下上百条，它们之中的大多数，大概率是不会转化成输出了。&lt;/p&gt;
-
-&lt;p&gt;往后可以尝试转变思路，「及时输出」，热乎的现场，热乎的记忆，转化成热乎的文章，有不完善的地方「迭代」即可。&lt;/p&gt;
-
-&lt;p&gt;偶尔「草率」一点，没什么大不了的。&lt;/p&gt;
-
-&lt;h3 id=&quot;工作&quot;&gt;工作&lt;/h3&gt;
-
-&lt;p&gt;不好不坏，工作内容上以技术类为主，相对能比较专心纯粹地做事，算是我比较喜欢的节奏，要是更不卷就更好了。dddd，不多言。&lt;/p&gt;
-
-&lt;h3 id=&quot;投资&quot;&gt;投资&lt;/h3&gt;
-
-&lt;p&gt;以指数基金投资为主，受中丐互怜的拖累，今年整体收益负几个点，不过心态还好，相信时间维度拉长结果不会差。&lt;/p&gt;
-
-&lt;h3 id=&quot;其它&quot;&gt;其它&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;看了下三年前的年度盘点，发现吉他那时候就买了，而今技术也没有什么进步，还没有放弃治疗，继续挣扎；&lt;/li&gt;
-  &lt;li&gt;今年的旅行记录为 0，没有到过武汉和家乡以外的地方，希望新的一年疫情消散，想去哪的时候就能出发。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;结语&quot;&gt;结语&lt;/h2&gt;
-
-&lt;p&gt;流水账记完了，犹豫该不该来点正能量 FLAG，就如那些「人间清醒」的反鸡汤所言，今天的我和昨天的我并没有什么两样，并不会因为年份加一就有什么焕然一新。&lt;/p&gt;
-
-&lt;p&gt;那就祝自己和大家新年快乐，健康平安吧。&lt;/p&gt;
-
-&lt;p&gt;慢慢的，把眼下的日子过下去，就好。&lt;/p&gt;</content><author><name>nice</name></author><category term="Blog" /><summary type="html">对于 2021 年，如果仅从岁月流逝的角度，当然是期望时光时光慢些吧；如果从这一年外界的疯狂变幻来讲，又想对它说慢走不送。但终会无力地看清，时间的洪流上并无刻度，你喜欢或者不喜欢，它并不在意，兀自「逝者如斯夫，不舍昼夜」。</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>nice</name></author><category term="Shell" /><summary type="html">有时我会自定义一些 zsh 命令，以便提升某些高频操作的效率。本文记录我给一个自定义命令添加参数自动补全的方法。</summary></entry></feed>
