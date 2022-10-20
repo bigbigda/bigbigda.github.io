@@ -313,7 +313,15 @@
       "category" : "CV",
       
       "url"      : "https://bigbigda.github.io/2022/10/19/Swin-Transformer/",
-      "keywords" : "transformer,"
+      "keywords" : "transformer, object detection"
+    } ,
+  
+    {
+      "title"    : "MoCo",
+      "category" : "CV",
+      
+      "url"      : "https://bigbigda.github.io/2022/10/20/CLIP/",
+      "keywords" : "CV,Contrastive Learning"
     } ,
   
     {
