@@ -1,8 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-18T11:27:59+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">MoCo</title><link href="https://bigbigda.github.io/2022/10/14/MoCo/" rel="alternate" type="text/html" title="MoCo" /><published>2022-10-14T00:00:00+08:00</published><updated>2022-10-14T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/14/MoCo</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/14/MoCo/">&lt;h2 id=&quot;momentum-contrast-for-unsupervised-visual-representation-learning&quot;&gt;Momentum Contrast for Unsupervised Visual Representation Learning&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-20T15:11:44+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">Swin Transformer</title><link href="https://bigbigda.github.io/2022/10/19/Swin-Transformer/" rel="alternate" type="text/html" title="Swin Transformer" /><published>2022-10-19T00:00:00+08:00</published><updated>2022-10-19T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/19/Swin-Transformer</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/19/Swin-Transformer/">&lt;h2 id=&quot;swin-transformer-hierarchical-vision-transformer-using-shifted-windows&quot;&gt;Swin Transformer: Hierarchical Vision Transformer using Shifted Windows&lt;/h2&gt;
+
+&lt;p&gt;Swin Transformer&lt;/p&gt;
+
+&lt;p&gt;MSRA&lt;/p&gt;
+
+&lt;p&gt;ICCV 2021 best paper&lt;/p&gt;
 
 &lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
 
-&lt;p&gt;cvpr2020 Best Paper提名 He Kaiming&lt;/p&gt;
+&lt;p&gt;本文发表在VIT之后，作者提出虽然VIT等工作已经将transformer使用在CV领域中，但VIT主要使用在分类任务上，本文将对transformer在CV的应用做进一步完善，使其成为CV各个任务的backbone&lt;/p&gt;
+
+&lt;p&gt;swin transformer主要引入了两个优化：（1） 层次化的底层表示；（2）移动窗口&lt;/p&gt;
+
+&lt;h3 id=&quot;整体结构&quot;&gt;整体结构&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20221019235443985.png&quot; alt=&quot;image-20221019235443985&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;实验效果&quot;&gt;实验效果&lt;/h3&gt;
+
+&lt;p&gt;在分类、检测、分割三大任务上显著优于VIT/DeiT/ResNe(X)t&lt;/p&gt;
+
+&lt;h3 id=&quot;后续&quot;&gt;后续&lt;/h3&gt;</content><author><name>nice</name></author><category term="CV" /><summary type="html">Swin Transformer: Hierarchical Vision Transformer using Shifted Windows</summary></entry><entry><title type="html">DALL·E·2</title><link href="https://bigbigda.github.io/2022/10/18/DALLE2/" rel="alternate" type="text/html" title="DALL·E·2" /><published>2022-10-18T00:00:00+08:00</published><updated>2022-10-18T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/18/DALLE2</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/18/DALLE2/">&lt;h2 id=&quot;hierarchical-text-conditional-image-generation-with-clip-latents&quot;&gt;Hierarchical Text-Conditional Image Generation with CLIP Latents&lt;/h2&gt;
+
+&lt;p&gt;DALLE-2  2022.4&lt;/p&gt;
+
+&lt;p&gt;Open AI&lt;/p&gt;
+
+&lt;h4 id=&quot;其他相关工作&quot;&gt;其他相关工作&lt;/h4&gt;
+
+&lt;p&gt;DALLE&lt;/p&gt;
+
+&lt;p&gt;Imagon&lt;/p&gt;
+
+&lt;h3 id=&quot;扩散模型&quot;&gt;扩散模型&lt;/h3&gt;
+
+&lt;p&gt;参考资料 https://lilianweng.github.io/posts/2021-07-11-diffusion-models/&lt;/p&gt;
+
+&lt;h3 id=&quot;后续&quot;&gt;后续&lt;/h3&gt;</content><author><name>nice</name></author><category term="Deep" /><category term="Learning" /><summary type="html">Hierarchical Text-Conditional Image Generation with CLIP Latents</summary></entry><entry><title type="html">MoCo</title><link href="https://bigbigda.github.io/2022/10/14/MoCo/" rel="alternate" type="text/html" title="MoCo" /><published>2022-10-14T00:00:00+08:00</published><updated>2022-10-14T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/14/MoCo</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/14/MoCo/">&lt;h2 id=&quot;momentum-contrast-for-unsupervised-visual-representation-learning&quot;&gt;Momentum Contrast for Unsupervised Visual Representation Learning&lt;/h2&gt;
+
+&lt;p&gt;cvpr2020 Best Paper提名&lt;/p&gt;
+
+&lt;p&gt;He Kaiming&lt;/p&gt;
+
+&lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
 
 &lt;p&gt;在文本领域，bert等自监督学习（&lt;strong&gt;Self-Supervised Learning&lt;/strong&gt;）已经得到了广泛应用，但其在CV领域的进展一直比较缓慢，之前也有不少基于对比学习的尝试，本文将他们都归类为基于构建动态词典的方式。具体而言，无监督学习被看做训练一个encoder进行词典查找，使得正样本更加接近，负样本具体更远。但作者认为之前工作没有同时处理好（1）字典比较大；(2)字典训练过程中保持一致。&lt;/p&gt;
 
@@ -15,6 +55,7 @@
   &lt;li&gt;文中对比了三种架构：end2end、memory bank和MoCo
     &lt;ul&gt;
       &lt;li&gt;end2end的方法，随着batchsize的增大效果会越来越好，但是受限于batchsize，实际无法变的很大&lt;/li&gt;
+      &lt;li&gt;与memory bank相比，核心区别在于每个batch进行运算后，不会大幅更新这个batch对应负样本的K&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -35,7 +76,7 @@ for x in loader: # 输入一个图像序列x，包含N张图，没有标签
     k = k.detach() 
     # 这里bmm是分批矩阵乘法
     l_pos = bmm(q.view(N,1,C), k.view(N,C,1)) # 输出Nx1，也就是自己与自己的增强图的特征的匹配度
-    l_neg = mm(q.view(N,C), queue.view(C,K)) # 输出Nxk，自己与上一批次所有图的匹配度（全不匹配）
+    l_neg = mm(q.view(N,C), queue.view(C,K)) # 输出Nxk，自己与队列中（注意K为队列大小）所有图的匹配度（全不匹配）
     logits = cat([l_pos, l_neg], dim=1) # 输出Nx(1+k)
     labels = zeros(N)
     # NCE损失函数，就是为了保证自己与自己衍生的匹配度输出越大越好，否则越小越好
@@ -48,13 +89,23 @@ for x in loader: # 输入一个图像序列x，包含N张图，没有标签
     dequeue(queue)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;h3 id=&quot;实验效果&quot;&gt;实验效果&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h3 id=&quot;参考资料&quot;&gt;参考资料&lt;/h3&gt;
 
-&lt;p&gt;https://zhuanlan.zhihu.com/p/382763210 （讲得非常详细清楚）&lt;/p&gt;</content><author><name>nice</name></author><category term="Contrastive" /><category term="Learning" /><summary type="html">Momentum Contrast for Unsupervised Visual Representation Learning</summary></entry><entry><title type="html">MAE</title><link href="https://bigbigda.github.io/2022/10/13/MAE/" rel="alternate" type="text/html" title="MAE" /><published>2022-10-13T00:00:00+08:00</published><updated>2022-10-13T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/13/MAE</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/13/MAE/">&lt;h2 id=&quot;masked-autoencoders-are-scalable-vision-learners&quot;&gt;Masked Autoencoders Are Scalable Vision Learners&lt;/h2&gt;
+&lt;p&gt;https://zhuanlan.zhihu.com/p/382763210 （讲得非常详细清楚）&lt;/p&gt;
+
+&lt;p&gt;http://rosmantis.com/2022/03/13/MoCo-Series/ (包含moco v2 v3)&lt;/p&gt;</content><author><name>nice</name></author><category term="CV" /><summary type="html">Momentum Contrast for Unsupervised Visual Representation Learning</summary></entry><entry><title type="html">MAE</title><link href="https://bigbigda.github.io/2022/10/13/MAE/" rel="alternate" type="text/html" title="MAE" /><published>2022-10-13T00:00:00+08:00</published><updated>2022-10-13T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/13/MAE</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/13/MAE/">&lt;h2 id=&quot;masked-autoencoders-are-scalable-vision-learners&quot;&gt;Masked Autoencoders Are Scalable Vision Learners&lt;/h2&gt;
+
+&lt;p&gt;CVPR 2021&lt;/p&gt;
+
+&lt;p&gt;He Kaiming&lt;/p&gt;
 
 &lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;CVPR2021&lt;/strong&gt;  He Kaiming&lt;/p&gt;
 
 &lt;p&gt;本文的最大意义在于在图像领域引入masked autoencoders训练任务，实现了自监督学习。&lt;/p&gt;
 
@@ -89,9 +140,11 @@ for x in loader: # 输入一个图像序列x，包含N张图，没有标签
 
 &lt;p&gt;https://www.zhihu.com/question/498364155&lt;/p&gt;</content><author><name>nice</name></author><category term="Transformer" /><summary type="html">Masked Autoencoders Are Scalable Vision Learners</summary></entry><entry><title type="html">DETR</title><link href="https://bigbigda.github.io/2022/10/11/DETR/" rel="alternate" type="text/html" title="DETR" /><published>2022-10-11T00:00:00+08:00</published><updated>2022-10-11T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/11/DETR</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/11/DETR/">&lt;h1 id=&quot;detr-end-to-end-object-detection-with-transformers&quot;&gt;&lt;strong&gt;DETR&lt;/strong&gt;: End-to-End Object Detection with Transformers&lt;/h1&gt;
 
-&lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
+&lt;p&gt;ECCV 2020&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;ECCV 2020&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Facebook&lt;/p&gt;
+
+&lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
 
 &lt;p&gt;如名字所示，DETR是一个端到端的基于transformer的目标检测网络。在本文之前，目标检测任务并不是完全端到端的，其流程中需要nms、anchor generation等步骤。DETR通过引入&lt;strong&gt;集合学习&lt;/strong&gt;和&lt;strong&gt;transformer&lt;/strong&gt;，首次移除了这些瓶颈。&lt;/p&gt;
 
@@ -167,7 +220,7 @@ for x in loader: # 输入一个图像序列x，包含N张图，没有标签
 计算置信度最高的边界框与其它候选框的IoU。
 删除IoU大于阈值的边界框
 重复上述过程，直至边界框列表为空。
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>nice</name></author><category term="Transformer" /><summary type="html">DETR: End-to-End Object Detection with Transformers</summary></entry><entry><title type="html">Attention-Is-All-You-Need</title><link href="https://bigbigda.github.io/2022/10/10/Transformer/" rel="alternate" type="text/html" title="Attention-Is-All-You-Need" /><published>2022-10-10T00:00:00+08:00</published><updated>2022-10-10T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/10/Transformer</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/10/Transformer/">&lt;h1 id=&quot;attention-is-all-you-need&quot;&gt;Attention Is All You Need&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>nice</name></author><category term="CV" /><summary type="html">DETR: End-to-End Object Detection with Transformers</summary></entry><entry><title type="html">Attention-Is-All-You-Need</title><link href="https://bigbigda.github.io/2022/10/10/Transformer/" rel="alternate" type="text/html" title="Attention-Is-All-You-Need" /><published>2022-10-10T00:00:00+08:00</published><updated>2022-10-10T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/10/Transformer</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/10/Transformer/">&lt;h1 id=&quot;attention-is-all-you-need&quot;&gt;Attention Is All You Need&lt;/h1&gt;
 
 &lt;h3 id=&quot;整体结构&quot;&gt;整体结构&lt;/h3&gt;
 
@@ -229,9 +282,11 @@ for x in loader: # 输入一个图像序列x，包含N张图，没有标签
 
 &lt;p&gt;https://zhuanlan.zhihu.com/p/132554155&lt;/p&gt;</content><author><name>nice</name></author><category term="Transformer" /><summary type="html">Attention Is All You Need</summary></entry><entry><title type="html">VIT</title><link href="https://bigbigda.github.io/2022/10/10/VIT/" rel="alternate" type="text/html" title="VIT" /><published>2022-10-10T00:00:00+08:00</published><updated>2022-10-10T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/10/VIT</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/10/VIT/">&lt;h1 id=&quot;an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale&quot;&gt;AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE&lt;/h1&gt;
 
-&lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
+&lt;p&gt;ICLR 2021&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;2021年发表于ICLR&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Google&lt;/p&gt;
+
+&lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
 
 &lt;p&gt;VIT（Vision Transformer）是一篇开创性的工作。自从2017年Transformer出现后，已经成为NLP领域的最主流模型，但此时CV圈的主流模型仍基于CNN结构，本文的最大创新点就是证明单纯的Transformer结构同样适用于cv任务，不仅为cv领域开辟了一个新方向，而且从结构上将nlp任务和cv任务统一起来，促进了后续多模态工作的大发展。&lt;/p&gt;
 
@@ -258,7 +313,7 @@ for x in loader: # 输入一个图像序列x，包含N张图，没有标签
 
 &lt;h3 id=&quot;输出层&quot;&gt;输出层&lt;/h3&gt;
 
-&lt;p&gt;首先取出之前加的第一个分类token经过多层encoder的输出结果，为1*768维，将此向量过一个两层MLP，即得到最终输出。&lt;/p&gt;</content><author><name>nice</name></author><category term="Transformer" /><summary type="html">AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE</summary></entry><entry><title type="html">第一篇博文</title><link href="https://bigbigda.github.io/2022/10/09/first-blog/" rel="alternate" type="text/html" title="第一篇博文" /><published>2022-10-09T00:00:00+08:00</published><updated>2022-10-09T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/09/first-blog</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/09/first-blog/">&lt;h3 id=&quot;github-pages搭建&quot;&gt;github pages搭建&lt;/h3&gt;
+&lt;p&gt;首先取出之前加的第一个分类token经过多层encoder的输出结果，为1*768维，将此向量过一个两层MLP，即得到最终输出。&lt;/p&gt;</content><author><name>nice</name></author><category term="CV" /><summary type="html">AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE</summary></entry><entry><title type="html">第一篇博文</title><link href="https://bigbigda.github.io/2022/10/09/first-blog/" rel="alternate" type="text/html" title="第一篇博文" /><published>2022-10-09T00:00:00+08:00</published><updated>2022-10-09T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/09/first-blog</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/09/first-blog/">&lt;h3 id=&quot;github-pages搭建&quot;&gt;github pages搭建&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;2022-10-09 终于搭建完成了基于github的个人博客&lt;/li&gt;
@@ -473,324 +528,4 @@ brew link python@3.10
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;后续有想到的其它的点，或者这几个点体验有变化了，我再更新。&lt;/p&gt;</content><author><name>nice</name></author><category term="Blog" /><summary type="html">上周有天晚上加完班下雨了，媳妇儿开车顺道带我回家，到家后过了一会儿她突然说，「对了，给你个东西」，然后从包里拿出一个黑盒子递给我，我正坐那刷沙雕视频，也没细看，见挺小一个盒子，随口问了一句「啥？充电宝啊？」，得到的是充满鄙夷的回复，「我们家需要那玩意儿吗，我买那干啥？」，接过来翻面一看，哦豁原来是 iPhone 13 Pro。</summary></entry><entry><title type="html">在 Mac 下编译 chaosblade</title><link href="https://bigbigda.github.io/2022/02/19/compile-chaosblade-on-mac/" rel="alternate" type="text/html" title="在 Mac 下编译 chaosblade" /><published>2022-02-19T00:00:00+08:00</published><updated>2022-02-19T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/02/19/compile-chaosblade-on-mac</id><content type="html" xml:base="https://bigbigda.github.io/2022/02/19/compile-chaosblade-on-mac/">&lt;p&gt;首先声明，这不是一份指南，这是一份失败的操作流水记录。我得到的最终结果：编译成功，但是无法运行，放弃在 Mac 平台直接使用此工具，乖乖用 Linux 或者容器环境。&lt;/p&gt;
-
-&lt;p&gt;以下问题的遇到和解决记录，基本是按时间序。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/chaosblade-io/chaosblade#compile&quot;&gt;chaosblade 项目的 README 上自行编译部分&lt;/a&gt; 说明很简单，就是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;make build_darwin&lt;/code&gt; 这么一条命令而已。&lt;/p&gt;
-
-&lt;h2 id=&quot;环境准备&quot;&gt;环境准备&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;安装 go，&lt;a href=&quot;https://go.dev/&quot;&gt;https://go.dev/&lt;/a&gt; 下载最新版安装，我安装的是 1.17.7 版本，然后将 /usr/local/go/bin 添加到 PATH。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;安装和配置 JAVA 环境。（我以前装过，本次先没动它，但实际后面也遇到问题与此相关。）&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;安装 Docker Desktop。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;下载源码开始编译&quot;&gt;下载源码，开始编译&lt;/h2&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone git@github.com:chaosblade-io/chaosblade.git
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;chaosblade
-make build_darwin
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;然后，兵来将挡，水来土掩的问题解决之旅开始了。&lt;/p&gt;
-
-&lt;h2 id=&quot;遇到问题解决问题&quot;&gt;遇到问题，解决问题&lt;/h2&gt;
-
-&lt;h3 id=&quot;0x01-网络问题&quot;&gt;0x01 网络问题&lt;/h3&gt;
-
-&lt;p&gt;编译过程中需要下载一些源码和二进制文件，首先遇到了网络问题。&lt;/p&gt;
-
-&lt;p&gt;如果遇到 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;timeout&lt;/code&gt; 或者 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fatal: 无法访问 'xxxx'：LibreSSL SSL_connect: Operation timed out in connection to xxx.com:443&lt;/code&gt; 之类的提示，一般是因为有一些资源偶尔需要科学上网才能访问。&lt;/p&gt;
-
-&lt;p&gt;解决方法：&lt;/p&gt;
-
-&lt;p&gt;终端挂代理：&lt;/p&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;http_proxy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;http://127.0.0.1:54107
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;https_proxy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;http://127.0.0.1:54107
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;no_proxy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;chaosblade.oss-cn-hangzhou.aliyuncs.com&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;其中代理自备，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;no_proxy&lt;/code&gt; 那一行是指定从阿里域名下载不走代理。&lt;/p&gt;
-
-&lt;p&gt;如果遇到下载 &lt;a href=&quot;https://chaosblade.oss-cn-hangzhou.aliyuncs.com/agent/github/sandbox/sandbox-1.3.1-bin.zip&quot;&gt;https://chaosblade.oss-cn-hangzhou.aliyuncs.com/agent/github/sandbox/sandbox-1.3.1-bin.zip&lt;/a&gt; 特别慢，几 kb/s 的速度，但是用浏览器下载很快，那可以先停掉编译，直接用浏览器下载好该文件，放到 target/cache/chaosblade-exec-jvm/build-target/cache 下面，再重新开始编译。&lt;/p&gt;
-
-&lt;p&gt;同理：&lt;/p&gt;
-
-&lt;p&gt;如果遇到下载 &lt;a href=&quot;https://chaosblade.oss-cn-hangzhou.aliyuncs.com/agent/release/tools.jar&quot;&gt;https://chaosblade.oss-cn-hangzhou.aliyuncs.com/agent/release/tools.jar&lt;/a&gt; 特别慢，可以先停掉编译，直接用浏览器下载好该文件，放到 target/cache/chaosblade-exec-jvm/build-target/cache 下面，再重新开始编译。&lt;/p&gt;
-
-&lt;p&gt;例外是如果遇到下载 &lt;a href=&quot;https://chaosblade.oss-cn-hangzhou.aliyuncs.com/agent/github/1.5.0/chaosblade-1.5.0-linux-amd64.tar.gz&quot;&gt;https://chaosblade.oss-cn-hangzhou.aliyuncs.com/agent/github/1.5.0/chaosblade-1.5.0-linux-amd64.tar.gz&lt;/a&gt; 特别慢，手动下载，放到 target/cache/chaosblade-operator/build/cache 也不行，编译过程只认自己下载的。&lt;/p&gt;
-
-&lt;p&gt;由以上得出的小技巧：&lt;/p&gt;
-
-&lt;p&gt;如果从 GitHub release 界面下载 chaosblade 的 release 文件特别慢，比如 &lt;a href=&quot;https://github.com/chaosblade-io/chaosblade/releases/download/v1.3.0/chaosblade-1.3.0-darwin-amd64.tar.gz&quot;&gt;https://github.com/chaosblade-io/chaosblade/releases/download/v1.3.0/chaosblade-1.3.0-darwin-amd64.tar.gz&lt;/a&gt;，可以将链接替换为 &lt;a href=&quot;https://chaosblade.oss-cn-hangzhou.aliyuncs.com/agent/github/1.3.0/chaosblade-1.3.0-darwin-amd64.tar.gz&quot;&gt;https://chaosblade.oss-cn-hangzhou.aliyuncs.com/agent/github/1.3.0/chaosblade-1.3.0-darwin-amd64.tar.gz&lt;/a&gt; 加速下载。&lt;/p&gt;
-
-&lt;h3 id=&quot;0x02-go-依赖模块问题&quot;&gt;0x02 go 依赖模块问题&lt;/h3&gt;
-
-&lt;p&gt;如果遇到&lt;/p&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt;/model.go:22:2: missing go.sum entry &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;module providing package github.com/chaosblade-io/chaosblade-exec-os/exec &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;imported by github.com/chaosblade-io/chaosblade-exec-docker/exec&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; to add:
-        go get github.com/chaosblade-io/chaosblade-exec-docker/exec
-&lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt;/executor_execin.go:29:2: missing go.sum entry &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;module providing package github.com/chaosblade-io/chaosblade-spec-go/channel &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;imported by github.com/chaosblade-io/chaosblade-exec-docker/exec&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; to add:
-        go get github.com/chaosblade-io/chaosblade-exec-docker/exec
-&lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt;/client.go:29:2: missing go.sum entry &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;module providing package github.com/chaosblade-io/chaosblade-spec-go/spec&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; to add:
-        go mod download github.com/chaosblade-io/chaosblade-spec-go
-&lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt;/container.go:24:2: missing go.sum entry &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;module providing package github.com/chaosblade-io/chaosblade-spec-go/util&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; to add:
-        go mod download github.com/chaosblade-io/chaosblade-spec-go
-make[1]: &lt;span class=&quot;k&quot;&gt;***&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;build_yaml] Error 1
-make: &lt;span class=&quot;k&quot;&gt;***&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;docker] Error 2
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;到 target/cache/chaosblade-exec-docker 和 target/cache/chaosblade-exec-os 目录下执行&lt;/p&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;go mod tidy
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;整理依赖，参考 &lt;a href=&quot;https://stackoverflow.com/questions/67203641/missing-go-sum-entry-for-module-providing-package-package-name&quot;&gt;https://stackoverflow.com/questions/67203641/missing-go-sum-entry-for-module-providing-package-package-name&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;0x03-java-编译问题&quot;&gt;0x03 Java 编译问题&lt;/h3&gt;
-
-&lt;p&gt;如果遇到报错：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project chaosblade-exec-spi: Compilation failure: Compilation failure:
-[ERROR] 不再支持源选项 6。请使用 7 或更高版本。
-[ERROR] 不再支持目标选项 6。请使用 7 或更高版本。
-[ERROR] -&amp;gt; [Help 1]
-[ERROR]
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR]
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
-[ERROR]
-[ERROR] After correcting the problems, you can resume the build with the command
-[ERROR]   mvn &amp;lt;args&amp;gt; -rf :chaosblade-exec-spi
-make[1]: *** [build_java] Error 1
-make: *** [java] Error 2
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;修改 target/cache/chaosblade-exec-jvm/chaosblade-exec-spi/pom.xml 里的&lt;/p&gt;
-
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;configuration&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;source&amp;gt;&lt;/span&gt;6&lt;span class=&quot;nt&quot;&gt;&amp;lt;/source&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;target&amp;gt;&lt;/span&gt;6&lt;span class=&quot;nt&quot;&gt;&amp;lt;/target&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;为&lt;/p&gt;
-
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;configuration&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;source&amp;gt;&lt;/span&gt;8&lt;span class=&quot;nt&quot;&gt;&amp;lt;/source&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;target&amp;gt;&lt;/span&gt;8&lt;span class=&quot;nt&quot;&gt;&amp;lt;/target&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;同理，后面还会遇到类似的报错，对应还要修改：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;target/cache/chaosblade-exec-jvm/chaosblade-exec-common/pom.xml&lt;/li&gt;
-  &lt;li&gt;target/cache/chaosblade-exec-jvm/chaosblade-exec-service/pom.xml&lt;/li&gt;
-  &lt;li&gt;target/cache/chaosblade-exec-jvm/chaosblade-exec-bootstrap/chaosblade-exec-bootstrap-jvmsandbox/pom.xml&lt;/li&gt;
-  &lt;li&gt;target/cache/chaosblade-exec-jvm/chaosblade-exec-plugin/chaosblade-exec-plugin-dubbo/pom.xml&lt;/li&gt;
-  &lt;li&gt;target/cache/chaosblade-exec-jvm/chaosblade-exec-plugin/chaosblade-exec-plugin-jvm/pom.xml&lt;/li&gt;
-  &lt;li&gt;target/cache/chaosblade-exec-jvm/chaosblade-exec-plugin/chaosblade-exec-plugin-mysql/pom.xml&lt;/li&gt;
-  &lt;li&gt;target/cache/chaosblade-exec-jvm/chaosblade-exec-plugin/chaosblade-exec-plugin-postgrelsql/pom.xml&lt;/li&gt;
-  &lt;li&gt;target/cache/chaosblade-exec-jvm/chaosblade-exec-plugin/chaosblade-exec-plugin-servlet/pom.xml&lt;/li&gt;
-  &lt;li&gt;target/cache/chaosblade-exec-jvm/chaosblade-exec-plugin/chaosblade-exec-plugin-jedis/pom.xml&lt;/li&gt;
-  &lt;li&gt;target/cache/chaosblade-exec-jvm/chaosblade-exec-plugin/chaosblade-exec-plugin-elasticsearch/pom.xml&lt;/li&gt;
-  &lt;li&gt;target/cache/chaosblade-exec-jvm/chaosblade-exec-plugin/chaosblade-exec-plugin-hbase/pom.xml&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;另外：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;target/cache/chaosblade-exec-jvm/chaosblade-exec-plugin/pom.xml&lt;/li&gt;
-  &lt;li&gt;target/cache/chaosblade-exec-jvm/chaosblade-exec-plugin/chaosblade-exec-plugin-dubbo/pom.xml（存疑）&lt;/li&gt;
-  &lt;li&gt;target/cache/chaosblade-exec-jvm/chaosblade-exec-plugin/chaosblade-exec-plugin-http/pom.xml（存疑）&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;里是需要添加&lt;/p&gt;
-
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;build&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;plugins&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;plugin&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.apache.maven.plugins&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;maven-compiler-plugin&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;configuration&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;source&amp;gt;&lt;/span&gt;8&lt;span class=&quot;nt&quot;&gt;&amp;lt;/source&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;target&amp;gt;&lt;/span&gt;8&lt;span class=&quot;nt&quot;&gt;&amp;lt;/target&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/plugin&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/plugins&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/build&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;如果遇到&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project chaosblade-exec-plugin-redisson: Compilation failure
-[ERROR] /Users/mazhuang/github/chaosblade/target/cache/chaosblade-exec-jvm/chaosblade-exec-plugin/chaosblade-exec-plugin-redisson/src/main/java/com/alibaba/chaosblade/exec/plugin/redisson/RedissonEnhancer.java:[52,23] 对info的引用不明确
-[ERROR]   org.slf4j.Logger 中的方法 info(java.lang.String,java.lang.Object...) 和 org.slf4j.Logger 中的方法 info(java.lang.String,java.lang.Throwable) 都匹配
-[ERROR]
-[ERROR] -&amp;gt; [Help 1]
-[ERROR]
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR]
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
-[ERROR]
-[ERROR] After correcting the problems, you can resume the build with the command
-[ERROR]   mvn &amp;lt;args&amp;gt; -rf :chaosblade-exec-plugin-redisson
-make[1]: *** [build_java] Error 1
-make: *** [java] Error 2
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;修改 target/cache/chaosblade-exec-jvm/chaosblade-exec-plugin/chaosblade-exec-plugin-redisson/src/main/java/com/alibaba/chaosblade/exec/plugin/redisson/RedissonEnhancer.java&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;LOGGER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;method command {}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ReflectUtil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;invokeMethod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;getName&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;改成&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmpResult&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;nc&quot;&gt;ReflectUtil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;invokeMethod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;getName&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;no&quot;&gt;LOGGER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;method command {}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmpResult&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;如果遇到&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project chaosblade-exec-common: Fatal error compiling: java.lang.IllegalAccessError: class lombok.javac.apt.LombokProcessor (in unnamed module @0x45da40ad) cannot access class com.sun.tools.javac.processing.JavacProcessingEnvironment (in module jdk.compiler) because module jdk.compiler does not export com.sun.tools.javac.processing to unnamed module @0x45da40ad -&amp;gt; [Help 1]
-[ERROR]
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR]
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
-[ERROR]
-[ERROR] After correcting the problems, you can resume the build with the command
-[ERROR]   mvn &amp;lt;args&amp;gt; -rf :chaosblade-exec-common
-make[1]: *** [build_java] Error 1
-make: *** [java] Error 2
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;将 target/cache/chaosblade-exec-jvm/chaosblade-exec-common/pom.xml&lt;/p&gt;
-
-&lt;p&gt;lombok 版本由 1.18.10 改为 1.18.20，参考 https://www.cnblogs.com/ZZG-GANGAN/p/14789050.html&lt;/p&gt;
-
-&lt;p&gt;如果遇到&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;The&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;JAVA_HOME&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;environment&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;variable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defined&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;correctly&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;environment&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;variable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;needed&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;program&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;***&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;build_java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Error&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-&lt;span class=&quot;nl&quot;&gt;make:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;***&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Error&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;那配置 JAVA_HOME：&lt;/p&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/usr/libexec/java_home &lt;span class=&quot;nt&quot;&gt;-V&lt;/span&gt;
-vim ~/.zshrc
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JAVA_HOME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$JAVA_HOME&lt;/span&gt;/bin:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
-:wq
-&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.zshrc
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;0x04-docker-问题&quot;&gt;0x04 Docker 问题&lt;/h3&gt;
-
-&lt;p&gt;如果遇到&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.
-See 'docker run --help'.
-make: *** [upx] Error 125
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;启动 Docker Desktop，然后再开始编译。&lt;/p&gt;
-
-&lt;h3 id=&quot;0x0x-未知&quot;&gt;0x0x 未知&lt;/h3&gt;
-
-&lt;p&gt;编码过程中有个警告，不知道有无影响：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;WARN[0000] parse java spec failed, so skip it, open build/cache/chaosblade/yaml/chaosblade-jvm-spec-1.5.0.yaml: no such file or directory
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;结果&quot;&gt;结果&lt;/h2&gt;
-
-&lt;p&gt;终于编译成功了，生成了 target/chaosblade-1.5.0.tar.gz 文件。&lt;/p&gt;
-
-&lt;p&gt;但解压后执行 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./blade&lt;/code&gt;，输出：&lt;/p&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;zsh: killed     ./blade
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;下载官方 Release 的 1.3.0 的 darwin 版本文件，也是报同样的问题。&lt;/p&gt;
-
-&lt;p&gt;到 &lt;a href=&quot;https://github.com/chaosblade-io/chaosblade/issues&quot;&gt;Issues&lt;/a&gt; 里翻到了几个类似的问题，官方给出的 &lt;a href=&quot;https://github.com/chaosblade-io/chaosblade/issues/478&quot;&gt;建议&lt;/a&gt;，比如修改系统【安全与隐私】-【通用】配置等，经验证都无效。&lt;/p&gt;
-
-&lt;p&gt;至此，如文首所述，放弃了在 Mac 平台下折腾，直接用 Linux 或者容器环境来体验。&lt;/p&gt;</content><author><name>nice</name></author><category term="混沌工程" /><summary type="html">首先声明，这不是一份指南，这是一份失败的操作流水记录。我得到的最终结果：编译成功，但是无法运行，放弃在 Mac 平台直接使用此工具，乖乖用 Linux 或者容器环境。</summary></entry><entry><title type="html">给 zsh 自定义命令添加参数自动补全</title><link href="https://bigbigda.github.io/2022/02/12/zsh-completion/" rel="alternate" type="text/html" title="给 zsh 自定义命令添加参数自动补全" /><published>2022-02-12T00:00:00+08:00</published><updated>2022-02-12T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/02/12/zsh-completion</id><content type="html" xml:base="https://bigbigda.github.io/2022/02/12/zsh-completion/">&lt;p&gt;有时我会自定义一些 zsh 命令，以便提升某些高频操作的效率。本文记录我给一个自定义命令添加参数自动补全的方法。&lt;/p&gt;
-
-&lt;h2 id=&quot;场景&quot;&gt;场景&lt;/h2&gt;
-
-&lt;p&gt;我自定义了一个 zsh 命令 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gmt&lt;/code&gt;，执行 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gmt &amp;lt;b2&amp;gt;&lt;/code&gt;，可以将当前所在的 git 分支 merge 到 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;b2&amp;gt;&lt;/code&gt; 这个分支。&lt;/p&gt;
-
-&lt;p&gt;它具体完成以下工作：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;切换到 git 分支 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;b2&amp;gt;&lt;/code&gt;；&lt;/li&gt;
-  &lt;li&gt;将 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;b2&amp;gt;&lt;/code&gt; 分支更新到最新；&lt;/li&gt;
-  &lt;li&gt;询问是否合并，输入 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;y&lt;/code&gt; 则进行分支合并。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;也就是用一条命令完成一个 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout b2&lt;/code&gt;、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git pull origin b2&lt;/code&gt;、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git merge b1&lt;/code&gt; 这样的组合操作。&lt;/p&gt;
-
-&lt;p&gt;用了一段时间，可以省一些事，美中不足的就是有时候分支名称比较长，只能手动输入，没有自动补全。&lt;/p&gt;
-
-&lt;h2 id=&quot;期望效果&quot;&gt;期望效果&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;输入 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gmt &lt;/code&gt;，然后按 &lt;kbd&gt;tab&lt;/kbd&gt;，自动提示本地的所有 git 分支名称；&lt;/li&gt;
-  &lt;li&gt;输入 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gmt fe&lt;/code&gt;，然后按 &lt;kbd&gt;tab&lt;/kbd&gt;，自动补全以 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fe&lt;/code&gt; 开头的 git 分支名称；&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;实现方法&quot;&gt;实现方法&lt;/h2&gt;
-
-&lt;p&gt;在 zsh 配置文件中添加如下代码：&lt;/p&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;compdef _git_merge_to_comp git_merge_to
-
-_git_merge_to_comp&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; git_branches
-    &lt;span class=&quot;nv&quot;&gt;git_branches&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(@f)&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;git branch &lt;span class=&quot;nt&quot;&gt;--format&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'%(refname:short)'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    _describe &lt;span class=&quot;s1&quot;&gt;'command'&lt;/span&gt; git_branches
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;em&gt;注：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git_merge_to&lt;/code&gt; 是一个自定义的函数，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gmt&lt;/code&gt; 是这个函数的 alias。&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;这段代码的意思就是使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_git_merge_to_comp&lt;/code&gt; 这个函数来给 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git_merge_to&lt;/code&gt; 命令做自动补全，自动补全的候选列表是当前项目的所有本地 git 分支名称。&lt;/p&gt;
-
-&lt;p&gt;其中：&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;compdef&lt;/code&gt;、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_describe&lt;/code&gt; 等的用法，可以参考 zsh 的官方文档 &lt;a href=&quot;https://zsh.sourceforge.io/Doc/Release/Completion-System.html&quot;&gt;Completion System&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git_branches=(&quot;${(@f)$(git branch --format='%(refname:short)')}&quot;)&lt;/code&gt; 的意思是，将 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git branch --format='%(refname:short)'&lt;/code&gt; 命令的输出按行分割后形成一个字符串数组，赋值给 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git_branches&lt;/code&gt; 变量，这部分可以参考 &lt;a href=&quot;https://unix.stackexchange.com/questions/29724/how-to-properly-collect-an-array-of-lines-in-zsh&quot;&gt;How to properly collect an array of lines in zsh&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;我的 zsh 配置都上传到了 &lt;a href=&quot;https://github.com/mzlogin/config-files&quot;&gt;https://github.com/mzlogin/config-files&lt;/a&gt;，有需要可以参考下。&lt;/p&gt;
-
-&lt;h2 id=&quot;效果演示&quot;&gt;效果演示&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/shell/zsh-gmt-completion.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;参考&quot;&gt;参考&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zsh.sourceforge.io/Doc/Release/Completion-System.html&quot;&gt;Completion System&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://unix.stackexchange.com/questions/29724/how-to-properly-collect-an-array-of-lines-in-zsh&quot;&gt;How to properly collect an array of lines in zsh&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>nice</name></author><category term="Shell" /><summary type="html">有时我会自定义一些 zsh 命令，以便提升某些高频操作的效率。本文记录我给一个自定义命令添加参数自动补全的方法。</summary></entry></feed>
+&lt;p&gt;后续有想到的其它的点，或者这几个点体验有变化了，我再更新。&lt;/p&gt;</content><author><name>nice</name></author><category term="Blog" /><summary type="html">上周有天晚上加完班下雨了，媳妇儿开车顺道带我回家，到家后过了一会儿她突然说，「对了，给你个东西」，然后从包里拿出一个黑盒子递给我，我正坐那刷沙雕视频，也没细看，见挺小一个盒子，随口问了一句「啥？充电宝啊？」，得到的是充满鄙夷的回复，「我们家需要那玩意儿吗，我买那干啥？」，接过来翻面一看，哦豁原来是 iPhone 13 Pro。</summary></entry></feed>

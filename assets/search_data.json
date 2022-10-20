@@ -270,7 +270,7 @@
   
     {
       "title"    : "VIT",
-      "category" : "Transformer",
+      "category" : "CV",
       
       "url"      : "https://bigbigda.github.io/2022/10/10/VIT/",
       "keywords" : "image classification,transformer"
@@ -278,10 +278,10 @@
   
     {
       "title"    : "DETR",
-      "category" : "Transformer",
+      "category" : "CV",
       
       "url"      : "https://bigbigda.github.io/2022/10/11/DETR/",
-      "keywords" : "CV,image detection,transformer"
+      "keywords" : "CV,object detection,transformer"
     } ,
   
     {
@@ -294,10 +294,26 @@
   
     {
       "title"    : "MoCo",
-      "category" : "Contrastive",
+      "category" : "CV",
       
       "url"      : "https://bigbigda.github.io/2022/10/14/MoCo/",
       "keywords" : "CV,Contrastive Learning"
+    } ,
+  
+    {
+      "title"    : "DALL·E·2",
+      "category" : "Deep",
+      
+      "url"      : "https://bigbigda.github.io/2022/10/18/DALLE2/",
+      "keywords" : "diffusion"
+    } ,
+  
+    {
+      "title"    : "Swin Transformer",
+      "category" : "CV",
+      
+      "url"      : "https://bigbigda.github.io/2022/10/19/Swin-Transformer/",
+      "keywords" : "transformer,"
     } ,
   
     {
