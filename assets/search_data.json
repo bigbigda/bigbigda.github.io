@@ -317,7 +317,7 @@
     } ,
   
     {
-      "title"    : "MoCo",
+      "title"    : "CLIP",
       "category" : "CV",
       
       "url"      : "https://bigbigda.github.io/2022/10/20/CLIP/",
