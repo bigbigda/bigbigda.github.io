@@ -26,6 +26,7 @@ result = tf.train.Example.FromString(example)
 # 分支一（这种方式看到的string可能为编码后的byte
 js = MessageToJson(result)
 js_dict = eval(js)
+
 # 分支二
 extra_info=result.features.feature['extra_info']
 
