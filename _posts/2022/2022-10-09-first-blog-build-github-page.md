@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 第一篇博文
-categories: 碎碎念
-description: 
-keywords: 碎碎念
+title: 第一篇博客：github pages搭建
+categories: 工程
+description: 记录搭建github pages
+keywords: 工程、博客搭建
 ---
 
 ### github pages搭建

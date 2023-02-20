@@ -1,10 +1,16 @@
 ---
 layout: post
-title: 使用 jsDelivr 免费加速 GitHub Pages 博客的静态资源
-categories: GitHub
+title: 博客示例-免费加速 GitHub Pages 博客的静态资源
+categories: 工程
 description: 使用 jsdelivr CDN 加速 GitHub Pages 博客的静态资源。
-keywords: GitHub, CDN, jsdelivr
+keywords: GitHub
 ---
+
+### 这不是我自己写的文章
+
+版权声明因为整个blog是基于前人历史版本库开发的，所以保留此篇文章以备参考格式所需。以下所有内容也并非我的文字。
+
+### 前言
 
 挺久以前就有网友给我的 GitHub Pages 博客模板提 [Issue](https://github.com/mzlogin/mzlogin.github.io/issues/65)，说希望能增加 CDN 用于加速静态资源的加载，由于懒，一直没有动。
 

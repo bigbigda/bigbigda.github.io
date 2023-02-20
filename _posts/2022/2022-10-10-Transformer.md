@@ -2,7 +2,7 @@
 
 layout: post
 title: Attention-Is-All-You-Need
-categories: Transformer
+categories: NLP
 description:
 keywords: attention,transformer
 
@@ -42,3 +42,5 @@ http://jalammar.github.io/illustrated-transformer/
 https://nlp.seas.harvard.edu/2018/04/03/attention.html 
 
 https://zhuanlan.zhihu.com/p/132554155
+
+https://amatriain.net/blog/transformer-models-an-introduction-and-catalog-2d1e9039f376/ （介绍基于Transformer的50多篇相关工作）
