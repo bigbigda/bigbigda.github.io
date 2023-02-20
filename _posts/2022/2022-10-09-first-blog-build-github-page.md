@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 第一篇博客：github pages搭建
-categories: 工程
+categories: engineer
 description: 记录搭建github pages
 keywords: 工程、博客搭建
 ---

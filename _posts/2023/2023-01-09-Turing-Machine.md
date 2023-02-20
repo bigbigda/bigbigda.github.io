@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 图灵机
-categories: computer
+categories: CS
 description: 
 keywords: 形式语言与自动机、图灵机
 ---
