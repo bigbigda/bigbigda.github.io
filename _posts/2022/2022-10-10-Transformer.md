@@ -43,4 +43,6 @@ https://nlp.seas.harvard.edu/2018/04/03/attention.html
 
 https://zhuanlan.zhihu.com/p/132554155
 
+https://zhuanlan.zhihu.com/p/178610196（结合代码介绍Transformer）
+
 https://amatriain.net/blog/transformer-models-an-introduction-and-catalog-2d1e9039f376/ （介绍基于Transformer的50多篇相关工作）
