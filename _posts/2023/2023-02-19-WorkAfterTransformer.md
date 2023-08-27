@@ -28,7 +28,6 @@ keywords: Transformer,attention，Bert
 ### 分类
 
 - **Pretraining Architecture**
-
   - **Encoder Pretraining**
   - **Decoder Pretraining**
   - **Transformer (Encoder-Decoder) Pretraining**
@@ -81,7 +80,23 @@ DEBERTA: DECODING-ENHANCED BERT WITH DISENTANGLED ATTENTION
 - enhanced mask decoder: 在最终softmax之前考虑绝对位置
 - 利用一个对抗式训练方法来增强模型泛化性
 
+#### 模型训练
 
+- 训练DeBERTa large 模型（L=12, H=768, A=12）使用6台DGX-2（合计96个V100 GPU），batchSize=2k，训练20天
+- 混合多个数据源后去重，实际使用约78G
+
+#### 实验结果
+
+![image-20230225005644789](http://pic.inoodles.online/imgimage-20230225005644789.png)
+
+### DeBERTaV3
+
+#### 简介
+
+相比DeBERTa，主要提出了两个训练方法优化，效果明显提升，成为了NLU任务新SOTA
+
+- 借鉴ELECTRA，引入类似GAN的训练方法（即将原模型结构作为Generator，新增一个Discriminator）
+- 发现上述结构中的embedding-share虽然有用，但是生成器和判别器优化目标不同会导致难以训练。提出GDES，本质是判别器不再更新embedding
 
 ### BART
 
@@ -89,7 +104,7 @@ BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generatio
 
 Facebook
 
-##### 简介
+#### 简介
 
 BART是一个使用sequence-to-sequence结构的denoising autoencoder。
 
@@ -99,19 +114,19 @@ BART是一个使用sequence-to-sequence结构的denoising autoencoder。
 
 BART也提出了一个新的机器翻译任务方案：在BART encoder输入端接入一些transformer层，这些层负责将原文本转化为带目标的噪音文本，然后利用BART将这个文本去噪。
 
-##### 模型结构
+#### 模型结构
 
 - 基于标准Transformer结构改造
 - ReLU激活函数修改为GeLUs
 - decoder每一个层新增了对encoder最后一个隐含层的cross-attention（原始Transformer也是这么处理的）
 
-##### 预训练
+#### 预训练
 
 - 预训练任务为恢复corrupted文本，loss为decoder输出和原始文本的交叉熵
 - Text Infilling：将输入中$\lambda$长度的文本替换为一个[mask]，$\lambda$取自泊松分布，为0时相当于在原文中直接插入一个[mask]
 - 针对翻译任务时，首先将BART原结构中encoder的embedding层改为一个随机初始化的encoder，然后进行端到端训练。训练分两步，第一步固定BART大部分参数，主要更新随机初始化encoder、positional embedding，第二步训练全部参数，两步训练均基于BART最终输出对应的交叉熵loss。
 
-##### 实验结果
+#### 实验结果
 
 ![image-20230221013500803](http://pic.inoodles.online/imgimage-20230221013500803.png)
 
