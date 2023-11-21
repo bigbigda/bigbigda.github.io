@@ -1,14 +1,14 @@
 ---
 layout: post
-title: SPARK
-categories: SPARK
+title: Spark机制
+categories: Engineer
 description:
 keywords: BigData
 ---
 
 
 
-### SPARK存储机制
+### Spark存储机制
 
 #### 堆内存储
 

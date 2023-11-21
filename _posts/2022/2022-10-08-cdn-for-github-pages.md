@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 博客示例-免费加速 GitHub Pages 博客的静态资源
-categories: engineer
+categories: Engineer
 description: 使用 jsdelivr CDN 加速 GitHub Pages 博客的静态资源。
 keywords: GitHub
 ---
