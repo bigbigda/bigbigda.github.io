@@ -30,6 +30,9 @@ js_dict = eval(js)
 # 分支二
 extra_info=result.features.feature['extra_info']
 
+example = examples.next()
+result = tf.train.Example.FromString(example)
+result.features.feature['x2_74']
 ```
 
 ![image-20221113143849630](http://pic.inoodles.online/imgimage-20221113143849630.png)
@@ -146,3 +149,35 @@ def read_demo(filepath):
 
  
 
+### tensorflow函数
+
+#### tf.expand（input, axis）
+
+扩充维度
+
+#### tf.tile（input, multiples）
+
+将input复制multiples次，multiples的每个数对应input的每个维度
+
+multiples的维度与input相同
+
+#### tf.reduce_max(input_tensor,axis)
+
+### 
+
+tensorflow 
+
+#### with tf.variable_scope(str(i),reuse=tf.AUTO_REUSE):
+
+
+
+### tensorflow debug
+
+```py
+# 输出所有可训练参数
+tf.trainable_variables()
+# 输出所有参数
+tf.global_variables()
+# 给定name获取tensor
+tf.get_default_graph().get_tensor_by_name('tensor-name')
+```
