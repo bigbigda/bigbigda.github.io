@@ -1,491 +1,1105 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2022-10-22T12:50:07+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">CLIP</title><link href="https://bigbigda.github.io/2022/10/20/CLIP/" rel="alternate" type="text/html" title="CLIP" /><published>2022-10-20T00:00:00+08:00</published><updated>2022-10-20T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/20/CLIP</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/20/CLIP/">&lt;h2 id=&quot;learning-transferable-visual-models-from-natural-language-supervision&quot;&gt;Learning Transferable Visual Models From Natural Language Supervision&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="https://bigbigda.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bigbigda.github.io/" rel="alternate" type="text/html" /><updated>2023-11-22T18:05:14+08:00</updated><id>https://bigbigda.github.io/feed.xml</id><title type="html">个人博客</title><subtitle></subtitle><author><name>nice</name></author><entry><title type="html">SQL语法</title><link href="https://bigbigda.github.io/2023/11/21/SQL/" rel="alternate" type="text/html" title="SQL语法" /><published>2023-11-21T00:00:00+08:00</published><updated>2023-11-21T00:00:00+08:00</updated><id>https://bigbigda.github.io/2023/11/21/SQL</id><content type="html" xml:base="https://bigbigda.github.io/2023/11/21/SQL/">&lt;p&gt;[TOC]&lt;/p&gt;
 
-&lt;p&gt;arxiv 2021&lt;/p&gt;
+&lt;h3 id=&quot;正则表达式&quot;&gt;正则表达式&lt;/h3&gt;
 
-&lt;p&gt;OpenAI&lt;/p&gt;</content><author><name>nice</name></author><category term="CV" /><summary type="html">Learning Transferable Visual Models From Natural Language Supervision</summary></entry><entry><title type="html">Swin Transformer</title><link href="https://bigbigda.github.io/2022/10/19/Swin-Transformer/" rel="alternate" type="text/html" title="Swin Transformer" /><published>2022-10-19T00:00:00+08:00</published><updated>2022-10-19T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/19/Swin-Transformer</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/19/Swin-Transformer/">&lt;h2 id=&quot;swin-transformer-hierarchical-vision-transformer-using-shifted-windows&quot;&gt;Swin Transformer: Hierarchical Vision Transformer using Shifted Windows&lt;/h2&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;-- regex_extract 第二个参数为正则表达式，第三个参数表示位置，为0时返回参数二正则表达式匹配到的字符串，为其他正整数时为该正则表达式第N个括号内的内容，如果未匹配成功，返回空字符串（与第三个参数取值无关）&lt;/span&gt;
 
-&lt;p&gt;Swin Transformer&lt;/p&gt;
-
-&lt;p&gt;MSRA&lt;/p&gt;
-
-&lt;p&gt;ICCV 2021 best paper&lt;/p&gt;
-
-&lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
-
-&lt;p&gt;本文发表在VIT之后，作者提出虽然VIT等工作已经将transformer使用在CV领域中，但VIT主要使用在分类任务上，本文将对transformer在CV的应用做进一步完善，使其成为CV各个任务的backbone&lt;/p&gt;
-
-&lt;p&gt;VIT等cv transformer工作之所以取得成功，一个主要原因是利用了transformer建模全局信息的能力，但是其也存在一个问题，即未能学习到更细粒度以及层次化的图像表达，而这类信息往往对检测、分割等任务非常重要。一个例子就是VIT在小物体检测上表现并不好。&lt;/p&gt;
-
-&lt;p&gt;针对VIT无法很好建模细粒度信息的问题，一个直接原因是VIT的patch大小为16x16，即每个patch过大。直接的方法是减少patch，但这会导致encoder结构输入序列过长，计算复杂度过大，并不可行。&lt;/p&gt;
-
-&lt;p&gt;swin transformer主要引入了两个优化：&lt;/p&gt;
-
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ab_trace_tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;regexp_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ab_trace_tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;.*(22-86:)&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;regexp_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ab_trace_tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;.*(22-86:)&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;regexp_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ab_trace_tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;(22-108:).*(?=,)&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;-- 贪婪匹配       &lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;regexp_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ab_trace_tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;(22-108:).*?(?=,)&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;-- 非贪婪匹配&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hive_table_name&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;20200115&apos;&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;slot_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10002&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;limit&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;其他例子&lt;/p&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;regexp_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ab_trace_tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;(21-109:)(&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\d&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;{3}$|.*?(?=,))&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pattern&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;&quot;(?&amp;lt;=delocText&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;)(.*?)(?=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;)&quot;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;hive&quot;&gt;Hive&lt;/h4&gt;
+&lt;p&gt;Hive中使用正则表达式的三种方式&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;层次化的图像表示（通过相邻Swin Transformer Block之间的Patch Merging）&lt;/li&gt;
-  &lt;li&gt;跨Patch的信息交互（通过Shifted Window Attention机制）&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;整体结构&quot;&gt;整体结构&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20221019235443985.png&quot; alt=&quot;image-20221019235443985&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;实验效果&quot;&gt;实验效果&lt;/h3&gt;
-
-&lt;p&gt;在分类、检测、分割三大任务上显著优于VIT/DeiT/ResNe(X)t&lt;/p&gt;
-
-&lt;p&gt;###&lt;/p&gt;</content><author><name>nice</name></author><category term="CV" /><summary type="html">Swin Transformer: Hierarchical Vision Transformer using Shifted Windows</summary></entry><entry><title type="html">DALL·E·2</title><link href="https://bigbigda.github.io/2022/10/18/DALLE2/" rel="alternate" type="text/html" title="DALL·E·2" /><published>2022-10-18T00:00:00+08:00</published><updated>2022-10-18T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/18/DALLE2</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/18/DALLE2/">&lt;h2 id=&quot;hierarchical-text-conditional-image-generation-with-clip-latents&quot;&gt;Hierarchical Text-Conditional Image Generation with CLIP Latents&lt;/h2&gt;
-
-&lt;p&gt;DALLE-2  2022.4&lt;/p&gt;
-
-&lt;p&gt;Open AI&lt;/p&gt;
-
-&lt;h4 id=&quot;其他相关工作&quot;&gt;其他相关工作&lt;/h4&gt;
-
-&lt;p&gt;DALLE&lt;/p&gt;
-
-&lt;p&gt;Imagon&lt;/p&gt;
-
-&lt;h3 id=&quot;扩散模型&quot;&gt;扩散模型&lt;/h3&gt;
-
-&lt;p&gt;参考资料 https://lilianweng.github.io/posts/2021-07-11-diffusion-models/&lt;/p&gt;
-
-&lt;h3 id=&quot;后续&quot;&gt;后续&lt;/h3&gt;</content><author><name>nice</name></author><category term="Deep" /><category term="Learning" /><summary type="html">Hierarchical Text-Conditional Image Generation with CLIP Latents</summary></entry><entry><title type="html">MoCo</title><link href="https://bigbigda.github.io/2022/10/14/MoCo/" rel="alternate" type="text/html" title="MoCo" /><published>2022-10-14T00:00:00+08:00</published><updated>2022-10-14T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/14/MoCo</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/14/MoCo/">&lt;h2 id=&quot;momentum-contrast-for-unsupervised-visual-representation-learning&quot;&gt;Momentum Contrast for Unsupervised Visual Representation Learning&lt;/h2&gt;
-
-&lt;p&gt;cvpr2020 Best Paper提名&lt;/p&gt;
-
-&lt;p&gt;He Kaiming&lt;/p&gt;
-
-&lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
-
-&lt;p&gt;在文本领域，bert等自监督学习（&lt;strong&gt;Self-Supervised Learning&lt;/strong&gt;）已经得到了广泛应用，但其在CV领域的进展一直比较缓慢，之前也有不少基于对比学习的尝试，本文将他们都归类为基于构建动态词典的方式。具体而言，无监督学习被看做训练一个encoder进行词典查找，使得正样本更加接近，负样本具体更远。但作者认为之前工作没有同时处理好（1）字典比较大；(2)字典训练过程中保持一致。&lt;/p&gt;
-
-&lt;p&gt;本文引入了一种Momentum的encoder更新策略来解决上述问题。本文最终实验结果在分类、检测、分割等任务上均展示出了和监督学习可比甚至更好的效果，证明了监督学习的可行性。&lt;/p&gt;
-
-&lt;h3 id=&quot;关键点&quot;&gt;关键点&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;无监督学习研究主要包括两方面：代理任务和Loss函数。本文主要聚焦于Loss函数&lt;/li&gt;
-  &lt;li&gt;文中对比了三种架构：end2end、memory bank和MoCo
+  &lt;li&gt;rlike  用于where语句中进行筛选&lt;/li&gt;
+  &lt;li&gt;regexp_extract  用于提取匹配的字符串&lt;/li&gt;
+  &lt;li&gt;regexp_replace  用于替换
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-- hive
+select slot_id, request_id, source, content, id from db.hive_table_name
+       WHERE dt=&apos;20200117&apos; and id rlike &apos;test.*&apos;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;h4 id=&quot;presto&quot;&gt;Presto&lt;/h4&gt;
+  &lt;/li&gt;
+  &lt;li&gt;regexp_extract
     &lt;ul&gt;
-      &lt;li&gt;end2end的方法，随着batchsize的增大效果会越来越好，但是受限于batchsize，实际无法变的很大&lt;/li&gt;
-      &lt;li&gt;与memory bank相比，核心区别在于每个batch进行运算后，不会大幅更新这个batch对应负样本的K&lt;/li&gt;
+      &lt;li&gt;支持regexp_extract(string, pattern), 相比之下，hive不支持此语法，如果没有第三个参数，hive默认添加参数1，如果没有分组，则报错&lt;/li&gt;
     &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;regexp_extract_all
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;select slot_id, request_id, source, content, id from db.hive_table_name
+       WHERE dt=&apos;20200117&apos; and regexp_like(id,&apos;test&apos;)    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;架构图&quot;&gt;架构图&lt;/h3&gt;
+&lt;h3 id=&quot;json处理及字符串拆分&quot;&gt;json处理及字符串拆分&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20221018110959714.png&quot; alt=&quot;image-20221018110959714&quot; /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;presto-1&quot;&gt;presto&lt;/h4&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expanded_recall_0115&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;shop_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;launch_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;json_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CAST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;extensions&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;VARCHAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.xgs.defineTalkSwitch&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defineTalk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;json_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CAST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;extensions&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;VARCHAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.xgs.smartTalkSwitch&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;samrtTalk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;json_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CAST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;extensions&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;VARCHAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.xgs.xgsMaterial.source&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;json_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CAST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;extensions&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;VARCHAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.xgs.xgsMaterial.id&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;json_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CAST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;extensions&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;VARCHAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.xgs.xgsMaterial.content&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+               &lt;span class=&quot;n&quot;&gt;json_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;{&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;regexp_replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp_col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\[\{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;}&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.dp_shop_id&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shop_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+               &lt;span class=&quot;n&quot;&gt;json_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;{&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;regexp_replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp_col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\[\{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;}&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.launch_id&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;launch_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+               &lt;span class=&quot;n&quot;&gt;json_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;{&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;regexp_replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp_col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\[\{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;}&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.image_urls&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+               &lt;span class=&quot;n&quot;&gt;json_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;{&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;regexp_replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp_col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\[\{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;}&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.extensions&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;extensions&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hive_table_name&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;CROSS&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;UNNEST&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;},{&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tb&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp_col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;20200112&apos;&lt;/span&gt;
+           &lt;span class=&quot;k&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;slot_id&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10002&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;h3 id=&quot;伪代码来自论文&quot;&gt;伪代码（来自论文）&lt;/h3&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;f_k.params = f_q.params # 初始化
-for x in loader: # 输入一个图像序列x，包含N张图，没有标签
-    x_q = aug(x) # 用于查询的图（数据增强得到）
-    x_k = aug(x) # 模板图（数据增强得到），自监督就体现在这里，只有图x和x的数据增强才被归为一类
-    q = f_q.forward(x_q) # 提取查询特征，输出NxC
-    k = f_k.forward(x_k) # 提取模板特征，输出NxC
-    # 不使用梯度更新f_k的参数，这是因为文章假设用于提取模板的表示应该是稳定的，不应立即更新
-    k = k.detach() 
-    # 这里bmm是分批矩阵乘法
-    l_pos = bmm(q.view(N,1,C), k.view(N,C,1)) # 输出Nx1，也就是自己与自己的增强图的特征的匹配度
-    l_neg = mm(q.view(N,C), queue.view(C,K)) # 输出Nxk，自己与队列中（注意K为队列大小）所有图的匹配度（全不匹配）
-    logits = cat([l_pos, l_neg], dim=1) # 输出Nx(1+k)
-    labels = zeros(N)
-    # NCE损失函数，就是为了保证自己与自己衍生的匹配度输出越大越好，否则越小越好
-    loss = CrossEntropyLoss(logits/t, labels) 
-    loss.backward()
-    update(f_q.params) # f_q使用梯度立即更新
-    # 由于假设模板特征的表示方法是稳定的，因此它更新得更慢，这里使用动量法更新，相当于做了个滤波。
-    f_k.params = m*f_k.params+(1-m)*f_q.params 
-    enqueue(queue, k) # 为了生成反例，所以引入了队列
-    dequeue(queue)
+&lt;span class=&quot;c1&quot;&gt;-- 同时存在array和json解析&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json_array_get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.richtextlist&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.text&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;hive-1&quot;&gt;hive&lt;/h4&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;shop_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;launch_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;get_json_object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;extensions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.zgs.defineTalkSwitch&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defineTalkSwitch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;get_json_object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;extensions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.zgs.smartTalkSwitch&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;smartTalkSwitch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;get_json_object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;extensions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.zgs.zgsMaterial.source&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;get_json_object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;extensions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.zgs.zgsMaterial.id&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;get_json_object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;extensions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.zgs.zgsMaterial.content&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;dt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;hour&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+               &lt;span class=&quot;n&quot;&gt;tmp_col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+               &lt;span class=&quot;n&quot;&gt;get_json_object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;{&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;regexp_replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp_col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;{&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;}&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.dp_shop_id&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shop_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+               &lt;span class=&quot;n&quot;&gt;get_json_object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;{&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;regexp_replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp_col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;{&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;}&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.launch_id&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;launch_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+               &lt;span class=&quot;n&quot;&gt;get_json_object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;{&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;regexp_replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp_col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;{&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;}&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.image_urls&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+               &lt;span class=&quot;n&quot;&gt;get_json_object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;{&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;regexp_replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp_col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;{&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;}&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;$.extensions&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;extensions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+               &lt;span class=&quot;n&quot;&gt;dt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+               &lt;span class=&quot;n&quot;&gt;hour&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hive_table_name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lateral&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;explode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;{&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tb&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp_col&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;$now.datekey&apos;&lt;/span&gt;
+           &lt;span class=&quot;k&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;slot_id&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10002&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10011&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;c&lt;/span&gt;
+     
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;实验效果&quot;&gt;实验效果&lt;/h3&gt;
+&lt;h3 id=&quot;时间转换&quot;&gt;时间转换&lt;/h3&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;-- Hive&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unix_timestamp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;20190909&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;yyyyMMdd&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hive_table_name&lt;/span&gt;
 
-&lt;h3 id=&quot;和mae比较&quot;&gt;和MAE比较&lt;/h3&gt;
+&lt;span class=&quot;n&quot;&gt;from_unixtime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unix_timestamp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;20190909&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;yyyyMMdd&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;yyyy-MM-dd&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;from_unixtime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unix_timestamp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hp_stat_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;yyyy-mm-dd&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;yyyymmdd&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;date_format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date_parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;20190805&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;%Y%m%d&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;%Y-%m-%d&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;datediff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;2020-05-14&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date_format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cast&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;2020-05-01 11:48:15&apos;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;timestamp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;yyyy-MM-dd&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 
-&lt;p&gt;moco和mae都属于自监督，但moco是基于对比学习的，mae则是模仿bert的自编码&lt;/p&gt;
+&lt;span class=&quot;c1&quot;&gt;-- Presto&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;format_datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date_parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;2020-03-02&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;%Y-%m-%d&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;yyyyMMdd&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;datediff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;2020-05-14&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format_datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cast&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;createtime&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;timestamp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;yyyy-MM-dd&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;date_format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date_parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;20200302&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;%Y%m%d&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;interval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;-1&apos;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;day&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;%Y%m%d&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;字符串分割拼接&quot;&gt;字符串分割&amp;amp;拼接&lt;/h3&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;-- Hive&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mt_poi_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;dp_shop_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;mt_poi_first_cate_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hive_table_name&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;lateral&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;explode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;刂&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myTable&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;-- Presto&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;student&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;score&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tests&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;CROSS&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;UNNEST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scores&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;score&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ 
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mt_poi_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;dp_shop_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;mt_poi_first_cate_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;array_join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array_agg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;刂&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hive_table_name&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mt_poi_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;dp_shop_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;mt_poi_first_cate_id&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;snippets&quot;&gt;snippets&lt;/h3&gt;
+
+&lt;h4 id=&quot;case语句&quot;&gt;case语句&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-SQL&quot;&gt;SELECT CASE WHEN (exp like &apos;%2-194:1420%&apos;) THEN &apos;lr_color1&apos;
+            WHEN (exp like &apos;%2-194:1701%&apos;) THEN &apos;lr_color2&apos;
+            WHEN (exp like &apos;%2-226:2139%&apos;) THEN &apos;food_color1&apos;
+            WHEN (exp like &apos;%2-256:2140%&apos;) THEN &apos;xiuyu_color1&apos;
+            WHEN (exp like &apos;%2-271:2141%&apos;) THEN &apos;yiliao_color1&apos;
+            ELSE &apos;others&apos;
+             END as expid
+  FROM db.hive_table_name
+ where dt = &apos;20210316&apos;
+   and id is not null
+   and id != &apos;&apos;
+   and pos = 1
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;时间&quot;&gt;时间&lt;/h4&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&apos;${now.datekey}&apos;
+&apos;${now.date}&apos;
+&apos;${now.delta(days=365).date}&apos;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;百分比&quot;&gt;百分比&lt;/h4&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;approx_percentile(dealidcnt,array[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,0.99,1])
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;转义字符&quot;&gt;转义字符&lt;/h4&gt;
+
+&lt;p&gt;prosto中转义字符用\,  hive中转义字符需要用\\&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;-- presto&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shopid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mark_number_feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mark_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rn&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shopid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;regexp_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;(wish&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\^&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;).*?(?=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\^&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;)&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mark_number_feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;regexp_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;(?&amp;lt;=wish&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\^&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;).*?(?=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\^&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;)&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mark_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;row_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;over&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;partition&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shopid&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;partition_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reqid&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rn&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hive_table_name&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;partition_date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;2020-04-01&apos;&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;slot_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10010&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+
+
+&lt;span class=&quot;c1&quot;&gt;-- hive&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shopid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;regexp_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;(wish&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;^).*?(?=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;^)&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mark_number_feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;regexp_extract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;(?&amp;lt;=wish&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;^).*?(?=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;^)&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mark_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;row_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;over&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;partition&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shopid&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;partition_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reqid&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rn&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hive_table_name&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;partition_date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;2020-04-01&apos;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;slot_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10010&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;参考资料&quot;&gt;参考资料&lt;/h3&gt;
 
-&lt;p&gt;https://zhuanlan.zhihu.com/p/382763210 （讲得非常详细清楚）&lt;/p&gt;
-
-&lt;p&gt;http://rosmantis.com/2022/03/13/MoCo-Series/ (包含moco v2 v3)&lt;/p&gt;</content><author><name>nice</name></author><category term="CV" /><summary type="html">Momentum Contrast for Unsupervised Visual Representation Learning</summary></entry><entry><title type="html">MAE</title><link href="https://bigbigda.github.io/2022/10/13/MAE/" rel="alternate" type="text/html" title="MAE" /><published>2022-10-13T00:00:00+08:00</published><updated>2022-10-13T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/13/MAE</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/13/MAE/">&lt;h2 id=&quot;masked-autoencoders-are-scalable-vision-learners&quot;&gt;Masked Autoencoders Are Scalable Vision Learners&lt;/h2&gt;
-
-&lt;p&gt;CVPR 2021&lt;/p&gt;
-
-&lt;p&gt;He Kaiming&lt;/p&gt;
-
-&lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
-
-&lt;p&gt;本文的最大意义在于在图像领域引入masked autoencoders训练任务，实现了自监督学习。&lt;/p&gt;
-
-&lt;p&gt;MAE可以看做CV版的bert&lt;/p&gt;
-
-&lt;p&gt;Transformer-&amp;gt;BERT-&amp;gt;VIT-&amp;gt;MAE&lt;/p&gt;
-
-&lt;h3 id=&quot;架构&quot;&gt;架构&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20221014135446680.png&quot; alt=&quot;image-20221014135446680&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;相关工作&quot;&gt;相关工作&lt;/h3&gt;
-
-&lt;p&gt;MAE之前，BEiT也在尝试类似思路，但是BEiT还没有激进的直接去学习pixel粒度信息&lt;/p&gt;
-
-&lt;h4 id=&quot;mae的细节&quot;&gt;MAE的细节&lt;/h4&gt;
-
 &lt;ul&gt;
-  &lt;li&gt;非对称的encoder和decoder：在encoder部分，不对masked patch进行编码，在decoder前重新插入这些patches&lt;/li&gt;
-  &lt;li&gt;轻量化的decoder：相比encoder，decoder的层数更少&lt;/li&gt;
-&lt;/ul&gt;
+  &lt;li&gt;presto和hive解析json
+    &lt;ul&gt;
+      &lt;li&gt;https://www.cnblogs.com/drjava/p/10536922.html&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>nice</name></author><category term="snip" /><summary type="html">[TOC]</summary></entry><entry><title type="html">Spark机制</title><link href="https://bigbigda.github.io/2023/07/07/Spark-Basic/" rel="alternate" type="text/html" title="Spark机制" /><published>2023-07-07T00:00:00+08:00</published><updated>2023-07-07T00:00:00+08:00</updated><id>https://bigbigda.github.io/2023/07/07/Spark-Basic</id><content type="html" xml:base="https://bigbigda.github.io/2023/07/07/Spark-Basic/">&lt;h3 id=&quot;spark存储机制&quot;&gt;Spark存储机制&lt;/h3&gt;
 
-&lt;h4 id=&quot;mae的实验&quot;&gt;MAE的实验&lt;/h4&gt;
+&lt;h4 id=&quot;堆内存储&quot;&gt;堆内存储&lt;/h4&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;作者对mask的方法（随机、网格状、大块）、decoder层数、是否encoder mask、decoder target是否正则等进行了大量实验&lt;/li&gt;
-  &lt;li&gt;一个有意思的现象是，作者发现VIT原始论文中VIT-H在ImageNet上训练的效果被低估了（VIT-L由于模型过大，容易过拟合），通过调整训练参数，准确度可以从76.5提升到82.5（huge improve），再次说明&lt;strong&gt;训练方法的重要性&lt;/strong&gt;，至少对CV领域&lt;/li&gt;
-  &lt;li&gt;还分析了fine-tune和linear probing的效果，首先fine-tune效果肯定要好的多；对比MoCo v3，作者发现MAE linear probing效果要差一些，但是fine-tune或partial fine-tune下效果则明显变化，作者认为这说明MAE学到的特征非线性更强&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;参考资料&quot;&gt;参考资料&lt;/h3&gt;
-
-&lt;p&gt;https://www.zhihu.com/question/498364155&lt;/p&gt;</content><author><name>nice</name></author><category term="Transformer" /><summary type="html">Masked Autoencoders Are Scalable Vision Learners</summary></entry><entry><title type="html">DETR</title><link href="https://bigbigda.github.io/2022/10/11/DETR/" rel="alternate" type="text/html" title="DETR" /><published>2022-10-11T00:00:00+08:00</published><updated>2022-10-11T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/11/DETR</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/11/DETR/">&lt;h1 id=&quot;detr-end-to-end-object-detection-with-transformers&quot;&gt;&lt;strong&gt;DETR&lt;/strong&gt;: End-to-End Object Detection with Transformers&lt;/h1&gt;
-
-&lt;p&gt;ECCV 2020&lt;/p&gt;
-
-&lt;p&gt;Facebook&lt;/p&gt;
-
-&lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
-
-&lt;p&gt;如名字所示，DETR是一个端到端的基于transformer的目标检测网络。在本文之前，目标检测任务并不是完全端到端的，其流程中需要nms、anchor generation等步骤。DETR通过引入&lt;strong&gt;集合学习&lt;/strong&gt;和&lt;strong&gt;transformer&lt;/strong&gt;，首次移除了这些瓶颈。&lt;/p&gt;
-
-&lt;h4 id=&quot;流程&quot;&gt;流程&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20221011234750955.png&quot; alt=&quot;image-20221011234750955&quot; /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;使用一个CNN骨干网络提取feature map，输出大小通常为$2048&lt;em&gt;\frac{H}{32}&lt;/em&gt;\frac{W}{32}$，本文实现中采用ResNet-50和ResNet-101&lt;/li&gt;
-  &lt;li&gt;使用一个encoder对前一步提取的feature map进行编码，注意输入的feature map还增加了positional encoding&lt;/li&gt;
-  &lt;li&gt;使用decoder对上述编码结果进行解码，解码器的query为可学习的object queries（本文固定位100个）&lt;/li&gt;
-  &lt;li&gt;Prediction feed-forward networks（FFNs），为一个3层激活函数为Relu的MLP&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20221013003541678.png&quot; alt=&quot;image-20221013003541678&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;细节&quot;&gt;细节&lt;/h3&gt;
-
-&lt;p&gt;DETR 代码可见 https://github.com/facebookresearch/detr/blob/10a2c759454930813aeac7af5e779f835dcb75f5/models/detr.py#L39&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;decoder第一个attention，query、key为前一个decoder layer输出（第一层则为0）加object-query-embedding，value为前一个layer输出&lt;/li&gt;
-  &lt;li&gt;decoder第二个attention，query为前一个attention结果+object-query-encoding，key为encoder输出+Spatial-positional-encoding，value为encoder输出&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class TransformerDecoderLayer(nn.Module):
-  def forward_post(self, tgt, memory,
-                      tgt_mask: Optional[Tensor] = None,
-                      memory_mask: Optional[Tensor] = None,
-                      tgt_key_padding_mask: Optional[Tensor] = None,
-                      memory_key_padding_mask: Optional[Tensor] = None,
-                      pos: Optional[Tensor] = None,
-                      query_pos: Optional[Tensor] = None):
-      q = k = self.with_pos_embed(tgt, query_pos)
-      tgt2 = self.self_attn(q, k, value=tgt, attn_mask=tgt_mask,
-                              key_padding_mask=tgt_key_padding_mask)[0]
-      tgt = tgt + self.dropout1(tgt2)
-      tgt = self.norm1(tgt)
-      tgt2 = self.multihead_attn(query=self.with_pos_embed(tgt, query_pos),
-                                  key=self.with_pos_embed(memory, pos),
-                                  value=memory, attn_mask=memory_mask,
-                                  key_padding_mask=memory_key_padding_mask)[0]
-      tgt = tgt + self.dropout2(tgt2)
-      tgt = self.norm2(tgt)
-      tgt2 = self.linear2(self.dropout(self.activation(self.linear1(tgt))))
-      tgt = tgt + self.dropout3(tgt2)
-      tgt = self.norm3(tgt)
-      return tgt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;背景知识&quot;&gt;背景知识&lt;/h2&gt;
-
-&lt;h3 id=&quot;rcnn系列&quot;&gt;RCNN系列&lt;/h3&gt;
-
-&lt;p&gt;rcnn -&amp;gt; fast-rcnn -&amp;gt; faster-rcnn&lt;/p&gt;
-
-&lt;h4 id=&quot;fast-rcnn中roi-pooling&quot;&gt;fast-rcnn中roi pooling&lt;/h4&gt;
-
-&lt;p&gt;roi pooling包括两个部分：首先是将proposal的区域映射的到feature map，第二步是将feature map进行pooling，转化为7*7的大小，然后进行分类、调整位置等操作。这两步都可能会引入精度损失。&lt;/p&gt;
-
-&lt;p&gt;mask-rcnn引入Roi Align来解决这一问题&lt;/p&gt;
-
-&lt;p&gt;可参考 https://cloud.tencent.com/developer/article/1829792&lt;/p&gt;
-
-&lt;h4 id=&quot;非极大值抑制-nms&quot;&gt;非极大值抑制 NMS&lt;/h4&gt;
-
-&lt;p&gt;NMS是一个选框的算法。在rcnn、fast-rnn流程中，针对一个目标物体，往往会产出多个检测框，NMS的作用是保证只保留一个。&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;非极大值抑制的流程如下：
-
-根据置信度得分进行排序
-选择置信度最高的比边界框添加到最终输出列表中，将其从边界框列表中删除
-计算所有边界框的面积
-计算置信度最高的边界框与其它候选框的IoU。
-删除IoU大于阈值的边界框
-重复上述过程，直至边界框列表为空。
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>nice</name></author><category term="CV" /><summary type="html">DETR: End-to-End Object Detection with Transformers</summary></entry><entry><title type="html">Attention-Is-All-You-Need</title><link href="https://bigbigda.github.io/2022/10/10/Transformer/" rel="alternate" type="text/html" title="Attention-Is-All-You-Need" /><published>2022-10-10T00:00:00+08:00</published><updated>2022-10-10T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/10/Transformer</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/10/Transformer/">&lt;h1 id=&quot;attention-is-all-you-need&quot;&gt;Attention Is All You Need&lt;/h1&gt;
-
-&lt;h3 id=&quot;整体结构&quot;&gt;整体结构&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimgimage-20221012011539932.png&quot; alt=&quot;image-20221012011539932&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimgimage-20221012002512478.png&quot; alt=&quot;image-20221012002512478&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;attention计算&quot;&gt;Attention计算&lt;/h4&gt;
-
-&lt;p&gt;$Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$&lt;/p&gt;
-
-&lt;h3 id=&quot;实现细节&quot;&gt;实现细节&lt;/h3&gt;
+&lt;p&gt;spark的内核由scala语言完成，其运行在JVM上，所以spark在运行时具有堆（heap）的概念。进一步，其将堆分为四部分&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th&gt;参数名&lt;/th&gt;
-      &lt;th&gt;参数含义&lt;/th&gt;
-      &lt;th&gt;base模型取值&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;Storage Memory&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;存储cached数据&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;N&lt;/td&gt;
-      &lt;td&gt;encoder/decoder层数&lt;/td&gt;
-      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Execution Memory&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;用于存储shuffle操作时的数据&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;$d_{model}$&lt;/td&gt;
-      &lt;td&gt;embedding维度&lt;/td&gt;
-      &lt;td&gt;512&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;User Memory&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;存储用户代码中的数据结构&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;h&lt;/td&gt;
-      &lt;td&gt;head数量&lt;/td&gt;
-      &lt;td&gt;8&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;$d_{k}$ / $d_{v}$&lt;/td&gt;
-      &lt;td&gt;key、value、query的维度&lt;/td&gt;
-      &lt;td&gt;64&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Reserved Memory&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;用于spark自身&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h4 id=&quot;输入层embedding&quot;&gt;输入层embedding&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20230707113552275.png&quot; alt=&quot;image-20230707113552275&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;对于英文，进行token embedding时可以以单词的粒度token化，也可以以词根的粒度token化；对于中文，一般以字为单位&lt;/li&gt;
-  &lt;li&gt;本文实现中embedding同encoder/decoder部分联合训练，且input embedding和output embedding共享参数&lt;/li&gt;
-  &lt;li&gt;decoder的embedding层和FC层权重共享：embedding层可以说是通过one-hot获取对应的embedding向量，FC层则是通过向量x去得到它为各个词的softmax概率（理论上也是one-hot），所以这两个计算近似为互逆过程。&lt;/li&gt;
+  &lt;li&gt;在spark 1.6以前，spark为&lt;a href=&quot;https://github.com/apache/spark/blob/branch-1.6/core/src/main/scala/org/apache/spark/memory/StaticMemoryManager.scala&quot;&gt;StaticMemoryManager&lt;/a&gt;，在此之后为 &lt;a href=&quot;https://github.com/apache/spark/blob/branch-1.6/core/src/main/scala/org/apache/spark/memory/UnifiedMemoryManager.scala&quot;&gt;UnifiedMemoryManager&lt;/a&gt;。在静态存储管理时，spark.storage.memoryFraction和spark.shuffle.memoryFraction分别用于控制storage memory和shuffle memory的比例，在此之后此参数失效（除非配置spark.memory.useLegacyMode）&lt;/li&gt;
+  &lt;li&gt;在统一存储管理中，使用spark.memory.fraction控制storage和shuffle存储的总比例&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;其他参考资料&quot;&gt;其他参考资料&lt;/h3&gt;
+&lt;h4 id=&quot;堆外存储&quot;&gt;堆外存储&lt;/h4&gt;
 
-&lt;p&gt;http://jalammar.github.io/illustrated-transformer/&lt;/p&gt;
+&lt;p&gt;SPARK的堆外内存可分为两种&lt;/p&gt;
 
-&lt;p&gt;https://nlp.seas.harvard.edu/2018/04/03/attention.html&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;一种是用于JVM本身、字符串等开销&lt;/li&gt;
+  &lt;li&gt;另一种是用于spark程序本身，存放数据等&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;https://zhuanlan.zhihu.com/p/132554155&lt;/p&gt;</content><author><name>nice</name></author><category term="Transformer" /><summary type="html">Attention Is All You Need</summary></entry><entry><title type="html">VIT</title><link href="https://bigbigda.github.io/2022/10/10/VIT/" rel="alternate" type="text/html" title="VIT" /><published>2022-10-10T00:00:00+08:00</published><updated>2022-10-10T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/10/VIT</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/10/VIT/">&lt;h1 id=&quot;an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale&quot;&gt;AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20230707114948882.png&quot; alt=&quot;image-20230707114948882&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;ICLR 2021&lt;/p&gt;
+&lt;p&gt;与之相关的主要有两组参数，一组是spark.yarn.executor.memoryOverhead，另一组是spark.memory.offHeap.enabled和spark.memory.offHeap.size，对于spark1.x和2.x，spark.yarn.executor.memoryOverhead控制整个堆外存储的大小，第二种堆外存储通过spark.memory.offHeap.enabled和spark.memory.offHeap.size显式配置；对于spark3.x，这两组参数独立控制两种堆外存储大小。此外，第一种堆外存储默认开启，大小为excutor的10%，且最小为384MB。&lt;/p&gt;
 
-&lt;p&gt;Google&lt;/p&gt;
+&lt;h3 id=&quot;spark&quot;&gt;SPARK&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;executor-cores 表示一个executor的核数，也是一个executor最大并行的task数&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;spark.dynamicAllocation.maxExecutors 最大使用饿的executor数目&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;spark调优&quot;&gt;spark调优&lt;/h2&gt;
+
+&lt;h3 id=&quot;代码优化&quot;&gt;代码优化&lt;/h3&gt;
+&lt;h4 id=&quot;避免创建重复rdd&quot;&gt;避免创建重复RDD&lt;/h4&gt;
+
+&lt;h4 id=&quot;尽可能复用同一个rdd&quot;&gt;尽可能复用同一个rdd&lt;/h4&gt;
+
+&lt;h4 id=&quot;对多次使用的rdd进行持久化&quot;&gt;对多次使用的rdd进行持久化&lt;/h4&gt;
+
+&lt;p&gt;sc.textFile(“hdfs://192.168.0.1:9000/hello.txt”).cache()&lt;/p&gt;
+
+&lt;p&gt;sc.textFile(“hdfs://192.168.0.1:9000/hello.txt”).persist(StorageLevel.MEMORY_AND_DISK_SER)&lt;/p&gt;
+
+&lt;h4 id=&quot;尽量避免使用shuffle类算子&quot;&gt;尽量避免使用shuffle类算子&lt;/h4&gt;
+&lt;p&gt;例如reduceByKey、join、reparation等算子&lt;/p&gt;
+
+&lt;h4 id=&quot;使用map-side预聚合的shuffle操作&quot;&gt;使用map-side预聚合的shuffle操作&lt;/h4&gt;
+&lt;p&gt;如果一定要使用shuffle操作，尽量可以使用map-side预聚合的算子（所谓map-side，是指每个节点本地对相同的key进行一次聚合操作，预聚合后，每个节点本地就只会有一条相同的key）
+建议使用reduceByKey或aggregateByKey替代groupByKey&lt;/p&gt;
+
+&lt;h3 id=&quot;配置优化&quot;&gt;配置优化&lt;/h3&gt;
+&lt;h4 id=&quot;num-executors&quot;&gt;num-executors&lt;/h4&gt;
+&lt;p&gt;该参数用于设置Spark作业总共要用多少个Executor进程来执行。如果不设置的话，默认只会给你启动少量的Executor进程，此时你的Spark作业的运行速度是非常慢&lt;/p&gt;
+
+&lt;p&gt;每个Spark作业的运行一般设置50~100个左右的Executor进程比较合适，设置太少或太多的Executor进程都不好。设置的太少，无法充分利用集群资源；设置的太多的话，大部分队列可能无法给予充分的资源。&lt;/p&gt;
+
+&lt;h4 id=&quot;executor-memory&quot;&gt;executor-memory&lt;/h4&gt;
+&lt;p&gt;该参数用于设置每个Executor进程的内存。Executor内存的大小，很多时候直接决定了Spark作业的性能，而且跟常见的JVM OOM异常，也有直接的关联。&lt;/p&gt;
+
+&lt;p&gt;每个Executor进程的内存设置4G~8G较为合适。但是这只是一个参考值，具体的设置还是得根据不同部门的资源队列来定。可以看看自己团队的资源队列的最大内存限制是多少，num-executors乘以executor-memory，是不能超过队列的最大内存量的。此外，如果你是跟团队里其他人共享这个资源队列，那么申请的内存量最好不要超过资源队列最大总内存的1/3~1/2，避免你自己的Spark作业占用了队列所有的资源，导致别的同学的作业无法运行。&lt;/p&gt;
+
+&lt;h4 id=&quot;executor-cores&quot;&gt;executor-cores&lt;/h4&gt;
+&lt;p&gt;该参数用于设置每个Executor进程的CPU core数量。这个参数决定了每个Executor进程并行执行task线程的能力。因为每个CPU core同一时间只能执行一个task线程，因此每个Executor进程的CPU core数量越多，越能够快速地执行完分配给自己的所有task线程。&lt;/p&gt;
+
+&lt;p&gt;Executor的CPU core数量设置为2~4个较为合适。同样得根据不同部门的资源队列来定，可以看看自己的资源队列的最大CPU core限制是多少，再依据设置的Executor数量，来决定每个Executor进程可以分配到几个CPU core。同样建议，如果是跟他人共享这个队列，那么num-executors * executor-cores不要超过队列总CPU core的1/3~1/2左右比较合适，也是避免影响其他同学的作业运行。&lt;/p&gt;
+
+&lt;h4 id=&quot;driver-memory&quot;&gt;driver-memory&lt;/h4&gt;
+&lt;p&gt;该参数用于设置Driver进程的内存。&lt;/p&gt;
+
+&lt;p&gt;Driver的内存通常来说不设置，或者设置1G左右应该就够了。唯一需要注意的一点是，如果需要使用collect算子将RDD的数据全部拉取到Driver上进行处理，那么必须确保Driver的内存足够大，否则会出现OOM内存溢出的问题。&lt;/p&gt;
+
+&lt;h4 id=&quot;sparkdefaultparallelism&quot;&gt;spark.default.parallelism&lt;/h4&gt;
+&lt;p&gt;该参数用于设置每个stage的默认task数量。这个参数极为重要，如果不设置可能会直接影响你的Spark作业性能。&lt;/p&gt;
+
+&lt;p&gt;Spark作业的默认task数量为500~1000个较为合适。Spark官网建议的设置原则是，设置该参数为num-executors * executor-cores的2~3倍较为合适。&lt;/p&gt;
+
+&lt;h4 id=&quot;sparkstoragememoryfraction&quot;&gt;spark.storage.memoryFraction&lt;/h4&gt;
+&lt;p&gt;该参数用于设置RDD持久化数据在Executor内存中能占的比例，默认是0.6&lt;/p&gt;
+
+&lt;p&gt;如果Spark作业中，有较多的RDD持久化操作，该参数的值可以适当提高一些，保证持久化的数据能够容纳在内存中。避免内存不够缓存所有的数据，导致数据只能写入磁盘中，降低了性能。但是如果Spark作业中的shuffle类操作比较多，而持久化操作比较少，那么这个参数的值适当降低一些比较合适。此外，如果发现作业由于频繁的gc导致运行缓慢（通过spark web ui可以观察到作业的gc耗时），意味着task执行用户代码的内存不够用，那么同样建议调低这个参数的值。&lt;/p&gt;
+
+&lt;h4 id=&quot;sparkshufflememoryfraction&quot;&gt;spark.shuffle.memoryFraction&lt;/h4&gt;
+&lt;p&gt;该参数用于设置shuffle过程中一个task拉取到上个stage的task的输出后，进行聚合操作时能够使用的Executor内存的比例，默认是0.2。也就是说，Executor默认只有20%的内存用来进行该操作。shuffle操作在进行聚合时，如果发现使用的内存超出了这个20%的限制，那么多余的数据就会溢写到磁盘文件中去，此时就会极大地降低性能。&lt;/p&gt;
+
+&lt;h4 id=&quot;示例&quot;&gt;示例&lt;/h4&gt;
+&lt;p&gt;./bin/spark-submit &lt;br /&gt;
+  –master yarn-cluster &lt;br /&gt;
+  –num-executors 100 &lt;br /&gt;
+  –executor-memory 6G &lt;br /&gt;
+  –executor-cores 4 &lt;br /&gt;
+  –driver-memory 1G &lt;br /&gt;
+  –conf spark.default.parallelism=1000 &lt;br /&gt;
+  –conf spark.storage.memoryFraction=0.5 &lt;br /&gt;
+  –conf spark.shuffle.memoryFraction=0.3 \&lt;/p&gt;</content><author><name>nice</name></author><category term="Engineer" /><summary type="html">Spark存储机制</summary></entry><entry><title type="html">Transformer后续</title><link href="https://bigbigda.github.io/2023/02/19/WorkAfterTransformer/" rel="alternate" type="text/html" title="Transformer后续" /><published>2023-02-19T00:00:00+08:00</published><updated>2023-02-19T00:00:00+08:00</updated><id>https://bigbigda.github.io/2023/02/19/WorkAfterTransformer</id><content type="html" xml:base="https://bigbigda.github.io/2023/02/19/WorkAfterTransformer/">&lt;p&gt;[toc]&lt;/p&gt;
 
 &lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
 
-&lt;p&gt;VIT（Vision Transformer）是一篇开创性的工作。自从2017年Transformer出现后，已经成为NLP领域的最主流模型，但此时CV圈的主流模型仍基于CNN结构，本文的最大创新点就是证明单纯的Transformer结构同样适用于cv任务，不仅为cv领域开辟了一个新方向，而且从结构上将nlp任务和cv任务统一起来，促进了后续多模态工作的大发展。&lt;/p&gt;
+&lt;p&gt;在之前我们介绍了attention-is-all-you-need这篇文章，事实上自从2017年Transformer结构提出后，截止目前其已经席卷了DeepLearning各个应用方向，不管是Bert还是GPT，还是之前介绍的视觉、多模态等工作，其主干网络都离不开Transformer结构。&lt;/p&gt;
 
-&lt;p&gt;作者在文中其实也提到，17年之后也有许多工作吧self-attention结构引入cv领域，例如将卷积层完全替换为self-attention层，或在原有cnn结构中引入self-attention单元，但这些尝试不仅导致模型的计算对硬件很不友好，效果上看也没有撼动CNN架构的SOTA地位。也有一个工作与本文非常近似，但其应用在小数据集上。相比之下，本文是&lt;strong&gt;首次直接把Transformer架构（encoder部分，也可看做BERT）应用与ImageNet分类任务&lt;/strong&gt;中。&lt;/p&gt;
+&lt;p&gt;本文主要是想介绍Bert和GPT之外，其他一些采用Transformer结构的重要工作。比如RoBERTa、BART、T5等&lt;/p&gt;
 
-&lt;p&gt;从实验来看，VIT在ImageNet上训练时效果还是略差于ResNets，作者将此归因为VIT没有CNN的归纳偏置（inductive biases）。事实上，通过在更大规模数据集上预训练，可以取得SOTA效果。&lt;/p&gt;
+&lt;h4 id=&quot;典型工作一句话总结&quot;&gt;典型工作一句话总结&lt;/h4&gt;
 
-&lt;p&gt;一个字：牛！&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;工作&lt;/th&gt;
+      &lt;th&gt;介绍&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RoBERTa&lt;/td&gt;
+      &lt;td&gt;充分挖掘BERT模型结构优点，仅通过调整训练目标策略和训练数据集就大幅提升了模型效果&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;DEBEARTa&lt;/td&gt;
+      &lt;td&gt;主体为encoder结构，SOTA，广泛应用与kaggle比赛&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;BART&lt;/td&gt;
+      &lt;td&gt;encoder-decoder结构&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;T5&lt;/td&gt;
+      &lt;td&gt;encoder-decoder结构，相对位置编码，多个生成任务的SOTA模型&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
-&lt;h3 id=&quot;整体结构&quot;&gt;整体结构&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20221012012237172.png&quot; alt=&quot;image-20221012012237172&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;预处理&quot;&gt;预处理&lt;/h3&gt;
+&lt;h3 id=&quot;分类&quot;&gt;分类&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;原始图片通过一层16x16的卷积变成14*14*768的feature map（这一步即按照16x16取patch）&lt;/li&gt;
-  &lt;li&gt;feature map拉直为196*768，即表示长度为196的序列，序列每个元素维度为768&lt;/li&gt;
-  &lt;li&gt;在序列最前方增加类似CLS的分类token&lt;/li&gt;
-  &lt;li&gt;增加Position Bias&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20221012014708951.png&quot; alt=&quot;image-20221012014708951&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;输出层&quot;&gt;输出层&lt;/h3&gt;
-
-&lt;p&gt;首先取出之前加的第一个分类token经过多层encoder的输出结果，为1*768维，将此向量过一个两层MLP，即得到最终输出。&lt;/p&gt;</content><author><name>nice</name></author><category term="CV" /><summary type="html">AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE</summary></entry><entry><title type="html">第一篇博文</title><link href="https://bigbigda.github.io/2022/10/09/first-blog/" rel="alternate" type="text/html" title="第一篇博文" /><published>2022-10-09T00:00:00+08:00</published><updated>2022-10-09T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/09/first-blog</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/09/first-blog/">&lt;h3 id=&quot;github-pages搭建&quot;&gt;github pages搭建&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;2022-10-09 终于搭建完成了基于github的个人博客&lt;/li&gt;
-  &lt;li&gt;2022-10-11 buy Typora&lt;/li&gt;
-  &lt;li&gt;2022-10-11 解决图片问题&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;解决图片问题记录&quot;&gt;解决图片问题记录&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;方案一：参考原始代码，将图片放在blog同路径下
+  &lt;li&gt;&lt;strong&gt;Pretraining Architecture&lt;/strong&gt;
     &lt;ul&gt;
-      &lt;li&gt;最初尝试在one-blog.md同路径下创建one-blog-images目录，将图片放在其中，但实际网站上无法展示图片&lt;/li&gt;
-      &lt;li&gt;最终放在/images/one-blog-images下可以解决此问题，但是这种方式&lt;strong&gt;图片解析很慢&lt;/strong&gt;，且由于图片比较多，以后有超过github-pages 1G 空间限制风险，遂放弃&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Encoder Pretraining&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Decoder Pretraining&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Transformer (Encoder-Decoder) Pretraining&lt;/strong&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;方案二：使用typora+ipic+微博图床，实现复制图片时自动update到云端，同时md文件中保存的也是url。可以完美解决方案一的问题。
+  &lt;li&gt;Pretraining Task
     &lt;ul&gt;
-      &lt;li&gt;方案二引入的新问题是如果以后微博图床失效，那整个博客有挂掉的风险。最初希望通过配置typora实现上传的同时保存到本地，但没找到此功能。&lt;strong&gt;后续计划&lt;/strong&gt;自己写python实现此功能&lt;/li&gt;
-      &lt;li&gt;目前优化为&lt;strong&gt;typora+PicGo+七牛云&lt;/strong&gt;，考虑到七牛云也在提供收费服务，稳定性有明显提升&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Language Modeling (LM):&lt;/strong&gt;Predict next token (in the case of unidirectional LM) or previous and next token&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Masked Language Modeling (MLM):&lt;/strong&gt; mask out some tokens from the input sentences and then trains the model to predict the masked tokens by the rest of the tokens&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Permuted Language Modeling (PLM):&lt;/strong&gt; same as LM but on a random permutation of input sequences. A permutation is randomly sampled from all possible permutations. Then some of the tokens are chosen as the target, and the model is trained to predict these targets.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Denoising Autoencoder (DAE):&lt;/strong&gt; take a partially corrupted input (e.g. Randomly sampling tokens from the input and replacing them with [MASK] elements. randomly deleting tokens from the input, or shuffling sentences in random order) and aim to recover the original undistorted input.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Contrastive Learning (CTL):&lt;/strong&gt; A score function for text pairs is learned by assuming some observed pairs of text that are more semantically similar than randomly sampled text.
+        &lt;h4 id=&quot;主要相关模型&quot;&gt;主要相关模型&lt;/h4&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>nice</name></author><category term="碎碎念" /><summary type="html">github pages搭建</summary></entry><entry><title type="html">修复 MacVim 9.0 的 Python3 支持</title><link href="https://bigbigda.github.io/2022/09/22/enable-python3-in-macvim/" rel="alternate" type="text/html" title="修复 MacVim 9.0 的 Python3 支持" /><published>2022-09-22T00:00:00+08:00</published><updated>2022-09-22T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/09/22/enable-python3-in-macvim</id><content type="html" xml:base="https://bigbigda.github.io/2022/09/22/enable-python3-in-macvim/">&lt;p&gt;前两天刚刚升级到了 MacVim 9.0 的最新版本，日常编辑编辑文字没遇到过什么问题，直到今天动了一下插件。&lt;/p&gt;
+&lt;/ul&gt;
 
-&lt;h2 id=&quot;发现问题&quot;&gt;发现问题&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20230219224946848.png&quot; alt=&quot;image-20230219224946848&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;今早看到一个有意思的 Vim 插件，安装上试用了下，感觉对我来说不太实用，就删掉配置，打算运行 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:PlugClean&lt;/code&gt; 清理掉它，结果 MacVim 提示我即将删掉的插件有两个——除了试用的这个以外，还有 LeaderF。&lt;/p&gt;
+&lt;h4 id=&quot;主要相关模型y轴表示参数量&quot;&gt;主要相关模型（y轴表示参数量）&lt;/h4&gt;
 
-&lt;p&gt;LeaderF 是我用得比较多的插件之一了，我并没有表明意图我要删掉它，是发生了什么让 vim-plug 这样以为呢？肯定是有什么误会。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20230219225226575.png&quot; alt=&quot;image-20230219225226575&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;我的 _vimrc 文件里，添加 LeaderF 插件是这样写的：&lt;/p&gt;
+&lt;h3 id=&quot;roberta&quot;&gt;RoBERTa&lt;/h3&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if has('python') || has('python3')
-    Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-endif
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;RoBERTa: A Robustly Optimized BERT Pretraining Approach&lt;/p&gt;
 
-&lt;p&gt;于是打开一个 MacVim 窗口，试了下 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:echo has('python')&lt;/code&gt; 和 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:echo has('python3')&lt;/code&gt;，输出竟然都是 0，那就难怪了……&lt;/p&gt;
+&lt;h4 id=&quot;背景&quot;&gt;背景&lt;/h4&gt;
 
-&lt;h2 id=&quot;分析问题&quot;&gt;分析问题&lt;/h2&gt;
+&lt;p&gt;本文发表于2019年，作者发现BERT被低估了，他们指出通过超参的调节、训练数据补充、训练目标的微调，原始BERT的效果可以得到明显的提升，超过当时所有BERT改进工作（例如XLNet）&lt;/p&gt;
 
-&lt;p&gt;一开始主要想弄清楚两点：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;我使用的 MacVim 版本编译时究竟有没有启用 Python 支持？&lt;/p&gt;
-
-    &lt;p&gt;在 MacVim 窗口里运行 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:version&lt;/code&gt;，可以看到 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+python/dyn&lt;/code&gt; 和 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+python3/dyn&lt;/code&gt;，那说明同时启用了 Python 和 Python3 支持。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;我本地有没有安装 Python？&lt;/p&gt;
-
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python
- zsh: &lt;span class=&quot;nb&quot;&gt;command &lt;/span&gt;not found: python
-
- &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew list | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;python
- python@3.10
- python@3.8
- python@3.9
-
- &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python3
- Python 3.9.12 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;main, Mar 26 2022, 15:51:15&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Clang 13.1.6 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;clang-1316.0.21.2&lt;span class=&quot;o&quot;&gt;)]&lt;/span&gt; on darwin
- Type &lt;span class=&quot;s2&quot;&gt;&quot;help&quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&quot;copyright&quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&quot;credits&quot;&lt;/span&gt; or &lt;span class=&quot;s2&quot;&gt;&quot;license&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;more information.
- &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;p&gt;可以看到我本地安装了 Python3 的 3.8、3.9、3.10 三个版本，默认 3.9，没有安装 Python2。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;这没什么问题，那继续找，尝试下在 MacVim 里执行 Python3 语句：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;:py3 import sys;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;结果输出了一堆报错：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;E370: 无法加载库 /usr/local/Frameworks/Python.framework/Versions/3.10/Python：dlopen(/usr/local/Frameworks/Python.fram
-ework/Versions/3.10/Python, 0x0009): tried: '/usr/local/Frameworks/Python.framework/Versions/3.10/Python' (no such fil
-e), '/Library/Frameworks/Python.framework/Versions/3.10/Python' (no such file), '/System/Library/Frameworks/Python.fra
-mework/Versions/3.10/Python' (no such file)
-E263: 抱歉，此命令不可用，无法加载 Python 库。
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;它要找的这个文件路径确实不存在……毕竟我默认的是 3.9 版本，所以  /usr/local/Frameworks/Python.framework/Versions/ 下只有 3.9 和 current 目录，没有 3.10。&lt;/p&gt;
-
-&lt;p&gt;它为啥放着配置好的 3.9 版本不用，非得这么头铁去找 3.10 版本呢？这个问题先不回答，留待后面的刨根问底环节。现在先解决问题。&lt;/p&gt;
-
-&lt;h2 id=&quot;解决问题&quot;&gt;解决问题&lt;/h2&gt;
-
-&lt;p&gt;在网上将以上错误信息搜索一番后，了解到了可以通过设置 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pythonthreedll&lt;/code&gt; 来指定动态加载的 Python3 支持库。&lt;/p&gt;
-
-&lt;p&gt;另外，也了解了一下，通过 brew 安装的多个 Python 版本如何切换默认版本。&lt;/p&gt;
-
-&lt;p&gt;所以这个小问题找到了两种解决方法：&lt;/p&gt;
-
-&lt;p&gt;一、在 _vimrc 里添加配置，指定动态加载的 Python3 支持库路径，比如：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```vim
-let &amp;amp;pythonthreedll='/usr/local/Frameworks/Python.framework/Versions/3.9/python'
-```
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;二、切换系统默认 Python3 版本，比如这里 MacVim 寻找 3.10 版本，我就把默认的切换到 3.10 版本好了：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```sh
-brew unlink python@3.9
-brew link python@3.10
-```
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;经验证以上两个方法都可以解决问题，我最终用了第二种。&lt;/p&gt;
-
-&lt;h2 id=&quot;刨根问底&quot;&gt;刨根问底&lt;/h2&gt;
-
-&lt;p&gt;上面我们遗留了一个问题，为什么 MacVim 那么头铁非要加载 3.10 版本的 Python 支持库呢？&lt;/p&gt;
-
-&lt;p&gt;首先看一下 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pythonthreedll&lt;/code&gt; 的帮助文档说明：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;:h pythonthreedll
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;可以看到：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;'pythonthreedll'	string	(default depends on the build)
-			global
-			{only available when compiled with the |+python3/dyn|
-			feature}
-	Specifies the name of the Python 3 shared library. The default is
-	DYNAMIC_PYTHON3_DLL, which was specified at compile time.
-	Environment variables are expanded |:set_env|.
-	This option cannot be set from a |modeline| or in the |sandbox|, for
-	security reasons.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;也就是说默认值是在编译时指定的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DYNAMIC_PYTHON3_DLL&lt;/code&gt; 值，按我理解那就是说如果没有在配置文件里人为指定，那它就是会按编译时指定的去加载。&lt;/p&gt;
-
-&lt;p&gt;那编译时的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DYNAMIC_PYTHON3_DLL&lt;/code&gt;，我们可以在 MacVim 的官方仓库 &lt;a href=&quot;https://github.com/macvim-dev/macvim/blob/master/.github/workflows/ci-macvim.yaml&quot;&gt;.github/worflows/ci-macvim.yaml&lt;/a&gt; 里找到，关键内容：&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;...&lt;/span&gt;
-
-  &lt;span class=&quot;na&quot;&gt;vi_cv_dll_name_python3&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/usr/local/Frameworks/Python.framework/Versions/3.10/Python&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Make sure to keep src/MacVim/vimrc synced with the Python version here for the Python DLL detection logic.&lt;/span&gt;
-
-&lt;span class=&quot;nn&quot;&gt;...&lt;/span&gt;
-
-          &lt;span class=&quot;s&quot;&gt;grep -q -- &quot;-DDYNAMIC_PYTHON3_DLL=\\\\\&quot;${vi_cv_dll_name_python3}\\\\\&quot;&quot; src/auto/config.mk&lt;/span&gt;
-
-&lt;span class=&quot;nn&quot;&gt;...&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;至此破案了。&lt;/p&gt;
-
-&lt;h2 id=&quot;参考&quot;&gt;参考&lt;/h2&gt;
+&lt;h4 id=&quot;优化点&quot;&gt;优化点&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/18f06d12348c&quot;&gt;https://www.jianshu.com/p/18f06d12348c&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>nice</name></author><category term="Vim" /><summary type="html">前两天刚刚升级到了 MacVim 9.0 的最新版本，日常编辑编辑文字没遇到过什么问题，直到今天动了一下插件。</summary></entry></feed>
+  &lt;li&gt;增大训练时间、增加batchSize大小、更多训练数据
+    &lt;ul&gt;
+      &lt;li&gt;原始BERT使用BOOKCORPUS和English WIKIPEDIA，总共16G未压缩文本&lt;/li&gt;
+      &lt;li&gt;本文使用了五个训练文本，数据总量达160G&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;移除next-sentence预测任务
+    &lt;ul&gt;
+      &lt;li&gt;原始BERT包括两个预训练任务：MLM（预测被mask的词）、NSP（预测输入中第二部分是不是第一部分的下一句）&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;使用更长的训练序列&lt;/li&gt;
+  &lt;li&gt;使用动态的mask&lt;/li&gt;
+  &lt;li&gt;输入文本编码
+    &lt;ul&gt;
+      &lt;li&gt;使用GPT中提出的BPE
+        &lt;ul&gt;
+          &lt;li&gt;BPE是一种sub-character的编码方式，最早用于压缩，主要做法是对所有训练文本中出现频率最高的子串（例如”app”)进行编码，最终未编码的用字母直接表示&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;deberta&quot;&gt;DeBERTa&lt;/h3&gt;
+
+&lt;p&gt;DEBERTA: DECODING-ENHANCED BERT WITH DISENTANGLED ATTENTION&lt;/p&gt;
+
+&lt;h4 id=&quot;简介-1&quot;&gt;简介&lt;/h4&gt;
+
+&lt;p&gt;本文在BERT和RoBERTa的基础上进行改进提出了DeBERTa模型，共有15亿参数。基于此模型的大量下游实验都取得了优于RoBERTa的效果。尤其是在SuperGLUE上取得了优于人类的效果。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;disentangled attention mechanism：使用相对位置的位置编码层，attention计算也基于这两部分分别进行&lt;/li&gt;
+  &lt;li&gt;enhanced mask decoder: 在最终softmax之前考虑绝对位置&lt;/li&gt;
+  &lt;li&gt;利用一个对抗式训练方法来增强模型泛化性&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;模型训练&quot;&gt;模型训练&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;训练DeBERTa large 模型（L=12, H=768, A=12）使用6台DGX-2（合计96个V100 GPU），batchSize=2k，训练20天&lt;/li&gt;
+  &lt;li&gt;混合多个数据源后去重，实际使用约78G&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;实验结果&quot;&gt;实验结果&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20230225005644789.png&quot; alt=&quot;image-20230225005644789&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;debertav3&quot;&gt;DeBERTaV3&lt;/h3&gt;
+
+&lt;h4 id=&quot;简介-2&quot;&gt;简介&lt;/h4&gt;
+
+&lt;p&gt;相比DeBERTa，主要提出了两个训练方法优化，效果明显提升，成为了NLU任务新SOTA&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;借鉴ELECTRA，引入类似GAN的训练方法（即将原模型结构作为Generator，新增一个Discriminator）&lt;/li&gt;
+  &lt;li&gt;发现上述结构中的embedding-share虽然有用，但是生成器和判别器优化目标不同会导致难以训练。提出GDES，本质是判别器不再更新embedding&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;bart&quot;&gt;BART&lt;/h3&gt;
+
+&lt;p&gt;BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension&lt;/p&gt;
+
+&lt;p&gt;Facebook&lt;/p&gt;
+
+&lt;h4 id=&quot;简介-3&quot;&gt;简介&lt;/h4&gt;
+
+&lt;p&gt;BART是一个使用sequence-to-sequence结构的denoising autoencoder。&lt;/p&gt;
+
+&lt;p&gt;其预训练任务为恢复一段被加噪的文本。作者尝试了许多增加噪音的方法，发现最有效的方法是将输入随机shuffle以及in-filling（将输入中任意长度、包括0长度的片段用&lt;strong&gt;一个&lt;/strong&gt;掩码代替）&lt;/p&gt;
+
+&lt;p&gt;在NLU任务（GLUE和SQuAD）上与RoBERTa效果类似，在NLG任务（abstractive、question answering、summarization、translation）取得当时SOTA效果。&lt;/p&gt;
+
+&lt;p&gt;BART也提出了一个新的机器翻译任务方案：在BART encoder输入端接入一些transformer层，这些层负责将原文本转化为带目标的噪音文本，然后利用BART将这个文本去噪。&lt;/p&gt;
+
+&lt;h4 id=&quot;模型结构&quot;&gt;模型结构&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;基于标准Transformer结构改造&lt;/li&gt;
+  &lt;li&gt;ReLU激活函数修改为GeLUs&lt;/li&gt;
+  &lt;li&gt;decoder每一个层新增了对encoder最后一个隐含层的cross-attention（原始Transformer也是这么处理的）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;预训练&quot;&gt;预训练&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;预训练任务为恢复corrupted文本，loss为decoder输出和原始文本的交叉熵&lt;/li&gt;
+  &lt;li&gt;Text Infilling：将输入中$\lambda$长度的文本替换为一个[mask]，$\lambda$取自泊松分布，为0时相当于在原文中直接插入一个[mask]&lt;/li&gt;
+  &lt;li&gt;针对翻译任务时，首先将BART原结构中encoder的embedding层改为一个随机初始化的encoder，然后进行端到端训练。训练分两步，第一步固定BART大部分参数，主要更新随机初始化encoder、positional embedding，第二步训练全部参数，两步训练均基于BART最终输出对应的交叉熵loss。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;实验结果-1&quot;&gt;实验结果&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20230221013500803.png&quot; alt=&quot;image-20230221013500803&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;t5&quot;&gt;T5&lt;/h3&gt;
+
+&lt;p&gt;Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer&lt;/p&gt;
+
+&lt;p&gt;google，原文67页&lt;/p&gt;
+
+&lt;p&gt;作者将所有任务都转化为text-to-text格式，例如英语翻译到德语的输入转化为 “translate English to German：sentence”，一个分类任务输入转为”mnli premise: sentence”。注意这里的前缀本质是一个超参，作者发现修改前缀的文本对最终效果影响不大&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20230222004524747.png&quot; alt=&quot;image-20230222004524747&quot; style=&quot;zoom: 33%;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;模型结构-1&quot;&gt;模型结构&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;基于原始Transformer&lt;/li&gt;
+  &lt;li&gt;移除Layer Norm的bias；&lt;/li&gt;
+  &lt;li&gt;残差连接之后做LayerNorm；&lt;/li&gt;
+  &lt;li&gt;position encoding（不同频率的正余弦函数）变为相对位置编码，attention函数计算时，Q和V相乘计算attention数值时加入相对位置的编码，编码是可训练的embedding。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;c4数据集&quot;&gt;C4数据集&lt;/h4&gt;
+
+&lt;p&gt;作者选取了Common Crawl数据集，该数据集每月自动从web上爬取20TB左右的数据，该数据集可能包含各种英语、代码以及内容重复，本文对这些数据做了进一步清理，最终大小约750G&lt;/p&gt;
+
+&lt;h4 id=&quot;实验&quot;&gt;实验&lt;/h4&gt;
+
+&lt;p&gt;本文的实验非常非常多，下图所示为其中4组&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;预训练任务方面，类似BERT的masked language modeling最好&lt;/li&gt;
+  &lt;li&gt;Mask策略中，replace spans最好&lt;/li&gt;
+  &lt;li&gt;mask率为15%时最佳&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/Users/mtdp/Library/Application Support/typora-user-images/image-20230224003929772.png&quot; alt=&quot;image-20230224003929772&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;评估任务&quot;&gt;评估任务&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;文本分类：GLUE &amp;amp; SuperGLUE，是测试通用语言理解能力的文本分类任务的集合，包括句子可接受性判断、情绪分析、释义/句子相似度、自然语言推断、指代消解、完成句子、词义消歧和问题回答。
+    &lt;ul&gt;
+      &lt;li&gt;GLUE进一步介绍：https://zhuanlan.zhihu.com/p/135283598&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;机器翻译：WMT English to German, French, and Romanian translation&lt;/li&gt;
+  &lt;li&gt;文本摘要：CNN/Daily Mail abstractive summarization&lt;/li&gt;
+  &lt;li&gt;智能问答：SQuAD question answering&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;参考资料&quot;&gt;参考资料&lt;/h3&gt;
+
+&lt;p&gt;https://amatriain.net/blog/transformer-models-an-introduction-and-catalog-2d1e9039f376/ （介绍基于Transformer的50多篇相关工作）&lt;/p&gt;
+
+&lt;p&gt;https://docs.google.com/spreadsheets/d/1ltyrAB6BL29cOv2fSpNQnnq2vbX8UrHl47d7FkIf6t4/edit#gid=0 （上文中整理的相关工作code链接及简介）&lt;/p&gt;</content><author><name>nice</name></author><category term="NLP" /><summary type="html">[toc]</summary></entry><entry><title type="html">Tools</title><link href="https://bigbigda.github.io/2023/02/17/Tools/" rel="alternate" type="text/html" title="Tools" /><published>2023-02-17T00:00:00+08:00</published><updated>2023-02-17T00:00:00+08:00</updated><id>https://bigbigda.github.io/2023/02/17/Tools</id><content type="html" xml:base="https://bigbigda.github.io/2023/02/17/Tools/">&lt;h3 id=&quot;工具&quot;&gt;工具&lt;/h3&gt;
+
+&lt;p&gt;reddit MachineLearning版&lt;/p&gt;
+
+&lt;p&gt;hacker news&lt;/p&gt;
+
+&lt;p&gt;paper with code （查sota）&lt;/p&gt;
+
+&lt;p&gt;Hugging Face&lt;/p&gt;
+
+&lt;h3 id=&quot;博客&quot;&gt;博客&lt;/h3&gt;
+
+&lt;p&gt;https://www.jianshu.com/u/720c6853ff98 （简书上一个推荐系统系列）&lt;/p&gt;
+
+&lt;h3 id=&quot;论文&quot;&gt;论文&lt;/h3&gt;
+
+&lt;p&gt;https://dl.acm.org/doi/10.1145/2339530.2339654 （Position-normalized click prediction in search advertising）&lt;/p&gt;</content><author><name>nice</name></author><category term="Tools" /><summary type="html">工具</summary></entry><entry><title type="html">GPT系列</title><link href="https://bigbigda.github.io/2023/02/16/GPT/" rel="alternate" type="text/html" title="GPT系列" /><published>2023-02-16T00:00:00+08:00</published><updated>2023-02-16T00:00:00+08:00</updated><id>https://bigbigda.github.io/2023/02/16/GPT</id><content type="html" xml:base="https://bigbigda.github.io/2023/02/16/GPT/">&lt;h2 id=&quot;gpt系列&quot;&gt;GPT系列&lt;/h2&gt;
+
+&lt;p&gt;[toc]&lt;/p&gt;
+
+&lt;h3 id=&quot;相关论文及时间线&quot;&gt;相关论文及时间线&lt;/h3&gt;
+
+&lt;p&gt;OpenAI&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;版本&lt;/th&gt;
+      &lt;th&gt;论文名&lt;/th&gt;
+      &lt;th&gt;时间&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;GPT&lt;/td&gt;
+      &lt;td&gt;Improving Language Understanding by Generative Pre-Training&lt;/td&gt;
+      &lt;td&gt;2018&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;GPT-2&lt;/td&gt;
+      &lt;td&gt;Language Models are Unsupervised Multitask Learners&lt;/td&gt;
+      &lt;td&gt;2019&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;GPT-3&lt;/td&gt;
+      &lt;td&gt;Language Models are Few-Shot Learners 2020&lt;/td&gt;
+      &lt;td&gt;2020&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20230216005551634.png&quot; alt=&quot;image-20230216005551634&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;gpt10&quot;&gt;GPT1.0&lt;/h3&gt;
+
+&lt;h4 id=&quot;简介&quot;&gt;简介&lt;/h4&gt;
+
+&lt;p&gt;GPT1的提出在Transformer之后，而在Bert之前。作者想解决的主要问题是：自然语言处理领域现有模型主要基于“昂贵的”标记文本进行训练，而没有充分利用大量未标记文本。此外作者希望形成一个NLP领域新范式，即基于无标记文本预训练一个&lt;strong&gt;通用&lt;/strong&gt;模型，下游任务仅采用少量标记数据在前者基础上进行微调。&lt;/p&gt;
+
+&lt;h4 id=&quot;模型&quot;&gt;模型&lt;/h4&gt;
+
+&lt;h5 id=&quot;无监督预训练&quot;&gt;无监督预训练&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20230216012322859.png&quot; alt=&quot;image-20230216012322859&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;有监督微调&quot;&gt;有监督微调&lt;/h5&gt;
+
+&lt;p&gt;Loss = Loss1+Loss2；其中Loss1为预训练的Loss函数，即用来学习下一个单次，Loss2为微调数据Label本身对应的损失函数&lt;/p&gt;
+
+&lt;h5 id=&quot;针对特定任务的输入转化&quot;&gt;针对特定任务的输入转化&lt;/h5&gt;
+
+&lt;p&gt;对于文本分类任务，我们只需要直接讲语句输入模型即可；这里主要指的是针对输入是两个句子（例如相似度计算）或多个句子（文本选择）的情况如何使用此模型，其实方法与BERT类似，将多个句子拼接起来，中间新增一个分隔符&lt;/p&gt;
+
+&lt;h4 id=&quot;实验效果&quot;&gt;实验效果&lt;/h4&gt;
+
+&lt;h3 id=&quot;gpt-20&quot;&gt;GPT 2.0&lt;/h3&gt;
+
+&lt;h4 id=&quot;文中meta-learning指的什么&quot;&gt;文中meta-learning指的什么&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;作者指出，对于单个NLP任务，我们可以把模型看作$P(output&lt;/td&gt;
+      &lt;td&gt;input)$ ，但对于多个任务，模型本质上是$P(output&lt;/td&gt;
+      &lt;td&gt;input,task)$，进一步，作者指出对于NLP任务，我们可以通过在input（一段文本）前缀任务类型来将将两个condition（input和task）统一。具体的，一个翻译任务训练样本可以看作 (translate to french, english text, french text)，一个阅读理解任务训练样本可以看作 (answer the question, document, question, answer)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;输入表示-bpe&quot;&gt;输入表示-BPE&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;之前论文表明，byte-level表示的语言模型比word-level表示的要差，作者也验证了这一点&lt;/li&gt;
+  &lt;li&gt;Byte Pair Encoding（BPE）介于两者中间&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;模型结构&quot;&gt;模型结构&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;主要沿用OpenAI GPT model，一小部分改动&lt;/li&gt;
+  &lt;li&gt;Layer normalization被移动到每一个block的开头&lt;/li&gt;
+  &lt;li&gt;最后一个self-attention块后新增一个layer normalization&lt;/li&gt;
+  &lt;li&gt;初始化中考虑了残差结构数量的影响&lt;/li&gt;
+  &lt;li&gt;词典数量增加到50257，context大小从512增加到1024 （context大小是什么？）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;实验&quot;&gt;实验&lt;/h4&gt;
+
+&lt;h5 id=&quot;模型规模&quot;&gt;模型规模&lt;/h5&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;参数数量&lt;/th&gt;
+      &lt;th&gt;层数&lt;/th&gt;
+      &lt;th&gt;d_model&lt;/th&gt;
+      &lt;th&gt;备注&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;117M&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;768&lt;/td&gt;
+      &lt;td&gt;与GPT参数量相同&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;345M&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;1024&lt;/td&gt;
+      &lt;td&gt;与BERT参数量相同&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;762M&lt;/td&gt;
+      &lt;td&gt;36&lt;/td&gt;
+      &lt;td&gt;1280&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1542M&lt;/td&gt;
+      &lt;td&gt;48&lt;/td&gt;
+      &lt;td&gt;1600&lt;/td&gt;
+      &lt;td&gt;GPT-2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;gpt-3&quot;&gt;GPT-3&lt;/h3&gt;
+
+&lt;h4 id=&quot;简介-1&quot;&gt;简介&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;GPT-3参数规模175 billion （1750亿）&lt;/li&gt;
+  &lt;li&gt;in-context learning&lt;strong&gt;（应该文本技术上最主要创新）&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;之前视觉任务也会提one-shot、few-shot，但是这都是指只用很少数据去fine-tune；而GPT-3提出的是完全不进行fine-tune，也即in-context learning，那如果不进行fine-tune如何利用这些监督样本呢，方法是把这些样本构造成测试任务输入的一部分（输入示例：“进行英文翻译中文，例如one对应一，two对应二，那three对应？”）&lt;/li&gt;
+      &lt;li&gt;这个方法有点像prompt的扩展&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;模型结构-1&quot;&gt;模型结构&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;类似GPT2，但在Transformer层使用了”alternating dense and locally banded sparse attention patterns”（具体是啥不知道）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;其他&quot;&gt;其他&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;in-context learning没有办法给太多例子（比如好几百），因为输入长度不能过长&lt;/li&gt;
+  &lt;li&gt;作者在训练更大版本模型时使用更大batch-size，一个是为了加快训练，另一个&lt;strong&gt;反直觉&lt;/strong&gt;原因是发现模型越大，反而越不容易过拟合&lt;/li&gt;
+  &lt;li&gt;基于gpt-3的一些好玩应用：https://platform.openai.com/examples&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;附录&quot;&gt;附录&lt;/h3&gt;
+
+&lt;h4 id=&quot;gpt和bert的比较&quot;&gt;GPT和BERT的比较&lt;/h4&gt;
+
+&lt;p&gt;如前所述，GPT相比BERT提出的更早，其与BERT也分别选择了Transformer的两个结构——decoder和encoder，除了模型结构上的差异，更根本的差异是GPT是一个采用前文预测下一个词的标准语言模型，而BERT是一个基于“完形填空”训练任务的带掩码语言模型（Masked Language Model）。参考李沐的观点，GPT的技术创新性更高，但同时任务训练难度也更大。从最终结果上看，标准版本BERT和GPT1.0规模大小相近，但效果更好，而BERT Large性能显著优于BERT，这也导致了BERT一文的影响力远高于GPT。&lt;/p&gt;
+
+&lt;h4 id=&quot;花絮参考沐神观点&quot;&gt;花絮（参考沐神观点）&lt;/h4&gt;
+
+&lt;p&gt;在GPT出来后，很快BERT就发表了，GPT采用的decoder架构，BERT采用的是encoder，从效果上来讲BERT取得了胜利，那对于GPT的作者而言，如果要继续做工作怎么办呢，假设也改成encoder路线，那无疑是承认之前的路线错了，这样一来之前工作的意义会更加大打折扣。但如果继续采用decoder，那就得通过增加训练数据集大小让效果比bert更好，但假如增加后还没有bert好或和bert差不多呢？方法就是换一个讲故事的思路，这也就是GPT-2以zero-shot为最大创新点去写整个文章的原因；相反，如果作者说我用了比BERT多5倍的参数量训了一个模型，各项指标比BERT好一点点，那这个文章的工程味就太重了，没什么意思。所以说做研究不能一条路走到黑。&lt;/p&gt;
+
+&lt;p&gt;论文的价值=问题重要性x创新性x效果，GPT-2选择了增加创新性的指标，但因为最终效果一般，所以整个工作最后价值度没有很高；而到了GPT-3，作者又退回到GPT的设定，即few-shot learning，但重点是真的做出了炸裂的效果。&lt;/p&gt;</content><author><name>nice</name></author><category term="NLP" /><summary type="html">GPT系列</summary></entry><entry><title type="html">ViLT</title><link href="https://bigbigda.github.io/2023/02/14/ViLT/" rel="alternate" type="text/html" title="ViLT" /><published>2023-02-14T00:00:00+08:00</published><updated>2023-02-14T00:00:00+08:00</updated><id>https://bigbigda.github.io/2023/02/14/ViLT</id><content type="html" xml:base="https://bigbigda.github.io/2023/02/14/ViLT/">&lt;h2 id=&quot;vilt-vision-and-language-transformer-without-convolution-or-region-supervision&quot;&gt;ViLT: Vision-and-Language Transformer Without Convolution or Region Supervision&lt;/h2&gt;
+
+&lt;p&gt;ICML2021&lt;/p&gt;
+
+&lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
+
+&lt;p&gt;图文多模态模型通常由三部分组成，即文本编码器（TE）、视觉编码器（VE）、模态融合（MI）。如下图所示，ViLT作者根据不同部分计算量的比较将多模态模型分为4类。本次分享选择b类型和d类型分别介绍一篇典型工作&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20230216004102047.png&quot; alt=&quot;image-20230216004102047&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;随着预训练-微调范式被用于视觉-文本联合任务中，业界出现了许多Vision-and-Language Pre-training（VLP）模型，VLP模型涉及对文本信息和视觉信息的处理，本文之前大部分工作依赖一个目标检测任务的CNN结构进行视觉特征提取，这种做法有两个缺陷：&lt;/p&gt;
+
+&lt;p&gt;（1）计算速度非常慢：主要是因为视觉特征提取网络复杂度很高&lt;/p&gt;
+
+&lt;p&gt;（2）表达能力受限：一方面不是端到端，另一方面目标检测任务本身分类数量有限&lt;/p&gt;
+
+&lt;p&gt;本文主要贡献是：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;提出了一种非常简单的VLP模型架构（即前述分类中第四种），取得了巨大的执行速度和参数效率提升&lt;/li&gt;
+  &lt;li&gt;将目标检测从多模态框架中移除，同时在图文任务取得可比结果（注: 最终效果距离当时SOTA仍有差距）&lt;/li&gt;
+  &lt;li&gt;提出了一些有效的训练技巧（图像增强、全词掩码等）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;模型结构&quot;&gt;模型结构&lt;/h3&gt;
+
+&lt;h4 id=&quot;文本编码器&quot;&gt;文本编码器&lt;/h4&gt;
+
+&lt;p&gt;预训练bert模型的tokenizer&lt;/p&gt;
+
+&lt;h4 id=&quot;视觉编码器&quot;&gt;视觉编码器&lt;/h4&gt;
+
+&lt;h6 id=&quot;基于region-feature的&quot;&gt;基于Region Feature的&lt;/h6&gt;
+
+&lt;p&gt;之前绝大部分VLP模型采用这种方法，核心思路是借鉴Faster R-CNN的架构，通过一个region proposal network（RPN）来提出一系列区域，然后采用NMS等方法将候选减少到数百，再以此作为图像特征。&lt;/p&gt;
+
+&lt;h6 id=&quot;基于grid-feature&quot;&gt;基于Grid Feature&lt;/h6&gt;
+
+&lt;p&gt;类似Region Feature，通常采用ResNet等网络结构，一个优势是便于端到端fine-tune&lt;/p&gt;
+
+&lt;h6 id=&quot;基于patch-projection的-本文采用&quot;&gt;基于Patch Projection的 （本文采用）&lt;/h6&gt;
+
+&lt;p&gt;借鉴ViT论文，将图片分为32x32大小的patch，然后将每个patch通过一个线性层，最终将所有线性映射后结果拉直为一个序列&lt;/p&gt;
+
+&lt;h4 id=&quot;模态融合及整体结构&quot;&gt;模态融合及整体结构&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;主题结构和Bert非常类似&lt;/li&gt;
+  &lt;li&gt;文本和图片embedding前都有一个数字表达模态类型（灰色）&lt;/li&gt;
+  &lt;li&gt;Loss函数
+    &lt;ul&gt;
+      &lt;li&gt;Image Text Matching（图文是否匹配，此外增加word Patch Alignment也用于计算匹配度）&lt;/li&gt;
+      &lt;li&gt;Masked Language Modeling（预测masked text tokens）&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20230216004134316.png&quot; alt=&quot;image-20230216004134316&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;训练技巧&quot;&gt;训练技巧&lt;/h4&gt;
+
+&lt;p&gt;针对具体场景，作者引入两个非常有效的训练技巧&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;全词掩码（Whole Word Masking）：因为许多原始token通过上下文很容易猜出，不利于学习与图片信息的交互，所以将整个单次完整掩盖&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;图片增强：之前多模态方法，尤其是c方法，训练时都是提前将原图转化为特征，数据增强就需要重新生成特征，所以一般没有进行；本文的方法十分适合，作者使用后也有明显效果提升。值得注意的是，为了避免数据增强后图文不一致，作者没有使用cut-off和color inversion这两种方法。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;实验结果&quot;&gt;实验结果&lt;/h3&gt;
+
+&lt;h4 id=&quot;模型训练&quot;&gt;模型训练&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;64 NVIDIA V100 GPUs，3天&lt;/li&gt;
+  &lt;li&gt;batchsize=4096&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;速度提升&quot;&gt;速度提升&lt;/h4&gt;
+
+&lt;h4 id=&quot;visual-question-answering&quot;&gt;Visual Question Answering&lt;/h4&gt;
+
+&lt;p&gt;VQAv2任务：给定一张图片和一个问题，最终从3129个回答中选择一个&lt;/p&gt;
+
+&lt;p&gt;与其他VLP模型相比，ViLT表现不佳，作者觉得是因为任务集合经常询问是否含有某个目标之类的问题，借助目标检测的VLP框架天然的适合此场景。&lt;/p&gt;
+
+&lt;h4 id=&quot;natural-language-for-visual-reasoning&quot;&gt;Natural Language for Visual Reasoning&lt;/h4&gt;
+
+&lt;p&gt;NLVR2任务是一个二分类任务，给定两个图片和一个文本，从中选择一个图片。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20230216004204226.png&quot; alt=&quot;image-20230216004204226&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;讨论&quot;&gt;讨论&lt;/h3&gt;
+
+&lt;p&gt;ViLT从最终效果来看相比SOTA模型还有差距，但是其最大的贡献是提出了将目标检测任务从多模态模型中移除出去的新框架。&lt;/p&gt;</content><author><name>nice</name></author><category term="MultiModal" /><summary type="html">ViLT: Vision-and-Language Transformer Without Convolution or Region Supervision</summary></entry><entry><title type="html">淘宝详情页分发推荐算法总结</title><link href="https://bigbigda.github.io/2023/01/31/TaobaoDetailPageRecAlg/" rel="alternate" type="text/html" title="淘宝详情页分发推荐算法总结" /><published>2023-01-31T00:00:00+08:00</published><updated>2023-01-31T00:00:00+08:00</updated><id>https://bigbigda.github.io/2023/01/31/TaobaoDetailPageRecAlg</id><content type="html" xml:base="https://bigbigda.github.io/2023/01/31/TaobaoDetailPageRecAlg/">&lt;h3 id=&quot;春节后第一个post&quot;&gt;春节后第一个post&lt;/h3&gt;
+
+&lt;p&gt;希望23年有更多的记录，更多的整理，更多的输出&lt;/p&gt;</content><author><name>nice</name></author><category term="Recsys" /><summary type="html">春节后第一个post</summary></entry><entry><title type="html">图灵机</title><link href="https://bigbigda.github.io/2023/01/09/Turing-Machine/" rel="alternate" type="text/html" title="图灵机" /><published>2023-01-09T00:00:00+08:00</published><updated>2023-01-09T00:00:00+08:00</updated><id>https://bigbigda.github.io/2023/01/09/Turing-Machine</id><content type="html" xml:base="https://bigbigda.github.io/2023/01/09/Turing-Machine/">&lt;h3 id=&quot;图灵机和枚举机的等价性&quot;&gt;图灵机和枚举机的等价性&lt;/h3&gt;
+
+&lt;p&gt;https://en.m.wikipedia.org/wiki/Enumerator_(computer_science)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20230109114159410.png&quot; alt=&quot;image-20230109114159410&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;备注：这个证明的第二部分，枚举机E=&amp;gt;图灵机M：对一个枚举机E，若L(E) = L，构造一个图灵机也对应语言L，是很容易理解的；&lt;/p&gt;
+
+&lt;p&gt;难点在第一部分：图灵机=&amp;gt;枚举机。之前主要困扰是既然枚举机input为空，如何给其输入s1、s2、s3等等？后面理解到这正是&lt;strong&gt;枚举&lt;/strong&gt;一词的精髓，即将所有可能性都列举出来（注意不是每个都属于L），&lt;strong&gt;而这一步其实很容易通过一个图灵机实现（因为列举有明确的规则，与输入无关）&lt;/strong&gt;，然后在列举的可能集合里使用图灵机M进行有限步试探（上图中的i），通过这种方式，所有属于L(M)的string最终都会被print，即构造出了我们想要的枚举机&lt;/p&gt;</content><author><name>nice</name></author><category term="CS" /><summary type="html">图灵机和枚举机的等价性</summary></entry><entry><title type="html">tensorflow相关代码</title><link href="https://bigbigda.github.io/2022/11/13/tensorflow/" rel="alternate" type="text/html" title="tensorflow相关代码" /><published>2022-11-13T00:00:00+08:00</published><updated>2022-11-13T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/11/13/tensorflow</id><content type="html" xml:base="https://bigbigda.github.io/2022/11/13/tensorflow/">&lt;h3 id=&quot;背景&quot;&gt;背景&lt;/h3&gt;
+
+&lt;p&gt;记录tensorflow使用相关的code&lt;/p&gt;
+
+&lt;h4 id=&quot;解析tfrecord文件&quot;&gt;解析tfrecord文件&lt;/h4&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;tensorflow&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;google.protobuf.json_format&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MessageToJson&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;file_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;part-r-00127&apos;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;#本地tfrecord文件
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;examples&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;python_io&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf_record_iterator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;example&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;examples&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Example&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FromString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 分支一（这种方式看到的string可能为编码后的byte
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;js&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MessageToJson&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;js_dict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;js&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 分支二
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;extra_info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;extra_info&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;example&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;examples&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Example&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FromString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;x2_74&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20221113143849630.png&quot; alt=&quot;image-20221113143849630&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;example = examples.next()&lt;/p&gt;
+
+&lt;p&gt;result = tf.train.Example.FromString(example)&lt;/p&gt;
+
+&lt;p&gt;result.features.feature[‘x_255’]&lt;/p&gt;
+
+&lt;p&gt;result.features.feature[‘x_73’]&lt;/p&gt;
+
+&lt;h4 id=&quot;tfrecord和tftrainexample&quot;&gt;tfrecord和tf.train.Example&lt;/h4&gt;
+
+&lt;h5 id=&quot;什么是tfrecord&quot;&gt;什么是TFRecord&lt;/h5&gt;
+
+&lt;p&gt;tfrecord是tensorflow training和inference中标准的数据存储格式之一。对于工业界来说，数据的高效存储和读取性能对模型落地非常重要，二进制的存储格式具有占用空间少，拷贝和读取（from disk）更加高效的特点。tfrecord便是为了解决这个问题而产生的一种record-oriented的标准数据表示形式。其本质是一行一行字节串构成的样本数据。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://pic.inoodles.online/imgimage-20230817192551631.png&quot; alt=&quot;image-20230817192551631&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;它实质上是由protobuf定义的一种数据协议，一条tfrecord数据代表一条样本数据，也可以叫做一个Example，其中tensorflow提供了两种Example表示形式 Example和SequenceExample。它的定义代码位于[tensroflow/core/example/example.proto &amp;amp; feature.proto]。&lt;/p&gt;
+
+&lt;h5 id=&quot;样本生产&quot;&gt;样本生产&lt;/h5&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;tensorflow&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 回忆上一小节介绍的，每个Example内部实际有若干种Feature表达，下面
+# 的四个工具方法方便我们进行Feature的构造
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;_bytes_feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bytes_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BytesList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;_float_feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;float_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FloatList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;_int64_feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;int64_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Int64List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;_int64list_feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;int64_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Int64List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 单条样本的生产逻辑
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;serialize_example&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;city_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app_type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;viewd_pois&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;avg_paid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+		&lt;span class=&quot;c1&quot;&gt;# 注意我们需要按照格式来进行数据的组装，这里的dict便按照指定Schema构造了一条Example
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;feature&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;&apos;user_id&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_int64_feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;&apos;city_id&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_int64_feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;city_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;&apos;app_type&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_int64_feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app_type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;&apos;viewd_pois&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_int64list_feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewd_pois&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;&apos;avg_paid&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_float_feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;avg_paid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;&apos;comment&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_bytes_feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+		&lt;span class=&quot;c1&quot;&gt;# 调用相关api将Example数据序列化为byte string
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;example_proto&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Example&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;features&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;feature&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;example_proto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SerializeToString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 样本的生产，这里展示了将2条样本数据写入到了文件中
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;write_demo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filepath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;python_io&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TFRecordWriter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filepath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;writer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;writer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;serialize_example&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;658&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;325&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;36.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;yummy food.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;writer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;serialize_example&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;897&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;568&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;126&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;89.6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;nice place to have dinner.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;write demo data done.&quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;filepath&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;testdata.tfrecord&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;write_demo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filepath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h5 id=&quot;样本解析&quot;&gt;样本解析&lt;/h5&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;read_demo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filepath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+		&lt;span class=&quot;c1&quot;&gt;# 定义要如何读取数据，定义schema
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;schema&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&apos;user_id&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FixedLenFeature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;int64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&apos;city_id&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FixedLenFeature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;int64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&apos;app_type&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FixedLenFeature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;int64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&apos;viewed_pois&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;VarLenFeature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;int64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&apos;avg_paid&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FixedLenFeature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;float32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default_value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&apos;comment&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FixedLenFeature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default_value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+		
+    &lt;span class=&quot;c1&quot;&gt;# 使用相关api，按照schema解析样本数据
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;_parse_function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example_proto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parse_single_example&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example_proto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;schema&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		
+    &lt;span class=&quot;c1&quot;&gt;# 使用TFRecordDataset加载tfrecord格式的文件
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;dataset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TFRecordDataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filepath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;parsed_dataset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_parse_function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parsed_dataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;make_one_shot_iterator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    
+    &lt;span class=&quot;c1&quot;&gt;# 这里直接利用session，简单打印数据
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;out of data&quot;&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;官网资料：https://www.tensorflow.org/tutorials/load_data/tfrecord&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;fixedlenfeature和varlenfeature&quot;&gt;FixedLenFeature和VarLenFeature&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;API名&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;功能&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;参数&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;tf.FixedLenFeature&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;将数据以Dense的形式读取出来&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;shape：定义样本数据该字段的shape，注意我们demo中的scalar shape都定义为[]dtype：数据类型defaule_value：默认值&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;tf.VarLenFeature&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;读取变长特征数据，数据被读取为&lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/sparse/SparseTensor&quot;&gt;SparseTensor&lt;/a&gt;的格式。例如view_pois是一个array，因此采用VarLenFeature进行读取&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;dtype：数据类型&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;tensorflow函数&quot;&gt;tensorflow函数&lt;/h3&gt;
+
+&lt;h4 id=&quot;tfexpandinput-axis&quot;&gt;tf.expand（input, axis）&lt;/h4&gt;
+
+&lt;p&gt;扩充维度&lt;/p&gt;
+
+&lt;h4 id=&quot;tftileinput-multiples&quot;&gt;tf.tile（input, multiples）&lt;/h4&gt;
+
+&lt;p&gt;将input复制multiples次，multiples的每个数对应input的每个维度&lt;/p&gt;
+
+&lt;p&gt;multiples的维度与input相同&lt;/p&gt;
+
+&lt;h4 id=&quot;tfreduce_maxinput_tensoraxis&quot;&gt;tf.reduce_max(input_tensor,axis)&lt;/h4&gt;
+
+&lt;p&gt;###&lt;/p&gt;
+
+&lt;p&gt;tensorflow&lt;/p&gt;
+
+&lt;h4 id=&quot;with-tfvariable_scopestrireusetfauto_reuse&quot;&gt;with tf.variable_scope(str(i),reuse=tf.AUTO_REUSE):&lt;/h4&gt;
+
+&lt;h3 id=&quot;tensorflow-debug&quot;&gt;tensorflow debug&lt;/h3&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# 输出所有可训练参数
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;trainable_variables&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# 输出所有参数
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global_variables&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# 给定name获取tensor
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_default_graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_tensor_by_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;tensor-name&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>nice</name></author><category term="snip" /><summary type="html">背景</summary></entry><entry><title type="html">Spark语法</title><link href="https://bigbigda.github.io/2022/10/24/Spark/" rel="alternate" type="text/html" title="Spark语法" /><published>2022-10-24T00:00:00+08:00</published><updated>2022-10-24T00:00:00+08:00</updated><id>https://bigbigda.github.io/2022/10/24/Spark</id><content type="html" xml:base="https://bigbigda.github.io/2022/10/24/Spark/">&lt;p&gt;&lt;strong&gt;如无特殊说明则为PySpark语法&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;配置环境&quot;&gt;配置环境&lt;/h4&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;%%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spark&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;conf&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yarn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zw01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hadoop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mining&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ad&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;online&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ffsfsdconf&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maxResultSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;读hdfs&quot;&gt;读hdfs&lt;/h4&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;offline_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;textFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewfs://hadoop-meituan/user/hadoop-mining/user/guopeng16/dpxg/search/offline_data_f/2022-12-07&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;处理&quot;&gt;处理&lt;/h4&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;line_s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;req&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line_s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;shopid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line_s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;xgid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line_s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;expid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line_s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;feature&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line_s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shopid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xgid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;offline_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;take&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;过滤&quot;&gt;过滤&lt;/h4&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;line_s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;shopid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line_s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;reqid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line_s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shopid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;745349529&apos;&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reqid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;33ef1918-dea1-4c0f-920b-55d414b10098&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shopid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;1540560422&apos;&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reqid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;1511426d-e734-4a3b-9b80-d3bb4bb1c33c&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;offline_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;take&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;过滤lambda表达式&quot;&gt;过滤（lambda表达式）&lt;/h4&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;rdd1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;rdd2hive&quot;&gt;rdd2hive&lt;/h4&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pyspark.sql.types&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StringType&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pyspark.sql.types&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StructField&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pyspark.sql.types&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StructType&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;SCHEMA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StructType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;StructField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;req&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StringType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()),&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;StructField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;shopid&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StringType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()),&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;StructField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;xgid&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StringType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()),&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;StructField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;expid&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StringType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()),&lt;/span&gt;
+ &lt;span class=&quot;n&quot;&gt;StructField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;feature&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StringType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;offline_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toDF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SCHEMA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;createOrReplaceTempView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;temp_view_name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;%%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mydf&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preview&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quiet&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp_guop_v1213&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp_view_name&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;21-1404:7459&apos;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;approx_percentile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;querytagnumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xxx&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;基于文本创建hive表scala-spark&quot;&gt;基于文本创建hive表(scala-spark)&lt;/h3&gt;
+
+&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;myDF&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;parallelize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Seq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;A&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;John&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;A&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Bob&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;A&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Sam&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;B&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Kim&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;B&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;John&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;B&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Ria&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))).&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;toDF&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ID&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;NAME&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;SEQ&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;NUMBER&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;myDf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;createOrReplaceTempView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;mytempTable&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;nv&quot;&gt;sqlContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;sql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;create table mytable as select * from mytempTable&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>nice</name></author><category term="snip" /><summary type="html">如无特殊说明则为PySpark语法</summary></entry></feed>

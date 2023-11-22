@@ -88,181 +88,27 @@
   
   
   
-  
-  
 
   
     {
-      "title"    : "GitHub 用户专属福利，实际到账 3K+，Namebase Airdrop",
-      "category" : "GitHub",
+      "title"    : "博客示例-免费加速 GitHub Pages 博客的静态资源",
+      "category" : "Engineer",
       
-      "url"      : "https://bigbigda.github.io/2020/02/21/namebase-airdrop/",
-      "keywords" : "GitHub, Namebase, Airdrop"
+      "url"      : "https://bigbigda.github.io/2022/10/08/cdn-for-github-pages/",
+      "keywords" : "GitHub"
     } ,
   
     {
-      "title"    : "记一个 Base64 有关的 Bug",
-      "category" : "Java",
+      "title"    : "第一篇博客：github pages搭建",
+      "category" : "Engineer",
       
-      "url"      : "https://bigbigda.github.io/2020/03/01/base64-bug/",
-      "keywords" : "Java, Base64"
-    } ,
-  
-    {
-      "title"    : "一份简明的 Base64 原理解析",
-      "category" : "Java",
-      
-      "url"      : "https://bigbigda.github.io/2020/03/07/get-an-in-depth-understanding-of-base64/",
-      "keywords" : "Base64"
-    } ,
-  
-    {
-      "title"    : "使用 jsDelivr 免费加速 GitHub Pages 博客的静态资源",
-      "category" : "GitHub",
-      
-      "url"      : "https://bigbigda.github.io/2020/05/01/cdn-for-github-pages/",
-      "keywords" : "GitHub, CDN, jsdelivr"
-    } ,
-  
-    {
-      "title"    : "本博客模板常见问题 Q &amp; A",
-      "category" : "GitHub",
-      
-      "url"      : "https://bigbigda.github.io/2020/05/03/blog-template-qna/",
-      "keywords" : "Jekyll, GitHub Pages"
-    } ,
-  
-    {
-      "title"    : "用 Vim 编辑 Markdown 时直接粘贴图片",
-      "category" : "Vim",
-      
-      "url"      : "https://bigbigda.github.io/2020/05/04/paste-image-in-vim/",
-      "keywords" : "Vim, Markdown, md-image-paste.vim"
-    } ,
-  
-    {
-      "title"    : "更聪明地学习，而不是苦读——《如何高效学习》",
-      "category" : "Blog",
-      
-      "url"      : "https://bigbigda.github.io/2020/05/17/learn-more-study-less/",
-      "keywords" : "如何高效学习，读书笔记，吐槽"
-    } ,
-  
-    {
-      "title"    : "林丹从国家队退役，带起一波回忆",
-      "category" : "Blog",
-      
-      "url"      : "https://bigbigda.github.io/2020/07/05/lindan-and-badminton/",
-      "keywords" : "羽毛球, 林丹"
-    } ,
-  
-    {
-      "title"    : "使用 jsDelivr 免费加速 GitHub Pages 博客的静态资源（二）",
-      "category" : "GitHub",
-      
-      "url"      : "https://bigbigda.github.io/2020/10/07/cdn-for-github-pages-2/",
-      "keywords" : "GitHub, CDN, jsdelivr"
-    } ,
-  
-    {
-      "title"    : "给 Mac 添加右键菜单「使用 VSCode 打开」",
-      "category" : "VSCode",
-      
-      "url"      : "https://bigbigda.github.io/2020/10/28/add-vscode-to-right-click/",
-      "keywords" : "VSCode, macOS"
-    } ,
-  
-    {
-      "title"    : "代码审查：从 ArrayList 说线程安全",
-      "category" : "Java",
-      
-      "url"      : "https://bigbigda.github.io/2021/03/13/talk-about-threadsafe-with-arraylist/",
-      "keywords" : "线程安全"
-    } ,
-  
-    {
-      "title"    : "解决 IntelliJ IDEA 启动报 Unsupported Java Version 的问题",
-      "category" : "Java",
-      
-      "url"      : "https://bigbigda.github.io/2021/03/27/intellij-idea-unsupported-java-version/",
-      "keywords" : "IntelliJ IDEA, Unsupported Java Version"
-    } ,
-  
-    {
-      "title"    : "利用 XXL-JOB 实现灵活控制的分片处理",
-      "category" : "Java",
-      
-      "url"      : "https://bigbigda.github.io/2021/06/19/xxl-job-sharding/",
-      "keywords" : "XXL-JOB, Java, 分片广播"
-    } ,
-  
-    {
-      "title"    : "读叔本华《人生的智慧》",
-      "category" : "Blog",
-      
-      "url"      : "https://bigbigda.github.io/2021/10/25/the-wisdom-of-life/",
-      "keywords" : "叔本华, 人生的智慧"
-    } ,
-  
-    {
-      "title"    : "如何让 Spring Security 「少管闲事」",
-      "category" : "Java",
-      
-      "url"      : "https://bigbigda.github.io/2021/12/26/spring-security/",
-      "keywords" : "Spring Security, Java, Spring"
-    } ,
-  
-    {
-      "title"    : "我的 2021 盘点",
-      "category" : "Blog",
-      
-      "url"      : "https://bigbigda.github.io/2022/01/01/my-2021/",
-      "keywords" : "2021, 盘点, 计划"
-    } ,
-  
-    {
-      "title"    : "给 zsh 自定义命令添加参数自动补全",
-      "category" : "Shell",
-      
-      "url"      : "https://bigbigda.github.io/2022/02/12/zsh-completion/",
-      "keywords" : "zsh, 自动补全"
-    } ,
-  
-    {
-      "title"    : "在 Mac 下编译 chaosblade",
-      "category" : "混沌工程",
-      
-      "url"      : "https://bigbigda.github.io/2022/02/19/compile-chaosblade-on-mac/",
-      "keywords" : "混沌工程, chaosblade"
-    } ,
-  
-    {
-      "title"    : "使用 iPhone 感觉不好的几点体验",
-      "category" : "Blog",
-      
-      "url"      : "https://bigbigda.github.io/2022/03/06/iphone-vs-xiaomi/",
-      "keywords" : "iPhone, Xiaomi"
-    } ,
-  
-    {
-      "title"    : "修复 MacVim 9.0 的 Python3 支持",
-      "category" : "Vim",
-      
-      "url"      : "https://bigbigda.github.io/2022/09/22/enable-python3-in-macvim/",
-      "keywords" : "MacVim, Python3"
-    } ,
-  
-    {
-      "title"    : "第一篇博文",
-      "category" : "碎碎念",
-      
-      "url"      : "https://bigbigda.github.io/2022/10/09/first-blog/",
-      "keywords" : "碎碎念"
+      "url"      : "https://bigbigda.github.io/2022/10/09/first-blog-build-github-page/",
+      "keywords" : "工程、博客搭建"
     } ,
   
     {
       "title"    : "Attention-Is-All-You-Need",
-      "category" : "Transformer",
+      "category" : "NLP",
       
       "url"      : "https://bigbigda.github.io/2022/10/10/Transformer/",
       "keywords" : "attention,transformer"
@@ -286,10 +132,10 @@
   
     {
       "title"    : "MAE",
-      "category" : "Transformer",
+      "category" : "CV",
       
       "url"      : "https://bigbigda.github.io/2022/10/13/MAE/",
-      "keywords" : "CV,transformer,Autoencoders"
+      "keywords" : "CV,transformer,Autoencoders,vision transformer"
     } ,
   
     {
@@ -302,7 +148,7 @@
   
     {
       "title"    : "DALL·E·2",
-      "category" : "Deep",
+      "category" : "MultiModal",
       
       "url"      : "https://bigbigda.github.io/2022/10/18/DALLE2/",
       "keywords" : "diffusion"
@@ -318,10 +164,90 @@
   
     {
       "title"    : "CLIP",
-      "category" : "CV",
+      "category" : "MultiModal",
       
       "url"      : "https://bigbigda.github.io/2022/10/20/CLIP/",
       "keywords" : "CV,Contrastive Learning"
+    } ,
+  
+    {
+      "title"    : "Spark语法",
+      "category" : "snip",
+      
+      "url"      : "https://bigbigda.github.io/2022/10/24/Spark/",
+      "keywords" : "SQL,Spark,Pyspark,Scala,,Snip"
+    } ,
+  
+    {
+      "title"    : "tensorflow相关代码",
+      "category" : "snip",
+      
+      "url"      : "https://bigbigda.github.io/2022/11/13/tensorflow/",
+      "keywords" : "tfrecord,tensorflow"
+    } ,
+  
+    {
+      "title"    : "图灵机",
+      "category" : "CS",
+      
+      "url"      : "https://bigbigda.github.io/2023/01/09/Turing-Machine/",
+      "keywords" : "形式语言与自动机、图灵机"
+    } ,
+  
+    {
+      "title"    : "淘宝详情页分发推荐算法总结",
+      "category" : "Recsys",
+      
+      "url"      : "https://bigbigda.github.io/2023/01/31/TaobaoDetailPageRecAlg/",
+      "keywords" : "阿里技术、推荐算法、notes"
+    } ,
+  
+    {
+      "title"    : "ViLT",
+      "category" : "MultiModal",
+      
+      "url"      : "https://bigbigda.github.io/2023/02/14/ViLT/",
+      "keywords" : "Vision-and-Language"
+    } ,
+  
+    {
+      "title"    : "GPT系列",
+      "category" : "NLP",
+      
+      "url"      : "https://bigbigda.github.io/2023/02/16/GPT/",
+      "keywords" : "NLP、GPT"
+    } ,
+  
+    {
+      "title"    : "Tools",
+      "category" : "Tools",
+      
+      "url"      : "https://bigbigda.github.io/2023/02/17/Tools/",
+      "keywords" : "ML,DeepLearning"
+    } ,
+  
+    {
+      "title"    : "Transformer后续",
+      "category" : "NLP",
+      
+      "url"      : "https://bigbigda.github.io/2023/02/19/WorkAfterTransformer/",
+      "keywords" : "Transformer,attention，Bert"
+    } ,
+  
+    {
+      "title"    : "Spark机制",
+      "category" : "Engineer",
+      
+      "url"      : "https://bigbigda.github.io/2023/07/07/Spark-Basic/",
+      "keywords" : "BigData"
+    } ,
+  
+    {
+      "title"    : "SQL语法",
+      "category" : "snip",
+      
+      "url"      : "https://bigbigda.github.io/2023/11/21/SQL/",
+      "keywords" : "SQL,Presto,Hive,Snip"
     } ,
   
     {
